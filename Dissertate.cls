@@ -13,7 +13,7 @@
 % Appearance adapted from Zhaoxi Xiong, arXiv:1906.02892 (2019).
 % Source: https://arxiv.org/src/1906.02892
 \ProvidesClass{Dissertate}[2014/03/25 v2.0 Dissertate Class]
-\LoadClass[12pt, oneside, letterpaper]{book}
+\LoadClass[12pt, twoside, openany, a4paper]{book}
 
 %
 % Options
@@ -53,8 +53,21 @@
 
 \RequirePackage{enumerate}
 
-% Text layout.
-\RequirePackage[letterpaper, margin=1.2in]{geometry}
+% Vertical layout measured from Tim Hempel's A4 dissertation.
+\RequirePackage[
+    a4paper,
+    % Mirrored margins reserve binding space and keep each left edge at 3--3.5 cm.
+    inner=35mm,
+    outer=30mm,
+    top=36.34mm,
+    bottom=52.4mm,
+    headheight=15pt,
+    headsep=18.9pt,
+    footskip=41.45pt
+]{geometry}
+\flushbottom
+% Let paragraph gaps absorb the small adjustment to the shared bottom edge.
+\setlength{\parskip}{0pt plus 3pt}
 \usepackage{ragged2e}
 \RaggedRight
 \RequirePackage{graphicx}
@@ -66,6 +79,8 @@
 \RequirePackage{pdfpages}
 
 % Fonts.
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
 \RequirePackage{color}
 \RequirePackage{xcolor}
 \usepackage{hyperref}
@@ -77,7 +92,6 @@
 \RequirePackage{mathrsfs} % so that we can use \mathscr
 \RequirePackage{amscd} % for the CD environment
 \RequirePackage{mathtools}
-% Use the reference thesis's default Computer Modern text and math fonts.
 \RequirePackage[labelfont={bf,rm,small,stretch=\dnormalspacing},
                 textfont={rm,small,stretch=\dnormalspacing},
                 labelsep=colon,
@@ -94,9 +108,31 @@
 % Headings and headers.
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
-\setlength{\headheight}{15pt}
 \pagestyle{plain}
 \RequirePackage{titling}
+
+% Running headers and outer page numbers, following Tim Hempel's thesis.
+\renewcommand{\chaptermark}[1]{\markboth{\@chapapp~\thechapter}{#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\thesispagestyle}{
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[LE]{\fontsize{9}{11}\selectfont\nouppercase{\leftmark}}
+    \fancyhead[RO]{\fontsize{9}{11}\selectfont\nouppercase{\rightmark}}
+    \fancyfoot[LE,RO]{%
+        \parbox[b]{0.1\textwidth}{%
+            \fontsize{9}{11}\selectfont
+            \ifodd\value{page}\raggedleft\else\raggedright\fi
+            \rule{\linewidth}{2pt}\\[3pt]
+            \thepage
+        }%
+    }
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    % Chapter openings retain the footer but omit the running header.
+    \fancypagestyle{plain}{\fancyhead{}}
+}
+
 \setcounter{secnumdepth}{3}
 \titleformat{\section}
     {\normalfont\rmfamily\Large\bfseries\raggedright}
@@ -135,7 +171,7 @@
 \setlength\cftbeforesubsubsecskip{0pt}
 \setlength\cftbeforefigskip{0pt}
 \setlength\cftbeforetabskip{0pt}
-% Computer Modern substitutes upright bold for unavailable bold small caps.
+% Keep contents entries upright and bold, as rendered in the reference.
 \renewcommand\cftchapfont{\normalsize \bfseries}
 \renewcommand\cftsecfont{\normalsize}
 \renewcommand\cftsubsecfont{\normalsize}
@@ -162,7 +198,7 @@
 \setlength\mybibindent{0pt}
 \renewenvironment{thebibliography}[1]
     {\chapter*{\bibname}%
-     \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+     \@mkboth{\bibname}{\bibname}%
      \list{\@biblabel{\@arabic\c@enumiv}}
           {\settowidth\labelwidth{\@biblabel{999}}
            \leftmargin\labelwidth

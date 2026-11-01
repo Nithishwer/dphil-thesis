@@ -46,11 +46,25 @@ omitted from the compiled document, as in the reference.
 
 ## Appearance
 
-The class uses the reference's Computer Modern text and mathematics, US Letter
-paper, 1.2-inch margins, 1.2 line-spacing factor, crimson Palatino chapter numbers,
+The class uses Latin Modern text and mathematics with T1 text encoding, A4
+paper, mirrored 35 mm inner and 30 mm outer margins, a 1.2 line-spacing factor,
+crimson Palatino chapter numbers,
 bold section headings, serif captions, and numbered citations in square brackets.
 Chapter numbering starts at 1. Footnotes are numbered continuously; bibliography
 entries use `unsrt` in citation order with compressed spacing.
+
+Running headers and footers follow Tim Hempel's dissertation: even pages show
+"Chapter N" at the upper left, odd pages show the chapter title at the upper
+right, and page numbers sit below a short rule at the outer bottom corners.
+Running headers and page numbers use 9-point text. Vertical spacing follows the
+measured reference: 36.34 mm above the text area and 52.4 mm below it, with an
+18.9 pt header separation and a 41.45 pt footer offset. Full text pages align
+at the bottom of the text area.
+Chapter-opening pages omit the running header. The layout is two-sided, with
+chapters allowed to start on either page; appendices use "Appendix A", etc.
+The wider inner margin reserves room for binding: it is on the left of odd
+pages and the right of even pages. Both page types retain a left margin within
+the quoted 30--35 mm requirement.
 
 Compatibility adjustments preserve the published appearance: the caption
 justification option is corrected, unavailable bold small caps in the contents
@@ -58,11 +72,10 @@ use their actual upright bold substitute, and the title-page offset is calibrate
 against the PDF. An emergency line-breaking allowance prevents overfull lines
 in the Latin sample text.
 
-Verification with identical text in a temporary document matched the published
-title, abstract, and opening introduction excerpt to within 0.001 PDF points in
-word positions. The delivered sample compiles to 57 pages with no LaTeX warnings,
-undefined citations, missing glyphs, or overfull boxes. Its page count and line
-breaks naturally depend on the sample content.
+Latin Modern is the chosen update to the reference's Computer Modern typography.
+The delivered sample compiles to 61 pages with no undefined citations, missing
+glyphs, or overfull boxes. Sample opening quotations report underfull boxes.
+Its page count and line breaks naturally depend on the sample content.
 
 The repository's existing license is retained in `LICENSE`. The underlying
 Dissertate AGPL license is included separately in `LICENSE-Dissertate`. Original

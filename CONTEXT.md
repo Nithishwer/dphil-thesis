@@ -8,13 +8,23 @@
   `fix(layout): correct caption spacing`, `docs: update thesis context`.
 - The thesis uses Harvard Dissertate, with appearance adapted from Zhaoxi Xiong's
   2019 dissertation: https://arxiv.org/pdf/1906.02892.
+- Use Latin Modern (`lmodern`) for text and mathematics, with T1 text encoding.
+  Large chapter numbers retain the reference's crimson Palatino Bold.
+- Body running headers and footers follow Tim Hempel's dissertation: chapter
+  labels on even pages, titles on odd pages, and outer page numbers below short
+  rules. Running headers and page numbers are 9 pt, matching Hempel's PDF.
+  A4 paper uses 36.34 mm top and 52.4 mm bottom text-area margins, 18.9 pt
+  `headsep`, 41.45 pt `footskip`, and `flushbottom`. Mirrored side margins are
+  35 mm inside and 30 mm outside, reserving binding space while keeping each
+  page's left margin within 30--35 mm. The class uses `twoside, openany`;
+  chapter openings omit headers.
 - Build with `sh scripts/build` (pdfLaTeX, BibTeX, and latexmk). The output is
   `dissertation.pdf`; generated LaTeX files and the compiled thesis PDF are not
   committed. Source figures, including PDFs, are versioned.
 - Edit author and degree details in `frontmatter/personalize.tex`, chapter order
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
-- The current document contains editable sample content. Reference-layout
-  checks matched identical title, abstract, and introduction text within
-  0.001 PDF points. The sample compiles to 57 pages without LaTeX warnings.
+- The current document contains editable sample content. Its layout follows the
+  reference, with Latin Modern as the chosen font update. The sample compiles to
+  61 pages; sample opening quotations report underfull boxes.
 - Preserve the repository's existing `LICENSE`; the upstream Dissertate license
   is retained separately in `LICENSE-Dissertate`.
