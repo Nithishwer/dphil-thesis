@@ -46,8 +46,8 @@ omitted from the compiled document, as in the reference.
 
 ## Appearance
 
-The class uses 12 pt Latin Modern body text and mathematics with T1 text encoding,
-A4 paper, mirrored 35 mm inner and 30 mm outer margins, a 1.2 line-spacing factor,
+The class uses Latin Modern text and mathematics with T1 text encoding, A4
+paper, mirrored 35 mm inner and 30 mm outer margins, a 1.2 line-spacing factor,
 crimson Palatino chapter numbers,
 bold section headings, serif captions, and numbered citations in square brackets.
 Chapter numbering starts at 1. Footnotes are numbered continuously; bibliography
@@ -73,7 +73,7 @@ against the PDF. An emergency line-breaking allowance prevents overfull lines
 in the Latin sample text.
 
 Latin Modern is the chosen update to the reference's Computer Modern typography.
-The delivered sample compiles to 70 pages with no undefined citations, missing
+The delivered sample compiles to 61 pages with no undefined citations, missing
 glyphs, or overfull boxes. Sample opening quotations report underfull boxes.
 Its page count and line breaks naturally depend on the sample content.
 
