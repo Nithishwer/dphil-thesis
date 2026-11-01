@@ -302,8 +302,9 @@
     \newpage
     \thispagestyle{empty}
     \vspace*{\fill}
-    \scshape \noindent \small {\normalfont\copyright} ~ \@degreeyear\hspace{3pt} \theauthor \\
-    \noindent all rights reserved.
+    {\scshape \small
+    \noindent {\normalfont\copyright} ~ \@degreeyear\hspace{3pt} \theauthor \\
+    \noindent all rights reserved.\par}
     \vspace*{\fill}
     \newpage
     \rm

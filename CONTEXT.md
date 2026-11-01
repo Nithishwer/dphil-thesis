@@ -9,6 +9,8 @@
 - The thesis uses Harvard Dissertate, with appearance adapted from Zhaoxi Xiong's
   2019 dissertation: https://arxiv.org/pdf/1906.02892.
 - Use Latin Modern (`lmodern`) for text and mathematics, with T1 text encoding.
+  Body text uses the class's 12 pt normal size; the copyright page's smaller
+  font is scoped to that page. The default spacing factor remains 1.2.
   Large chapter numbers retain the reference's crimson Palatino Bold.
 - Body running headers and footers follow Tim Hempel's dissertation: chapter
   labels on even pages, titles on odd pages, and outer page numbers below short
@@ -25,6 +27,6 @@
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
 - The current document contains editable sample content. Its layout follows the
   reference, with Latin Modern as the chosen font update. The sample compiles to
-  61 pages; sample opening quotations report underfull boxes.
+  70 pages; sample opening quotations report underfull boxes.
 - Preserve the repository's existing `LICENSE`; the upstream Dissertate license
   is retained separately in `LICENSE-Dissertate`.
