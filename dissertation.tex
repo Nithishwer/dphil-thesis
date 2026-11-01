@@ -1,0 +1,26 @@
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass{Dissertate}
+
+\begin{document}
+
+\frontmatter
+\setstretch{\dnormalspacing}
+
+% Start the introduction at chapter 1, as in the reference thesis.
+\setcounter{chapter}{0}
+\setlength{\footnotesep}{16pt}
+\include{chapters/introduction}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/conclusion}
+
+\begin{appendices}
+    \include{chapters/appendixA}
+\end{appendices}
+
+\backmatter
+
+\end{document}
