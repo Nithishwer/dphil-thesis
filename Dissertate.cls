@@ -69,7 +69,7 @@
 % Let paragraph gaps absorb the small adjustment to the shared bottom edge.
 \setlength{\parskip}{0pt plus 3pt}
 \usepackage{ragged2e}
-\RaggedRight
+\justifying
 \RequirePackage{graphicx}
 \parindent 12pt
 % Allow a final line-breaking pass for the sample's long Latin paragraphs.
@@ -95,7 +95,7 @@
 \RequirePackage[labelfont={bf,rm,small,stretch=\dnormalspacing},
                 textfont={rm,small,stretch=\dnormalspacing},
                 labelsep=colon,
-                justification=RaggedRight,
+                justification=justified,
                 singlelinecheck=false,
                 margin=0pt,
                 figurewithin=chapter,
