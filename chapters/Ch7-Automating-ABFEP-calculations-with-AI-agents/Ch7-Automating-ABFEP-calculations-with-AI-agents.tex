@@ -1,4 +1,4 @@
-%!TEX root = ../dissertation.tex
+%!TEX root = ../../dissertation.tex
 \begin{savequote}[75mm]
 Why are people still telling me what to do? I don't want to do anything. What is the thing I should copy-paste to my agent? Every time I am told `go to this URL' or `click here,' I think: no.
 \qauthor{Andrej Karpathy}
@@ -35,7 +35,7 @@ MDArena was constructed from more than 100 candidate tasks contributed by domain
 
 \begin{figure}[htbp]
 \centering
-  \includegraphics[width=\textwidth]{figures/figure_1/figure_1.pdf}
+  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_1.pdf}
   \caption[MDArena dataset composition.]{Composition of the 50 MDArena tasks by (A) task type, (B) molecular system type, and (C) software package. Each task contributes once to panels A and B. The ``No molecular system'' category denotes a task operating only on a \mbox{GROMACS} MDP file. Tasks may use multiple packages, giving 111 task--package assignments across 18 packages. Panel C shows the 11 packages used in at least two tasks; seven packages used in one task each are omitted for legibility: alchemlyb, \mbox{ensemble\_md}, MDRestraintsGenerator, openmmforcefields, ORCA, physical\_validation, and ProLIF. All panels are derived from the task metadata.}
   \label{fgr:task-types}
 \end{figure}
@@ -53,7 +53,7 @@ As molecular simulations are inherently stochastic and often lack a unique groun
 
 \begin{figure}[htbp]
 \centering
-  \includegraphics[width=\textwidth]{figures/figure_2/figure_2.pdf}
+  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_2.pdf}
   \caption[Coding-agent performance on MDArena.]{Performance of coding agents on MDArena. (a) Mean Strict-Pass@1 against model release date; (a strict pass requires all correctness and process checks to pass). (b,c) Mean correctness and process scores, respectively, for five selected models. Error bars show 95\% task-bootstrap confidence intervals. Daggers mark v0.1.0 runs with one attempt per task; other runs use the v1 of the benchmark with three attempts per task. }
   \label{fig:model_performance}
   \label{fig:success-reward-triptych}
@@ -81,7 +81,7 @@ Most models were run with three repeats to test repeatability. Claude Opus 5.5 p
 
 \begin{figure}[htbp]
 \centering
-  \includegraphics[width=\textwidth]{figures/figure_3/figure_3.pdf}
+  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
   \caption[Coding-agent performance and cost on MDArena.]{Performance and cost of nine coding-agent configurations on MDArena. Left: mean Strict-Pass@1 by task difficulty. Middle: mean cost per trial by difficulty. Right: overall Strict-Pass@1 against mean cost per trial. A strict pass requires correctness and process scores of one. Error bars show 95\% task-bootstrap confidence intervals. Striped bars indicate costs estimated from exported token counts. GLM-5.2 estimates use its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash estimates use Vertex AI list prices.}
   \label{fig:difficulty_cost}
   \label{fig:cost-by-difficulty}

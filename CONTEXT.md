@@ -23,6 +23,9 @@
   committed. Source figures, including PDFs, are versioned.
 - Edit author and degree details in `frontmatter/personalize.tex`, chapter order
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
+- Each chapter and appendix has its own folder under `chapters/`, containing the
+  matching `.tex` file and a `figures/` subfolder. Figure paths are relative to
+  the repository root; empty figure folders are preserved with `.gitkeep`.
 - Chapters are numbered consecutively from 1 to 8, matching their filenames:
   Introduction; Theory and Methods; Benchmarking and System Preparation;
   Binding Pocket Resolvation; Apo-State Conformational Changes; ABFEs on Agonists;
