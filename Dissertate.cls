@@ -315,7 +315,8 @@
     \pagenumbering{roman}
     \setcounter{page}{3}
     \pagestyle{fancy}
-    \lhead{Dissertation Advisor: Professor \@advisor} \rhead{\@author}
+    \lhead{\fontsize{9}{11}\selectfont Dissertation Advisor: Professor \@advisor}
+    \rhead{\fontsize{9}{11}\selectfont\@author}
     \renewcommand{\headrulewidth}{0.0pt}
     \vspace*{35pt}
     \begin{center}
