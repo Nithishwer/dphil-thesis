@@ -4,7 +4,7 @@ Why are people still telling me what to do? I don't want to do anything. What is
 \qauthor{Andrej Karpathy}
 \end{savequote}
 
-\chapter{Automating ABFEs with AI Agents}
+\chapter{Automating ABFEP calculations with AI Agents}
 \label{ch:automating-abfes-with-ai-agents}
 \section*{Abstract}
 In the previous chapters, we examined the performance of ABFEP calculations. Although among the most rigorous physics-based methods for predicting binding affinities, they are labour-intensive to set up and expensive to run. Coding agents promise to automate much of this workflow, but their reliability on realistic molecular dynamics (MD) tasks remains poorly characterised. To address this gap, we introduce MDArena, a benchmark of 50 containerised tasks from active biomolecular simulation projects, spanning 29 molecular systems across seven task types, including trajectory analysis, complex system preparation, free-energy calculations, and enhanced sampling. We evaluate over 17 coding agent configurations. Recent frontier models score consistently high on easy and medium tasks and show substantial gains on hard tasks. However, failures persist in membrane-protein system preparation and charge treatment in alchemical free-energy setup. MDArena thus exposes the gap between coding agents as supervised assistants and as autonomous MD researchers, and provides a reproducible, extensible platform for tracking progress in closing it.
@@ -26,7 +26,7 @@ We track the performance of agents released between May and November 2026 and sh
 
 
 
-\section{Experiments}
+\section{Methods}
 
 \subsection{Task selection and curation}
 
@@ -66,7 +66,7 @@ As molecular simulations are inherently stochastic and often lack a unique groun
 
 
 
-\section{Results}
+\section{Results and Discussion}
 
 \subsection[Reliable execution of complex MD workflows]{Frontier coding agents can reliably execute complex molecular dynamics workflows}
 
@@ -116,7 +116,7 @@ GPT-6 Astra and GPT-6.1 Sol, run in the shared Codex harness, grouped related op
 
 Gemini 4 Argon, by contrast, prioritised exploration over delivery, spending more of its workflow inspecting files, probing library behaviour, and updating plans. It used the to-do tool in 123 of 150 trials, with a median of 53 calls and 18.5 minutes. On the ProLIF interaction analysis (Task 17), two repeats had already printed the correct top-ten interactions when the agent kept investigating residue numbering and export details; both hit the 15-minute limit without saving the requested CSV or summary. GLM-5.2 also explored extensively, mainly through small shell and Python experiments (to-do tool in 62 of 150 trials; median 35 calls and 17.5 minutes). This paid off on some tasks, such as Task 34, where GLM resolved failed imports and topology-loading problems, built the OpenFE network, and confirmed the saved transformations could be reloaded, passing all three repeats with 106–140 calls each. Gemini timed out on all three without delivering the network.
 
-\section{Discussion and Conclusion}
+\section{Conclusion}
 
 Performance on MDArena demonstrates substantial progress towards reliable automation of molecular dynamics workflows. Claude Code–Opus-5.5 achieved the highest Strict-Pass@1 rate at 94.7\% (142/150 trials), followed by GPT-6.1 Sol and GPT-6 Astra at 88.0\% each (132/150). Improvements extended to demanding workflows: Opus-5.5 passed 91.7\% of hard-task attempts (44/48), compared with 52.1\% (25/48) for Opus-5. Nevertheless, even Opus-5.5 failed at least one of three attempts on 8.0\% of tasks (4/50), with all three attempts failing on 2.0\% (1/50). These results support integrating coding agents into clearly specified, bounded research workflows with independent validation. They do not yet establish dependable execution of entire computational research projects. Closing the remaining gap between high aggregate performance and consistent scientific correctness remains a priority for the next generation of agents.
 

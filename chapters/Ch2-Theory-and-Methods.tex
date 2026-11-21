@@ -2,4 +2,69 @@
 \chapter{Theory and Methods}
 \label{ch:theory-and-methods}
 
-% TODO: Add content here.
+\section{Statistical Mechanics}
+\subsection{Microscopic description}
+\subsection{Ensembles and Equilibrium }
+\subsection{Partition functions and free energies}
+\subsection{Ensemble Averages and Sampling}
+\subsection{Metastability and barriers}
+
+\section{Simulating Moleculat Systems}
+\subsection{Molecular Models and Force fields}
+% Protein, ligand, lipid, water, and ion models.
+\subsection{Energy minimization}
+\subsection{Molecular Dynamics simulations}
+\subsubsection{Equations of motions} % Introduce Finite difference methods here
+\subsubsection{Numerical Integration}
+\subsection{Monte Carlo Simulations}
+% Markov chains, detailed balance, and acceptance rules.
+\subsection{Thermostats and Barostats}
+\subsection{Constraints, boundary conditions, and nonbonded interactions}
+\subsubsection{Bond constraints}
+\subsubsection{Periodic boundary conditions}
+\subsubsection{Nonbonded interactions}
+% Cutoffs, neighbour lists, and Ewald/PME electrostatics.
+\subsubsection{Periodic boundary conditions}
+\subsubsection{HMR}
+\subsubsection{Particle mesh Ewald (PME) summation}
+\subsubsection{Constraints}
+\subsubsection{Neighbor Lists}
+
+\section{Alchemical binding free-energy calculations}
+\subsection{Statistical-mechanical formulation of binding free energies}
+% Binding equilibria, partition-function formulation, and standard state.
+\subsection{Alchemical Pathways and enpoint definitions}
+\subsubsection{Thermodynamic cycles}
+% Introduce the double-decoupling cycle, its complex and solvent legs,
+% and the role of restraints.
+\subsubsection{Decoupling, annihilation, and dummy atoms}
+% Define the noninteracting endpoints and specify which
+% intermolecular and intramolecular interactions are retained.
+\subsubsection{Coupling schedules and soft-core potentials}
+% Introduce H(lambda), intermediate states, staged electrostatic
+% and van der Waals transformations, and soft-core potentials.
+\subsection{Free-energy estimators}
+% FEP, TI, BAR, and MBAR, emphasising those used in this thesis.
+\subsection{Restraints and standard-state corrections}
+% Explain the restraint scheme and derive the relevant corrections.
+\subsection{Charged ligands and electrostatic treatment}
+% Charge-changing transformations and their treatment.
+\subsection{Convergence, uncertainty, and validation}
+% Phase-space overlap, correlated samples, independent repeats,
+% convergence diagnostics, and comparison with experiment.
+
+\section{Enhanced sampling}
+\subsection{Replica exchange and Hamiltonian replica exchange}
+\subsection{Umbrella sampling and replica-exchange umbrella sampling}
+\subsection{Grand canonical Monte Carlo} % Note that GCMC is just sampling a different ensembly but when combined with ABFEs it behaves like and enhanced sampling method
+
+\section{Large language models and coding agents}
+\subsection{Large language models}
+\subsubsection{Autoregressive generation and transformer architecture}
+\subsubsection{Brief overview of pretraining, supervised fine-tuning, and RL.}
+\subsubsection{ Inference, context windows, and stochastic generation.}
+\subsection{Coding agents and harnesses}
+\subsection{Evaluation of scientific coding agents}
+\subsubsection{Deterministic verification}
+\subsubsection{LLM-based evaluation}
+\subsubsection{Performance metrics and uncertainty}
