@@ -4,25 +4,108 @@ Why are people still telling me what to do? I don't want to do anything. What is
 \qauthor{Andrej Karpathy}
 \end{savequote}
 
-\chapter{Automating ABFEP calculations with AI Agents}
+\chapter{Automating FEP calculations with AI Agents}
 \label{ch:automating-abfes-with-ai-agents}
 \section*{Abstract}
-In the previous chapters, we examined the performance of ABFEP calculations. Although among the most rigorous physics-based methods for predicting binding affinities, they are labour-intensive to set up and expensive to run. Coding agents promise to automate much of this workflow, but their reliability on realistic molecular dynamics (MD) tasks remains poorly characterised. To address this gap, we introduce MDArena, a benchmark of 50 containerised tasks from active biomolecular simulation projects, spanning 29 molecular systems across seven task types, including trajectory analysis, complex system preparation, free-energy calculations, and enhanced sampling. We evaluate over 17 coding agent configurations. Recent frontier models score consistently high on easy and medium tasks and show substantial gains on hard tasks. However, failures persist in membrane-protein system preparation and charge treatment in alchemical free-energy setup. MDArena thus exposes the gap between coding agents as supervised assistants and as autonomous MD researchers, and provides a reproducible, extensible platform for tracking progress in closing it.
+In the previous chapters, we examined errors in ABFEP calculations arising from insufficient sampling and improper simulation setup. Alongside these errors, a further barrier to the wider adoption of FEP is its labour-intensive setup process. LLM-based coding agents, which are increasingly capable of performing scientific workflows, promise to lower this barrier. However, despite their potential to accelerate FEP and molecular dynamics (MD) research more broadly, their reliability on realistic MD tasks remains poorly characterised, owing to the lack of rigorous benchmarks. In the absence of such benchmarks, researchers cannot reliably integrate coding agents into FEP and broader MD workflows. 
+
+To address this gap, we introduce MDArena, a benchmark of 50 containerised tasks drawn from active biomolecular simulation projects. The tasks span 29 molecular systems and seven task types, including trajectory analysis, complex system preparation, free-energy calculations, and enhanced sampling. We evaluate 18 coding agent configurations, released between July 2025 and November 2026 and show that the latest frontier models score consistently high on easy and medium tasks and show substantial gains on hard tasks. However, failures persist in membrane-protein system preparation and in alchemical free-energy setup. MDArena thus exposes the gap between coding agents as supervised assistants and as autonomous MD researchers, and provides a reproducible, extensible platform for tracking progress in closing it.
 
 
 
 \section{Introduction}
 
-Molecular dynamics (MD) has become central to modern biomolecular research.\cite{hollingsworth2018molecular,huggins2019biomolecular} While its theoretical foundation is well-established, carrying out a scientifically reliable MD workflow remains technically demanding, as it often requires substantial expertise for meticulous system preparation, parameterization, selection of sampling protocols, and analysis tailored to the scientific question. Powered by large language models (LLMs)\cite{zhao2023survey} and equipped to directly interact with computational environments, coding agents\cite{liu2024large} offer a promising route to automate substantial portions of this work. 
+Molecular dynamics (MD) provides a computational microscope for studying the motion of molecular
+systems. Over the past decades, it has been widely used across scientific disciplines and delivered
+insights into molecular mechanisms, dynamics, and functions in numerous studies (Hollingsworth &
+Dror, 2018; Huggins et al., 2019). While its underlying theory is well-established, carrying out a
+scientifically defensible MD workflow remains technically demanding, as it often requires meticulous
+system preparation, parameterization, selection of appropriate sampling protocols, and analysis
+tailored to the scientific question. These activities require substantial expertise and are often repeated
+across systems and projects, creating a strong incentive to automate their execution.
 
-On this front, several systems have demonstrated this potential across increasingly sophisticated workflows. For biomolecular applications, MDCrow\cite{campbell2026mdcrow} introduced an agentic LLM-based assistant for routine protein MD tasks, followed by NAMD-Agent\cite{chandrasekhar2025namdagent} and DynaMate,\cite{guilbert2025dynamate} which similarly automated protein and protein–ligand simulation and analysis through specialized pipelines. In materials simulation, PolyJarvis\cite{zhao2026polyjarvis} and LAMMPS-Agents\cite{vriza2026multiagentic} enabled end-to-end LAMMPS\cite{thompson2022lammps} workflows for predicting properties of polymers and inorganic materials, respectively, while ChemGraph\cite{pham2026chemgraph} presents agentic tool orchestration for general computational-chemistry problems. Recently, dedicated benchmarks MD-EvalBench\cite{shi2026mdagent2} and MDGym\cite{kumar2026mdgym} have also been proposed, which evaluate coding agents on executable tasks using LAMMPS\cite{thompson2022lammps} and GROMACS.\cite{abraham2015gromacs} 
-
-While these efforts establish the feasibility of agentic molecular simulation, existing evaluations remain limited in their ability to represent the breadth and complexity of computational chemistry research. Specifically, they typically either assess purpose-built agents on small sets of isolated or simplified cases, or comprise repeated variations of the same general workflow, such as setting up simulations to compute specified properties.\cite{kumar2026mdgym} Such evaluations may lose discriminative value rapidly as LLMs improve. As such, it remains unclear whether general-purpose coding agents can reliably tackle heterogeneous, long-horizon problems common in actual research projects and drug-discovery campaigns. Moreover, their emphasis on execution success or agreement with a reference output also provides limited support for assessing workflow validity, as a flawed system or inappropriate protocol may still execute successfully and produce plausible results. Given the rapid improvement of the LLMs underlying coding agents, realistic benchmarks are urgently needed to identify their capabilities and limitations. Such assessments guide reliable adoption of AI agents and accelerate molecular simulation research.
+Recent advances in large language models (LLMs) and coding agents offer a promising route toward
+such automation (Zhao et al., 2023; Liu et al., 2024b). In particular, MD is well-suited to agentic
+assistance because its workflows are mature, modular, and well-supported by a variety of simulation
+and analysis software (Abraham et al., 2015; Eastman et al., 2023; Michaud-Agrawal et al., 2011).
+Equipped with language-based reasoning and the capability to directly interact with computational
+environments, an agent could in principle translate a scientific objective into an actionable workflow,
+∗These authors contributed equally.
+†Correspondence: N.M.A. and P.C.B.
+1
+arXiv:2608.02642v1 [physics.chem-ph] 31 Jul 2026
+orchestrate available tools, and execute iteratively adapting protocols given intermediate results
+or failures. Still, reliable automation of MD workflows and its own evaluation are non-trivial.
+The challenge lies in the sequential coupling between workflow stages: an error introduced at a
+certain step, such as an incorrect protonation state or ligand topology, can propagate and invalidate
+subsequent calculations. Compounding this problem, many mistakes are silent, as a successfully
+executed simulation may still produce plausible results even when the underlying system or protocol
+is flawed. A benchmark must therefore assess not only whether an agent can execute MD software
+successfully, but also whether its workflow and outputs are scientifically valid, especially in realistic
+scenarios that mirror actual research projects or drug-discovery campaigns. Existing benchmarks
+and evaluations often fall short on this front (Kumar et al., 2026; Campbell et al., 2026), relying on
+isolated toy problems and narrow research contexts while providing limited support to evaluate the
+validity of an agent’s workflow.
 
 We therefore introduce MDArena, an executable benchmark of 50 expert-curated, containerized tasks drawn directly from actual research projects. Characterized by three difficulty levels, the benchmark tasks span 29 diverse biomolecular systems and 18 simulation software packages, covering tasks including membrane-protein preparation, parameterization of non-standard residues, free energy methods, enhanced-sampling protocols, quantum-chemistry workflows, and bespoke analysis across diverse research contexts. Each task is implemented using Harbor,\cite{Harbor_Framework} making it straightforward both to evaluate new agents and to incorporate new research problems. This extensibility allows the benchmark to evolve with the frontiers of computational chemistry research and remain informative as agent capabilities advance. Each task is evaluated by deterministic checks of the resulting artifacts and LLM-based assessment of the workflow’s scientific validity to distinguish sound solutions from merely plausible outputs. Using MDArena, we evaluate contemporary model–harness configurations through Harbor\cite{Harbor_Framework} under a common execution protocol and the two-part verification scheme.
 
 
-We track the performance of agents released between May and November 2026 and show that frontier agents can autonomously perform MD tasks, ranging from simple analysis to complex membrane protein FEP system preparation. The best models succeed across a broad range of tasks, although some failures persist across repeated attempts. Claude Opus-5.5 achieved the highest strict pass rate at 94.7\% (142 of 150 trials), while GPT-6.1 Sol was the most cost-effective configuration, with an 88.0\% strict pass rate (132 of 150 trials) and a cost of \$0.53 per strict pass, compared with \$0.91 for Opus-5.5. They are closely followed by Gemini-4 Argon and open-source models such as GLM. Together, these results characterize the state of the art in agentic assistance for molecular dynamics. The strongest evaluated agents are ready for adoption in production workflows, provided that edge cases are documented and requirements are stated explicitly.
+We track the performance of agents released between July 2025 and November 2026 and show that frontier agents can autonomously perform MD tasks, ranging from simple analysis to complex membrane protein FEP system preparation. The best models succeed across a broad range of tasks, although some failures persist across repeated attempts. Claude Opus-5.5 achieved the highest strict pass rate at 94.7\% (142 of 150 trials), while GPT-6.1 Sol was the most cost-effective configuration, with an 88.0\% strict pass rate (132 of 150 trials) and a cost of \$0.53 per strict pass, compared with \$0.91 for Opus-5.5. They are closely followed by Gemini-4 Argon and open-source models such as GLM. Together, these results characterize the state of the art in agentic assistance for molecular dynamics. The strongest evaluated agents are ready for adoption in production workflows, provided that edge cases are documented and requirements are stated explicitly.
+
+\subsection{Related Works}
+
+The growing ubiquity of AI agents in scientific computing has driven a parallel effort to benchmark
+them on realistic scientific workflows, and molecular dynamics is no exception. Yet most existing
+benchmarks remain narrow in scope and fail to capture the breadth of high-level tasks relevant to MD
+workflows.
+MDCrow (Campbell et al., 2026) was the first to evaluate LLM agents with 40+ tools on 25 MD tasks.
+However, this benchmark is limited in scope, and modern coding agents now nearly saturate this suite.
+This was followed by NAMD-Agent (Chandrasekhar & Barati Farimani, 2025) which automates
+the CHARMM-GUI interface (Jo et al., 2008) via Gemini (Team et al., 2023) and Selenium.
+NAMD-Agent primarily serves as a system demonstration and does not introduce an accompanying
+benchmark. ChemGraph (Pham et al., 2026) applies multi-agent orchestration to computational
+chemistry workflows, including geometry optimization, reaction enthalpy, and Gibbs free energy.
+It reports 100% accuracy on all tasks tested, although the task suite is relatively small and focuses
+on textbook-scale problems. DynaMate (Guilbert et al., 2025) was the first to target biomolecular
+MD with realistic tasks, evaluating a 12-system benchmark and automating the industry-relevant
+MM/GBSA binding-affinity estimation, though it remains a system demonstration rather than a
+held-out benchmark. MDAgent2 (Shi et al., 2026) contributes MD-EvalBench, the first dedicated
+2
+MD benchmark suite, alongside a domain-adapted Qwen3-8B model (Yang et al., 2025) trained
+via continued pretraining, supervised fine-tuning, and reinforcement learning with execution as the
+reward signal. Its scope, however, is restricted to LAMMPS (Thompson et al., 2022) code generation,
+with no biomolecular tasks. PolyJarvis (Zhao et al., 2026) extends this direction to polymer MD,
+orchestrating polymer MD toolkits via Model Context Protocol (MCP) servers, but remains restricted
+to polymer MD.
+MDGym (Kumar et al., 2026) is a dedicated benchmark in this line, evaluating agents on GROMACS
+(Abraham et al., 2015) and LAMMPS (Thompson et al., 2022) workflows rather than merely
+demonstrating agent capability. MDGym provides an important foundation, while also leaving
+several opportunities for broader evaluation. MDGym’s current biomolecular tasks score agents
+against simulation output directly, which can conflate protocol correctness with sampling noise.
+The task suite currently focuses on simulation execution given pre-built structures and topologies,
+leaving system preparation and parameterization as a promising direction for future extension. It
+also concentrates on well-known soluble protein systems, which leaves room to broaden coverage in
+follow-up work. Additionally, tasks are framed as property prediction problems with fixed accuracy
+thresholds (e.g., 5% deviation), an approach that could be complemented by grading strategies better
+suited to settings without a well-defined ground truth. The reported failure-mode taxonomy provide a
+useful starting point that could be complemented by more fine-grained, case-level analysis in future
+iterations.
+MDArena departs from these works along three axes. First, provenance: tasks are drawn from
+active research projects in a working MD group rather than authored as benchmark artifacts, allowing
+continual addition of novel research workflows as they arise. Second, scope: coverage extends beyond
+prior work into alchemical free-energy perturbation (FEP) (Mey et al., 2020) workflows, membraneprotein systems, protein-ligand complexes, and enhanced-sampling methods such as replica exchange
+of expanded ensembles (REXEE) (Hsu & Shirts, 2024) and alchemical metadynamics (Hsu et al.,
+2023). Third, evaluation: agent outputs and execution trajectories are graded against a dual-pronged
+scheme combining human-authored, criterion-anchored rubrics with deterministic correctness checks
+designed to catch subtle but common agent errors that rubric grading alone can miss. Together, these
+yield a more robust and diagnostically informative evaluation than execution- or output-matching
+alone.
+
+
+
+
+
+
 
 
 
@@ -30,19 +113,18 @@ We track the performance of agents released between May and November 2026 and sh
 
 \subsection{Task selection and curation}
 
-MDArena was constructed from more than 100 candidate tasks contributed by domain experts to reflect the diversity and difficulty of problems encountered in research projects and drug discovery efforts. We screened the candidates for scientific relevance, technical substance, and complementarity, yielding an initial release of 50 tasks. The collection deliberately includes long-horizon workflows, underspecified problems requiring scientific judgements, and negative examples where the requested action is impossible or scientifically inappropriate. Its aggregate composition is shown in Figure~\ref{fgr:task-types}. Each task was assigned an easy, medium, or hard difficulty label by the task author and subsequently reviewed based on the workflow length, required domain knowledge, and technical complexity. The current benchmark comprises 10 easy, 24 medium and 16 hard tasks.
+MDArena was constructed from more than 100 candidate tasks contributed by domain experts from the Biggin Group to reflect the diversity and difficulty of problems encountered in research projects and drug discovery efforts. We screened the candidates for scientific relevance, technical substance, and complementarity, yielding an initial release of 50 tasks. The collection deliberately includes long-horizon workflows, underspecified problems requiring scientific judgements, and negative examples where the requested action is impossible or scientifically inappropriate. Its aggregate composition is shown in Figure~\ref{fgr:task-types}. Each task was assigned an easy, medium, or hard difficulty label by the task author and subsequently reviewed based on the workflow length, required domain knowledge, and technical complexity. The current benchmark comprises 10 easy, 24 medium and 16 hard tasks.
 
 
 \begin{figure}[htbp]
 \centering
   \includegraphics[width=\textwidth]{figures/figure_1/figure_1.pdf}
-  \caption[MDArena dataset composition.]{Composition of the 50 MDArena tasks by (A) task type, (B) molecular system type, and (C) software package. Each task contributes once to panels A and B. The ``No molecular system'' category denotes a task operating only on a \mbox{GROMACS} MDP file. Tasks may use multiple packages, giving 111 task--package assignments across 18 packages. Panel C shows the 11 packages used in at least two tasks; seven packages used in one task each are omitted for legibility: alchemlyb, \mbox{ensemble\_md}, MDRestraintsGenerator, openmmforcefields, ORCA, physical\_validation, and ProLIF. All panels are derived from the task metadata.}
+  \caption[MDArena dataset composition.]{Composition of the 50 MDArena tasks by (A) task type, (B) molecular system type, and (C) software package. Each task contributes once to panels A and B. The ``No molecular system'' category denotes a task operating only on a \mbox{GROMACS} MDP file. Tasks may use multiple packages, giving 111 task--package assignments across 18 packages in (C). Panel (C) shows the 11 packages used in at least two tasks; seven packages used in one task each are omitted for legibility.}
   \label{fgr:task-types}
 \end{figure}
 
 
 \subsection{Implementation}
-
 
  MDArena is implemented using the Harbor,\cite{Harbor_Framework} agent evaluation framework, allowing researchers to readily evaluate their own agents and extend MDArena with new self-contained tasks. Each task runs in a dedicated Docker container\cite{moreau2023containers} and includes an executable reference solution that passes all correctness and process checks, confirming task solvability and validating that the verifier functions as intended. 
  
