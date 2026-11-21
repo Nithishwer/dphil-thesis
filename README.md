@@ -33,7 +33,7 @@ machine; no external font installation is needed.
 - `dissertation.tex`: main document, chapter order, and appendix.
 - `frontmatter/personalize.tex`: title, author, advisor, degree, and date.
 - `frontmatter/`: abstract, previous publications, and acknowledgments.
-- `chapters/`: sample chapters and appendix.
+- `chapters/`: numbered chapter templates, the existing AI-agents draft, and appendix.
 - `references.bib`: bibliography entries.
 - `Dissertate.cls`: typography and page layout.
 
@@ -73,9 +73,20 @@ against the PDF. An emergency line-breaking allowance prevents overfull lines
 in the Latin sample text.
 
 Latin Modern is the chosen update to the reference's Computer Modern typography.
-The delivered sample compiles to 61 pages with no undefined citations, missing
-glyphs, or overfull boxes. Sample opening quotations report underfull boxes.
-Its page count and line breaks naturally depend on the sample content.
+Chapter filenames and headings follow this order:
+
+1. Introduction
+2. Theory and Methods
+3. Benchmarking and System Preparation
+4. Binding Pocket Resolvation
+5. Apo-State Conformational Changes
+6. ABFEs on Agonists
+7. Automating ABFEs with AI Agents
+8. Conclusion
+
+Chapters are minimal templates with a title, label, and content TODO, except for
+Chapter 7, which retains the existing AI-agents draft. Supporting Information
+follows as Appendix A. The page count and line breaks depend on the content.
 
 The repository's existing license is retained in `LICENSE`. The underlying
 Dissertate AGPL license is included separately in `LICENSE-Dissertate`. Original

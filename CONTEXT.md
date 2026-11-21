@@ -23,8 +23,12 @@
   committed. Source figures, including PDFs, are versioned.
 - Edit author and degree details in `frontmatter/personalize.tex`, chapter order
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
-- The current document contains editable sample content. Its layout follows the
-  reference, with Latin Modern as the chosen font update. The sample compiles to
-  61 pages; sample opening quotations report underfull boxes.
+- Chapters are numbered consecutively from 1 to 8, matching their filenames:
+  Introduction; Theory and Methods; Benchmarking and System Preparation;
+  Binding Pocket Resolvation; Apo-State Conformational Changes; ABFEs on Agonists;
+  Automating ABFEs with AI Agents; Conclusion. Supporting Information is Appendix A.
+- Chapters and the appendix are minimal templates with titles, labels, and TODOs,
+  except Chapter 7, which preserves the existing AI-agents draft. Its layout
+  follows the reference, with Latin Modern as the chosen font update.
 - Preserve the repository's existing `LICENSE`; the upstream Dissertate license
   is retained separately in `LICENSE-Dissertate`.
