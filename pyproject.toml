@@ -1,0 +1,15 @@
+[project]
+name = "thesis-plots"
+version = "0.1.0"
+description = "Plotting environment for thesis figures"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pillow",
+    "scipy",
+]
+
+[tool.uv]
+package = false
