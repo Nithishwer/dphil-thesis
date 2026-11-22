@@ -127,9 +127,19 @@ As molecular simulations are inherently stochastic and often lack a unique groun
 \subsection{Experimental setup}
 
 
- We tracked the performance of frontier models from May 2026 onwards, covering both open-source and proprietary models from OpenAI (GPT-5.5 Medium and XHigh, GPT-5.6 Sol and Terra, GPT-6.1 Sol, and GPT Astra), Anthropic (Claude Opus-5 and Sonnet-5), Google (Gemini Flash 3.5, Pro 3.1, 3.7 Flash, and 4 Argon), DeepSeek (V3.2), Alibaba (Qwen3-235B and Qwen3 Coder 480B A35B), and Z.ai (GLM-5.2). In the main v1 evaluation, each configuration was evaluated in three independent trials on all 50 tasks. Claude Opus-5 was used as the process judge across all trials to ensure consistent grading. Tasks were executed in Docker containers with internet access, but GitHub and repository mirrors were blocked to prevent task lookup. Each task had access to 2–4 CPUs, 8 GB RAM, 10 GB storage, no GPUs, and a task-specific wall-clock limit ranging from 10 minutes to 2.5 hours given its computational requirements. Timeouts and other runtime failures were retained as failed deliveries and assigned zero correctness and process scores in the adjusted metrics. Confidence intervals were computed as 95\% percentile bootstrap intervals from 2,000 resamples, resampling tasks rather than trials so that repeated attempts at one task were not treated as independent.
+ We tracked the performance of frontier models from May 2026 onwards, covering both open-source and proprietary models from OpenAI (GPT-5.5 Medium and XHigh, GPT-5.6 Sol and Terra, GPT-6.1 Sol, and GPT Astra), Anthropic (Claude Opus-5 and Sonnet-5), Google (Gemini Flash 3.5, Pro 3.1, 3.7 Flash, and 4 Argon), DeepSeek (V3.2), Alibaba (Qwen3-235B and Qwen3 Coder 480B A35B), and Z.ai (GLM-5.2). In the main v1 evaluation, each configuration was evaluated in three independent trials on all 50 tasks. Claude Opus-5 was used as the process judge across all trials to ensure consistent grading. Tasks were executed in Docker containers with internet access, but GitHub and repository mirrors were blocked to prevent task lookup. Each task had access to 2–4 CPUs, 8 GB RAM, 10 GB storage, no GPUs, and a task-specific wall-clock limit ranging from 10 minutes to 2.5 hours given its computational requirements.
 
 Check the difference between this and the original thing
+
+\subsection{Evaluation metrics and statistical analysis}
+
+For each configuration, the reported strict-pass@1 rate was calculated as the fraction of individual trials that pass all scored correctness and process checks:
+\begin{equation}
+  \text{Strict-Pass@1} = \frac{1}{NR} \sum_{i=1}^{N} \sum_{r=1}^{R} s_{ir},
+\end{equation}
+where $N$ is the number of tasks, $R$ is the number of replicates per task, and $s_{ir}$ equals one if replicate $r$ on task $i$ achieves a strict pass and zero otherwise. Mean correctness and process scores were calculated by averaging the corresponding scores across all trials. For configurations evaluated with three replicates per task, Pass@3 denotes the fraction of tasks with at least one strict pass, while Pass$^3$, as a repeatability measure, denotes the fraction with strict passes in all three replicates.
+
+Timeouts and other runtime failures were retained as failed deliveries and assigned zero correctness and process scores in the adjusted metrics. Confidence intervals were computed as 95\% percentile bootstrap intervals from 2,000 resamples, sampling tasks rather than trials so that repeated attempts at one task were not treated as independent.
 
 \section{Results and Discussion}
 
