@@ -48,8 +48,12 @@ chapters/Ch1-Introduction/
 └── figures/
 ```
 
-Keep input data in `data/`, analysis and plotting code in `scripts/`, and figure
-outputs in `figures/` within the relevant chapter. Figure paths in LaTeX are
+Keep input data in `data/`, processing and plotting scripts directly in
+`scripts/`, and figure outputs in `figures/` within the relevant chapter.
+Keep working files (prepared structures, sessions, generated tables, and
+validation records) in `scripts/intermediates/`, grouped by figure or workflow.
+Do not recreate `figures/`, `analysis/`, or `data/` trees inside `scripts/`.
+Figure paths in LaTeX are
 relative to the repository root, for example
 `chapters/Ch1-Introduction/figures/example.pdf`. Empty asset folders contain a
 `.gitkeep` file so Git preserves them. The root `scripts/build` remains the
@@ -68,7 +72,7 @@ Run a chapter script in that environment, for example:
 
 ```sh
 chapter=chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents
-uv run --locked python "$chapter/scripts/figures/figure_3/make_figure_3.py"
+uv run --locked python "$chapter/scripts/make_figure_3.py"
 ```
 
 Alternatively, activate it with `source .venv/bin/activate`. The environment is

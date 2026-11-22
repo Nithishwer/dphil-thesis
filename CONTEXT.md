@@ -25,7 +25,10 @@
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
 - Each chapter and appendix has its own folder under `chapters/`, containing the
   matching `.tex` file and separate `data/`, `scripts/`, and `figures/`
-  subfolders. Figure paths are relative to the repository root; empty asset
+  subfolders. Keep processing and plotting entry points directly in `scripts/`
+  and working files in `scripts/intermediates/`, grouped by figure or workflow;
+  do not nest `figures/`, `analysis/`, or `data/` folders inside `scripts/`.
+  Figure paths are relative to the repository root; empty asset
   folders are preserved with `.gitkeep`. Root `scripts/build` is shared.
 - `pyproject.toml` and `uv.lock` define the plotting-only uv project:
   Matplotlib, NumPy, pandas, SciPy, and Pillow. Use `uv sync --locked`, then
@@ -34,9 +37,10 @@
   `/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena-RSC-Comms` on 2026-11-22
   (source commit `8ea34464dd0135f7e184d4739c1b953b0e109c02`, including untracked
   molecular-panel assets). Its `data/source_manifest.csv` records the source
-  path, destination, and original SHA-256 for each imported file. Active plotting
-  scripts use the chapter's data and figure folders; original audit/export
-  scripts are preserved under `scripts/upstream/`. The original three flat PDF
+  path, destination, and original SHA-256 for each retained imported file.
+  Active scripts live directly in `scripts/` and use the chapter's data and
+  figure folders; prepared coordinates, PyMOL sessions, generated tables, and
+  validation records live in `scripts/intermediates/`. The original three flat PDF
   figure paths used by the thesis draft are retained. See the chapter README.
 - Chapters are numbered consecutively from 1 to 8, matching their filenames:
   Introduction; Theory and Methods; Benchmarking and System Preparation;
