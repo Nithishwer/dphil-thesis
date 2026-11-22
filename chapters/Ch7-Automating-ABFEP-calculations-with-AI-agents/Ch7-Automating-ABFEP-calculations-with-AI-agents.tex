@@ -36,6 +36,30 @@ MDArena departs from these works along three axes:
 \end{enumerate}
 Together, these yield a more robust and diagnostically informative evaluation than execution- or output-matching alone.
 
+\begin{table}[!htbp]
+  \centering
+  \renewcommand{\thetable}{B1}
+  \caption[Positioning of MDArena relative to representative systems.]{Positioning of MDArena relative to representative agentic molecular-simulation and computational-chemistry systems. $\checkmark$, $\circ$, and $\times$ denote yes, partial or limited coverage, and no, respectively.}
+  \label{tab:mdarena-positioning}
+  \small
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+    \hline
+    System or benchmark & \shortstack{Biomol.\\MD} & \shortstack{Exec.\\workflows} & Multipackage & \shortstack{Research\\provenance} \\
+    \hline
+    MDCrow~\cite{campbell2026mdcrow} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    NAMD-Agent~\cite{chandrasekhar2025namdagent} & $\checkmark$ & $\checkmark$ & $\times$ & $\circ$ \\
+    DynaMate~\cite{guilbert2025dynamate} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    PolyJarvis~\cite{zhao2026polyjarvis} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
+    LAMMPS-Agents~\cite{vriza2026multiagentic} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
+    ChemGraph~\cite{pham2026chemgraph} & $\circ$ & $\circ$ & $\checkmark$ & $\circ$ \\
+    MD-EvalBench~\cite{shi2026mdagent2} & $\times$ & $\circ$ & $\times$ & $\circ$ \\
+    MDGym~\cite{kumar2026mdgym} & $\circ$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    MDArena & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+    \hline
+  \end{tabular*}
+\end{table}
+
 \section{Methods}
 
 \subsection{Task selection and curation}
