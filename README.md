@@ -52,6 +52,8 @@ Keep input data in `data/`, processing and plotting scripts directly in
 `scripts/`, and figure outputs in `figures/` within the relevant chapter.
 Keep working files (prepared structures, sessions, generated tables, and
 validation records) in `scripts/intermediates/`, grouped by figure or workflow.
+Thesis Figure 7.9 keeps its generator and outputs together in Chapter 7's
+`figures/figure_7_9/` folder.
 Do not recreate `figures/`, `analysis/`, or `data/` trees inside `scripts/`.
 Figure paths in LaTeX are
 relative to the repository root, for example

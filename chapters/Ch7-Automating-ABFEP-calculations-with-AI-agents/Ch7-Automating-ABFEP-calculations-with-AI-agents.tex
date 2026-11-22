@@ -305,11 +305,18 @@ Cost per successful trial is a key consideration for industrial adoption. Mean c
 
 \subsection{Behavioural differences between model families}
 
-Manual inspection of the MDArena trajectories showed clear differences in how agents planned, executed, and validated their work. Models from the same lab behaved alike. 
+Manual inspection of the MDArena trajectories showed clear differences in how agents planned, executed, and validated their work. Models from the same lab behaved alike. Figure~\ref{fig:agent_workflows} summarises cohort-level tool use, execution time, and failure outcomes.
 
 GPT-6 Astra and GPT-6.1 Sol, run in the shared Codex harness, grouped related operations into batches and validated intermediate results before proceeding. Across full cohorts, Astra used a median of 12.5 calls and 4.1 minutes per trial, and Sol 14 calls and 3.9 minutes. This differed from the behaviour of Claude Opus 5.5, which typically moved from a short inspection to a script that produced the requested files, followed by an end-to-end check. It was quick to make and document reasonable assumptions, and had the lowest median tool count and execution time (11 calls, 2.0 minutes). For example, when converting an AMBER system with no periodic box to GROMACS (Task 11), it added a box to the delivered structure and disclosed the choice, passing all three repeats. Astra and Sol used temporary boxes only for validation and delivered structures with zero box vectors, which failed the verifier’s periodic preprocessing check. 
 
 Gemini 4 Argon, by contrast, prioritised exploration over delivery, spending more of its workflow inspecting files, probing library behaviour, and updating plans. It used the to-do tool in 123 of 150 trials, with a median of 53 calls and 18.5 minutes. On the ProLIF interaction analysis (Task 17), two repeats had already printed the correct top-ten interactions when the agent kept investigating residue numbering and export details; both hit the 15-minute limit without saving the requested CSV or summary. GLM-5.2 also explored extensively, mainly through small shell and Python experiments (to-do tool in 62 of 150 trials; median 35 calls and 17.5 minutes). This paid off on some tasks, such as Task 34, where GLM resolved failed imports and topology-loading problems, built the OpenFE network, and confirmed the saved transformations could be reloaded, passing all three repeats with 106–140 calls each. Gemini timed out on all three without delivering the network.
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_7_9/figure_7_9.pdf}
+  \caption[Coding-agent tool use, execution time, and failures on MDArena.]{Tool use and failure outcomes for five coding agents on MDArena. (A) Median tool calls per trial. (B) Median execution time in minutes. (C) Failed trials by type, out of 150 per agent. Evaluation failures are completed trials that failed verification; bar-end labels show total failures.}
+  \label{fig:agent_workflows}
+\end{figure}
 
 \section{Conclusion}
 

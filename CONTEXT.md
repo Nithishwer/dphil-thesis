@@ -30,6 +30,8 @@
   do not nest `figures/`, `analysis/`, or `data/` folders inside `scripts/`.
   Figure paths are relative to the repository root; empty asset
   folders are preserved with `.gitkeep`. Root `scripts/build` is shared.
+  Thesis Figure 7.9 is an exception to the script layout: its generator and
+  rendered outputs are together in Chapter 7's `figures/figure_7_9/`, as requested.
 - `pyproject.toml` and `uv.lock` define the plotting-only uv project:
   Matplotlib, NumPy, pandas, SciPy, and Pillow. Use `uv sync --locked`, then
   `uv run --locked python <chapter-script>`. `.venv/` is local and ignored.

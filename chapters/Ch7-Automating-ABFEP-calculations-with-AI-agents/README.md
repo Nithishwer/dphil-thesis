@@ -11,6 +11,8 @@ project's untracked molecular-panel inputs, renderings, and scripts.
   source project's `MDArena-dev` dependency.
 - `scripts/`: processing and plotting entry points and their shared helpers,
   all directly in this folder. The source project's figure numbering is retained.
+  The new thesis Figure 7.9 keeps its plotting script with its outputs in
+  `figures/figure_7_9/`.
 - `scripts/intermediates/`: working files grouped by figure: prepared molecular
   coordinates, PyMOL sessions, candidate cameras, layout metadata, and validation
   records. `make_task_metadata_table.py` also writes
@@ -73,6 +75,22 @@ The plotting environment supports these generators:
 | `make_figure_S1.py` | `figure_S1/figure_S1.{pdf,png}` |
 | `copy_figure_S2.py` | `figure_S2/figure_S2.{pdf,png}` |
 | `make_figure_2d.py` | `figure_2/d-AlchMetad/figure_2d.{pdf,png}` |
+
+Thesis Figure 7.9 is generated separately from its dedicated figure folder:
+
+```sh
+uv run --locked python "$chapter/figures/figure_7_9/make_figure_7_9.py"
+```
+
+It writes `figure_7_9.{pdf,png,svg}` beside the script. Panels A and B use the
+cohort medians reported in the chapter text; panel C reads the five models'
+`data/trials/` tables and applies the same failure classification as Figure A1.
+The figure uses uppercase panel labels, embedded PDF fonts, and 600 dpi PNGs.
+The untitled legend is stacked vertically inside panel C's upper-right corner,
+with the labels "Evaluation", "Timeout", and "Runtime error" in black and no
+border. Failed evaluation uses Verdigris (`#2a9d8f`),
+agent timeout uses Jasmine (`#e9c46a`), and other runtime error uses Burnt Peach
+(`#e76f51`).
 
 Figure 1 uses the copied task metadata by default. Set `MDARENA_REPO` to a full
 benchmark checkout to use a different task metadata source.
