@@ -65,13 +65,29 @@ As molecular simulations are inherently stochastic and often lack a unique groun
 
 \begin{figure}[htbp]
 \centering
-  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_2.pdf}
-  \caption[Coding-agent performance on MDArena.]{Performance of coding agents on MDArena. (a) Mean Strict-Pass@1 against model release date; (a strict pass requires all correctness and process checks to pass). (b,c) Mean correctness and process scores, respectively, for five selected models. Error bars show 95\% task-bootstrap confidence intervals. Daggers mark v0.1.0 runs with one attempt per task; other runs use the v1 of the benchmark with three attempts per task. }
+  % Isolate the timeline from the original vector figure, removing its panel label.
+  \includegraphics[width=\textwidth,trim=0bp 0bp 279bp 26bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_2.pdf}
+  \caption[Coding-agent strict-pass rates on MDArena.]{Mean Strict-Pass@1 against model release date on MDArena. A strict pass requires all correctness and process checks to pass. Error bars show 95\% task-bootstrap confidence intervals. Daggers mark v0.1.0 runs with one attempt per task; other runs use the v1 of the benchmark with three attempts per task.}
   \label{fig:model_performance}
   \label{fig:success-reward-triptych}
 \end{figure}
 
-Split this into A and B+C
+\begin{figure}[htbp]
+\centering
+  % Crop the original score panels to matching sizes and place them side by side.
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{A}}\par
+    \includegraphics[width=\linewidth,trim=731bp 212bp 0bp 26bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_2.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{B}}\par
+    \includegraphics[width=\linewidth,trim=731bp 32bp 0bp 206bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_2.pdf}
+  \end{minipage}
+  \caption[Coding-agent correctness and process scores on MDArena.]{Mean (A) correctness and (B) process scores on MDArena for five selected models. Error bars show 95\% task-bootstrap confidence intervals.}
+  \label{fig:model_scores}
+\end{figure}
 
 \subsection{Experimental setup}
 
@@ -89,7 +105,7 @@ Frontier LLMs have made a leap in capabilities over the past few months, and thi
 
 \subsection[Partial credit and strict task success]{High Partial-Credit Rewards Do Not Guarantee Strict Task Success}
 
-Most frontier agents achieved consistently high partial-credit rewards, even on failed tasks, suggesting that most failures arise from minor errors rather than fundamental flaws in the workflow (Figure~\ref{fig:model_performance}). The latest closed frontier agents attained mean correctness and process rewards above 0.98, with Claude Opus 5.5 achieving the highest correctness (0.990) and GPT-6 Astra the highest process reward (0.992). These rewards substantially exceeded the corresponding Strict-Pass@1 rates, indicating that high partial credit does not necessarily translate into complete task success. Gemini 4 Argon and GLM 5.2 were notable exceptions, with lower mean rewards. This was largely attributable to trials that exceeded the time limit and terminated before completion, which were assigned a score of zero on both correctness and process checks. When the analysis was restricted to trials with a successful exit status, Gemini 4 Argon improved from 82.47\% to 97.69\% in correctness and from 82.99\% to 98.03\% in process, while GLM 5.2 improved from 82.37\% to 87.90\% in correctness and from 84.15\% to 90.04\% in process. The low correctness and process scores are therefore likely an artefact of the implementation and the OpenCode agent harness rather than of the models themselves.
+Most frontier agents achieved consistently high partial-credit rewards, even on failed tasks, suggesting that most failures arise from minor errors rather than fundamental flaws in the workflow (Figure~\ref{fig:model_scores}). The latest closed frontier agents attained mean correctness and process rewards above 0.98, with Claude Opus 5.5 achieving the highest correctness (0.990) and GPT-6 Astra the highest process reward (0.992). These rewards substantially exceeded the corresponding Strict-Pass@1 rates, indicating that high partial credit does not necessarily translate into complete task success. Gemini 4 Argon and GLM 5.2 were notable exceptions, with lower mean rewards. This was largely attributable to trials that exceeded the time limit and terminated before completion, which were assigned a score of zero on both correctness and process checks. When the analysis was restricted to trials with a successful exit status, Gemini 4 Argon improved from 82.47\% to 97.69\% in correctness and from 82.99\% to 98.03\% in process, while GLM 5.2 improved from 82.37\% to 87.90\% in correctness and from 84.15\% to 90.04\% in process. The low correctness and process scores are therefore likely an artefact of the implementation and the OpenCode agent harness rather than of the models themselves.
 
 Most models were run with three repeats to test repeatability. Claude Opus 5.5 passed 49/50 tasks at least once across three attempts (Pass@3) and 46/50 in all three attempts (Pass$^3$), while GPT-6.1 Sol and GPT-6 Astra each achieved identical Pass@3 and Pass$^3$ scores of 46/50 and 43/50, respectively. Gemini 4 Argon passed 42 tasks at least once and 34 on all three attempts, while GLM-5.2 passed 39 at least once and 24 on all three. Even the strongest configuration, Claude Opus 5.5, failed at least one attempt on four of the 50 tasks, underscoring the fragility of these models on harder tasks.
 
