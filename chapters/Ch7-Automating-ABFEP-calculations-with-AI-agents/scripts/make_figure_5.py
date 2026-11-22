@@ -10,7 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import BoundaryNorm, ListedColormap
-from matplotlib.patches import ConnectionPatch, Rectangle
+from matplotlib.patches import ConnectionPatch, Patch, Rectangle
 from PIL import Image
 from prepare_figure_5 import load_atoms, positions, sha256
 
@@ -22,14 +22,15 @@ OUTPUT = CHAPTER / "figures/figure_5"
 WIDTH_MM, HEIGHT_MM = 185.9, 73.3
 MODELS = ["opus-5.5", "gpt-6.1-sol", "gpt-6-astra", "gemini-4-argon", "glm-5.2"]
 NAMES = ["Claude Opus-5.5", "GPT-6.1 Sol", "GPT-6 Astra", "Gemini 4 Argon", "GLM-5.2"]
-COLORS = ["#F0E4DC", "#D7AD73", "#7BB5BC", "#418D84"]
+# Sunny Beach Day colours, ordered by strict-pass count from zero to three.
+COLORS = ["#e76f51", "#f4a261", "#e9c46a", "#2a9d8f"]
 GROUPS = {
     "analysis": "Analysis",
-    "system_preparation": "System preparation",
+    "system_preparation": "System\npreparation",
     "free_energy": "Free energy",
     "enhanced_sampling": "Enhanced\nsampling",
-    "parameterization": "Parameterization",
-    "diagnostics": "Diagnostics",
+    "parameterization": "Parameter-\nization",
+    "diagnostics": "Diagnos-\ntics",
     "quantum_chemistry": "QM",
 }
 CYAN, GOLD = "#2D9FBA", "#9F792F"
@@ -44,7 +45,7 @@ TASK29_CROP = (0.055, 0.055, 0.955, 0.90)
 
 DETAIL_FONT_SIZE = 5.5
 FONT_FAMILY = "Liberation Sans"
-HEATMAP_BOTTOM_MM, HEATMAP_HEIGHT_MM = 44, 12
+HEATMAP_BOTTOM_MM, HEATMAP_HEIGHT_MM = 40, 12
 
 DISPLAY_NAMES = {
     1: "Solvated ligand from SMILES",
@@ -253,18 +254,22 @@ def protein_center_x(stage, camera, placement):
     return float(x + (center - left) / (right - left) * width)
 
 
-def heatmap(fig, rows):
+def heatmap(fig, rows, *, header_rotation=0, group_gap=0.4):
     panel_label(fig, 1, 70.3, "A")
+    canvas_width_mm, canvas_height_mm = fig.get_size_inches() * 25.4
+    # Preserve cell width when adding space between task types.
+    total_columns = len(rows) + group_gap * (len(GROUPS) - 1)
+    default_columns = len(rows) + 0.4 * (len(GROUPS) - 1)
+    heatmap_width_mm = 108 * total_columns / default_columns
     ax = fig.add_axes(
         [
-            24 / WIDTH_MM,
-            HEATMAP_BOTTOM_MM / HEIGHT_MM,
-            108 / WIDTH_MM,
-            HEATMAP_HEIGHT_MM / HEIGHT_MM,
+            24 / canvas_width_mm,
+            HEATMAP_BOTTOM_MM / canvas_height_mm,
+            heatmap_width_mm / canvas_width_mm,
+            HEATMAP_HEIGHT_MM / canvas_height_mm,
         ]
     )
-    # Keep one heatmap, with a narrow blank gutter between the seven scientific task types.
-    group_gap = 0.4
+    # Separate the seven scientific task types with blank gutters.
     column_lefts = np.array(
         [
             i + group_gap * list(GROUPS).index(row["category"])
@@ -293,12 +298,13 @@ def heatmap(fig, rows):
         column_centers, labels, fontsize=5.6, rotation=90, ha="center", va="top"
     )
     ax.tick_params(axis="y", length=0, pad=2)
-    ax.tick_params(axis="x", length=0, pad=15.9)
-    # Align the indices directly beneath the data; rotating them leaves clear space between columns.
+    ax.tick_params(axis="x", length=0, pad=2)
+    task_id_y_mm, difficulty_y_mm = 57, 54
+    # Align the metadata above the data, with task names directly below it.
     index_labels = [
         ax.text(
             center,
-            -1.5 / HEATMAP_HEIGHT_MM,
+            (task_id_y_mm - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM,
             f"{int(row['number']):02d}",
             transform=ax.get_xaxis_transform(),
             ha="center",
@@ -311,80 +317,46 @@ def heatmap(fig, rows):
     ]
     for spine in ax.spines.values():
         spine.set_visible(False)
-    for column, row in enumerate(rows):
-        shared = all(int(row[model]) == 3 for model in MODELS[:3])
-        ax.add_patch(
-            Rectangle(
-                (column_lefts[column], 1 + 0.8 / HEATMAP_HEIGHT_MM),
-                1,
-                0.9 / HEATMAP_HEIGHT_MM,
-                transform=ax.get_xaxis_transform(),
-                facecolor="#344F48" if shared else "#F4F4F4",
-                edgecolor="white",
-                lw=0.25,
-                clip_on=False,
-            )
-        )
-    ax.text(
-        -0.4,
-        1 + 1.25 / HEATMAP_HEIGHT_MM,
-        "Shared by top 3",
-        transform=ax.get_xaxis_transform(),
-        ha="right",
-        va="center",
-        fontsize=5.5,
-    )
     titles = []
-    for type_index, (category, label) in enumerate(GROUPS.items()):
+    group_line_y = (59.3 - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM
+    header_y_mm = 60.5 if header_rotation else 62
+    header_y = (header_y_mm - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM
+    for category, label in GROUPS.items():
         indices = [i for i, row in enumerate(rows) if row["category"] == category]
         left, right = column_lefts[min(indices)], column_lefts[max(indices)] + 1
-        # Two horizontal levels keep full task-type words legible without overlap.
-        label = label.replace("System preparation", "System\npreparation")
-        header_y_mm = 60 if type_index % 2 == 0 else 64
-        height = 1 + (header_y_mm - 56) / HEATMAP_HEIGHT_MM
+        if header_rotation or group_gap > 0.4:
+            label = label.replace("-\n", "").replace("\n", " ")
         titles.append(
             ax.text(
                 (left + right) / 2,
-                height,
+                header_y,
                 label,
                 transform=ax.get_xaxis_transform(),
                 ha="center",
-                va="bottom",
+                va="bottom" if header_rotation else "center",
                 fontsize=5.8,
-                rotation=0,
+                rotation=header_rotation,
             )
         )
         ax.plot(
             [left + 0.08, right - 0.08],
-            [1 + 1.9 / HEATMAP_HEIGHT_MM] * 2,
+            [group_line_y] * 2,
             transform=ax.get_xaxis_transform(),
             color="#BBBBBB",
             lw=0.45,
             clip_on=False,
         )
-        if type_index % 2:
-            ax.plot(
-                [(left + right) / 2] * 2,
-                [
-                    1 + 1.9 / HEATMAP_HEIGHT_MM,
-                    1 + (header_y_mm - 56 - 0.6) / HEATMAP_HEIGHT_MM,
-                ],
-                transform=ax.get_xaxis_transform(),
-                color="#BBBBBB",
-                lw=0.35,
-                clip_on=False,
-            )
     for center, row in zip(column_centers, rows):
         ax.text(
             center,
-            (40.0 - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM,
+            (difficulty_y_mm - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM,
             row["difficulty"][0].upper(),
             transform=ax.get_xaxis_transform(),
             fontsize=5.2,
             ha="center",
             va="center",
         )
-    for y, label in [(42.5, "Task ID"), (40.0, "Difficulty")]:
+    for y, label in [(task_id_y_mm, "Task ID"), (difficulty_y_mm, "Difficulty")]:
         ax.text(
             -0.5,
             (y - HEATMAP_BOTTOM_MM) / HEATMAP_HEIGHT_MM,
@@ -394,38 +366,22 @@ def heatmap(fig, rows):
             va="center",
             fontsize=5.0,
         )
-    for row, label, index in zip(rows, ax.get_xticklabels(), index_labels):
-        if int(row["number"]) in [25, 29]:
-            label.set_color("#8E542C")
-            index.set_color("#8E542C")
-    fig.text(
-        26 / WIDTH_MM,
-        1.5 / HEIGHT_MM,
-        "Strict passes out of 3",
+    fig.legend(
+        handles=[
+            Patch(facecolor=color, label=str(value))
+            for value, color in enumerate(COLORS)
+        ],
+        title="Strict passes out of 3",
+        loc="lower center",
+        bbox_to_anchor=((24 + heatmap_width_mm / 2) / canvas_width_mm, 0),
+        ncol=4,
+        frameon=False,
         fontsize=6.2,
-        va="center",
-    )
-    for value, color in enumerate(COLORS):
-        x = 61 + 7 * value
-        fig.add_artist(
-            Rectangle(
-                (x / WIDTH_MM, 0.8 / HEIGHT_MM),
-                3 / WIDTH_MM,
-                1.5 / HEIGHT_MM,
-                transform=fig.transFigure,
-                facecolor=color,
-                edgecolor="none",
-            )
-        )
-        fig.text(
-            (x + 3.7) / WIDTH_MM, 1.5 / HEIGHT_MM, str(value), fontsize=6.2, va="center"
-        )
-    fig.text(
-        93 / WIDTH_MM,
-        1.5 / HEIGHT_MM,
-        "E/M/H: easy/medium/hard",
-        fontsize=5.6,
-        va="center",
+        title_fontsize=6.2,
+        handlelength=1.5,
+        handletextpad=0.5,
+        columnspacing=1.2,
+        borderaxespad=0.2,
     )
     return list(ax.get_xticklabels()), titles, index_labels
 
@@ -714,12 +670,9 @@ def main():
             "task_index_font_weight": "bold",
             "cell_annotations": 0,
             "colors": COLORS,
-            "group_labels": {
-                key: value.replace("System preparation", "System\npreparation")
-                for key, value in GROUPS.items()
-            },
+            "group_labels": GROUPS,
             "difficulty_labels": [row["difficulty"][0].upper() for row in rows],
-            "task_indices_position": "separate aligned row below heatmap",
+            "task_indices_position": "separate aligned row above heatmap",
             "type_label_rotation_degrees": 0,
             "cell_size_mm": [108 / 52.4, HEATMAP_HEIGHT_MM / 5],
             "task_type_gutter_mm": 108 / 52.4 * 0.4,
