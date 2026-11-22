@@ -27,6 +27,9 @@
   matching `.tex` file and separate `data/`, `scripts/`, and `figures/`
   subfolders. Figure paths are relative to the repository root; empty asset
   folders are preserved with `.gitkeep`. Root `scripts/build` is shared.
+- `pyproject.toml` and `uv.lock` define the plotting-only uv project:
+  Matplotlib, NumPy, pandas, SciPy, and Pillow. Use `uv sync --locked`, then
+  `uv run --locked python <chapter-script>`. `.venv/` is local and ignored.
 - Chapter 7 assets were copied from
   `/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena-RSC-Comms` on 2026-11-22
   (source commit `8ea34464dd0135f7e184d4739c1b953b0e109c02`, including untracked

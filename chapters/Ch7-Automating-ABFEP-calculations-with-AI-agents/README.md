@@ -36,15 +36,16 @@ replace the draft's existing PDFs or change its captions.
 From the thesis repository root:
 
 ```sh
+uv sync --locked
 chapter=chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents
-python "$chapter/scripts/figures/figure_3/make_figure_3.py"
+uv run --locked python "$chapter/scripts/figures/figure_3/make_figure_3.py"
 ```
 
 This reads `data/headline.csv` and `data/metrics/` within this chapter and writes
 `figures/figure_3/figure_3.pdf` and `.png`. The scripts resolve paths relative
 to their own location, so the working directory does not affect asset paths.
 
-These generators use Matplotlib, NumPy, pandas, SciPy, and Pillow:
+The plotting environment supports these generators:
 
 | Script under `scripts/figures/` | Output under `figures/` |
 | --- | --- |
@@ -65,5 +66,5 @@ Figure 2's SVG assembly script requires the Inkscape command. Molecular renderin
 and preparation scripts also require tools from the upstream scientific
 environment, including PyMOL, RDKit, or GROMACS. Figure 5's preparation and
 validation scripts depend on original job records and source-specific audit
-checks. Figure 5 can be plotted directly using its copied data and existing
-renders.
+checks. These tools are separate from the thesis plotting dependencies; Figure
+5 can be plotted directly using its copied data and existing renders.

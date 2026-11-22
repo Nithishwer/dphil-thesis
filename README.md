@@ -55,6 +55,25 @@ relative to the repository root, for example
 `.gitkeep` file so Git preserves them. The root `scripts/build` remains the
 shared thesis build command.
 
+## Plotting
+
+The repository has a uv project for plotting, with Matplotlib, NumPy, pandas,
+SciPy, and Pillow. Install the locked environment from the repository root:
+
+```sh
+uv sync --locked
+```
+
+Run a chapter script in that environment, for example:
+
+```sh
+chapter=chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents
+uv run --locked python "$chapter/scripts/figures/figure_3/make_figure_3.py"
+```
+
+Alternatively, activate it with `source .venv/bin/activate`. The environment is
+local and ignored by Git; `pyproject.toml` and `uv.lock` record the dependencies.
+
 Chapter 7's data, scripts, and figure assets were copied from
 `/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena-RSC-Comms`. Its
 [asset README](chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/README.md)

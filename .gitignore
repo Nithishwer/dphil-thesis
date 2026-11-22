@@ -17,3 +17,6 @@ dissertation.pdfsync
 *.xdv
 *.bbl
 fonts/*
+.venv/
+__pycache__/
+.ruff_cache/
