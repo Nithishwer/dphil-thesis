@@ -1,0 +1,89 @@
+HETATM    1  H1  AMP A 702       0.425  -1.205  -2.875  1.00  0.00           H  
+HETATM    2  H2  AMP A 702       1.935  -0.505  -3.145  1.00  0.00           H  
+HETATM    3  H3  AMP A 702       0.525   0.415  -3.075  1.00  0.00           H  
+HETATM    4  S   AMP A 702      -1.445  -2.475  -2.595  1.00  0.00           S  
+HETATM    5  O   AMP A 702      -2.315  -3.615   1.275  1.00  0.00           O  
+HETATM    6  O1  AMP A 702      -4.705  -3.275  -3.265  1.00  0.00           O  
+HETATM    7  OXT AMP A 702      -5.125  -5.425  -2.595  1.00  0.00           O  
+HETATM    8  O2  AMP A 702      -0.965   0.895  -1.025  1.00  0.00           O  
+HETATM    9  N   AMP A 702      -3.315  -3.045  -0.785  1.00  0.00           N  
+HETATM   10  N1  AMP A 702      -0.785  -1.095   0.095  1.00  0.00           N  
+HETATM   11  N2  AMP A 702       1.035  -0.385  -2.675  1.00  0.00           N  
+HETATM   12  C   AMP A 702      -2.775  -1.845  -1.425  1.00  0.00           C  
+HETATM   13  C1  AMP A 702      -1.965  -4.265  -2.385  1.00  0.00           C  
+HETATM   14  CA  AMP A 702      -3.305  -4.265  -1.605  1.00  0.00           C  
+HETATM   15  C13 AMP A 702      -2.255  -1.415  -0.015  1.00  0.00           C  
+HETATM   16  C2  AMP A 702      -2.635  -2.865   0.385  1.00  0.00           C  
+HETATM   17  C3  AMP A 702      -2.005  -4.925  -3.775  1.00  0.00           C  
+HETATM   18  C4  AMP A 702      -0.855  -4.965  -1.565  1.00  0.00           C  
+HETATM   19  C5  AMP A 702      -4.505  -4.325  -2.585  1.00  0.00           C  
+HETATM   20  C6  AMP A 702      -0.275  -0.045  -0.625  1.00  0.00           C  
+HETATM   21  C14 AMP A 702       1.155  -0.185  -1.195  1.00  0.00           C  
+HETATM   22  C7  AMP A 702       2.045  -1.215  -0.515  1.00  0.00           C  
+HETATM   23  C8  AMP A 702       2.155  -2.535  -0.965  1.00  0.00           C  
+HETATM   24  C9  AMP A 702       2.745  -0.835   0.645  1.00  0.00           C  
+HETATM   25  C10 AMP A 702       2.955  -3.455  -0.285  1.00  0.00           C  
+HETATM   26  C11 AMP A 702       3.545  -1.765   1.325  1.00  0.00           C  
+HETATM   27  C12 AMP A 702       3.645  -3.065   0.865  1.00  0.00           C  
+HETATM   28  H   AMP A 702      -3.525  -1.195  -1.885  1.00  0.00           H  
+HETATM   29  HA  AMP A 702      -3.355  -5.125  -0.925  1.00  0.00           H  
+HETATM   30  H16 AMP A 702      -2.865  -0.665   0.495  1.00  0.00           H  
+HETATM   31  H4  AMP A 702      -2.655  -4.405  -4.475  1.00  0.00           H  
+HETATM   32  H5  AMP A 702      -2.355  -5.965  -3.695  1.00  0.00           H  
+HETATM   33  H6  AMP A 702      -1.005  -4.955  -4.225  1.00  0.00           H  
+HETATM   34  H7  AMP A 702      -0.675  -4.485  -0.605  1.00  0.00           H  
+HETATM   35  H8  AMP A 702       0.095  -4.975  -2.105  1.00  0.00           H  
+HETATM   36  H9  AMP A 702      -1.125  -6.005  -1.375  1.00  0.00           H  
+HETATM   37  H10 AMP A 702      -0.195  -1.855   0.415  1.00  0.00           H  
+HETATM   38  H17 AMP A 702       1.635   0.795  -1.095  1.00  0.00           H  
+HETATM   39  H11 AMP A 702       1.625  -2.895  -1.845  1.00  0.00           H  
+HETATM   40  H12 AMP A 702       2.675   0.175   1.045  1.00  0.00           H  
+HETATM   41  H13 AMP A 702       3.025  -4.485  -0.635  1.00  0.00           H  
+HETATM   42  H14 AMP A 702       4.075  -1.465   2.225  1.00  0.00           H  
+HETATM   43  H15 AMP A 702       4.255  -3.785   1.395  1.00  0.00           H  
+CONECT    1   11
+CONECT    2   11
+CONECT    3   11
+CONECT    4   12
+CONECT    4   13
+CONECT    5   16
+CONECT    6   19
+CONECT    7   19
+CONECT    8   20
+CONECT    9   12
+CONECT    9   14
+CONECT    9   16
+CONECT   10   15
+CONECT   10   20
+CONECT   10   37
+CONECT   11   21
+CONECT   12   15
+CONECT   12   28
+CONECT   13   14
+CONECT   13   17
+CONECT   13   18
+CONECT   14   19
+CONECT   14   29
+CONECT   15   16
+CONECT   15   30
+CONECT   17   31
+CONECT   17   32
+CONECT   17   33
+CONECT   18   34
+CONECT   18   35
+CONECT   18   36
+CONECT   20   21
+CONECT   21   22
+CONECT   21   38
+CONECT   22   23
+CONECT   22   24
+CONECT   23   25
+CONECT   23   39
+CONECT   24   26
+CONECT   24   40
+CONECT   25   27
+CONECT   25   41
+CONECT   26   27
+CONECT   26   42
+CONECT   27   43
+END

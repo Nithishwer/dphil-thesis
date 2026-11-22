@@ -24,8 +24,17 @@
 - Edit author and degree details in `frontmatter/personalize.tex`, chapter order
   in `dissertation.tex`, and formatting in `Dissertate.cls`.
 - Each chapter and appendix has its own folder under `chapters/`, containing the
-  matching `.tex` file and a `figures/` subfolder. Figure paths are relative to
-  the repository root; empty figure folders are preserved with `.gitkeep`.
+  matching `.tex` file and separate `data/`, `scripts/`, and `figures/`
+  subfolders. Figure paths are relative to the repository root; empty asset
+  folders are preserved with `.gitkeep`. Root `scripts/build` is shared.
+- Chapter 7 assets were copied from
+  `/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena-RSC-Comms` on 2026-11-22
+  (source commit `8ea34464dd0135f7e184d4739c1b953b0e109c02`, including untracked
+  molecular-panel assets). Its `data/source_manifest.csv` records the source
+  path, destination, and original SHA-256 for each imported file. Active plotting
+  scripts use the chapter's data and figure folders; original audit/export
+  scripts are preserved under `scripts/upstream/`. The original three flat PDF
+  figure paths used by the thesis draft are retained. See the chapter README.
 - Chapters are numbered consecutively from 1 to 8, matching their filenames:
   Introduction; Theory and Methods; Benchmarking and System Preparation;
   Binding Pocket Resolvation; Apo-State Conformational Changes; ABFEs on Agonists;

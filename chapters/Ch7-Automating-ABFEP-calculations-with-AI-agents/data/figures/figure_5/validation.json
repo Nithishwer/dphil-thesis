@@ -1,0 +1,146 @@
+{
+  "manuscript_commit": "6ff0003be4237c693a4f4e3ab9e240b5ee1c1527",
+  "layout_revision_commit": "775e5c6c93e2da35a54b4fda196526a5e3fd54d3",
+  "Figure5_dimensions_mm": [
+    185.9,
+    73.3
+  ],
+  "full_text_width_basis": "Letter paper in the supplied RSC template, minus the current 15 mm side margins",
+  "full_text_width_mm": 185.89999999999998,
+  "panels": [
+    "A: five-configuration heatmap",
+    "B: Task 25",
+    "C: Task 29"
+  ],
+  "heatmap_task_difficulty_labels_verified": 50,
+  "vector_heatmap": true,
+  "selected_option": "figure_5_horizontal_headers",
+  "pixel_identical_to_approved_option": false,
+  "pixel_identical_to_current_palette_approval": true,
+  "palette_revisions": [
+    {
+      "approval_date": "2026-11-21",
+      "request": "Slightly lighten the color for three strict passes.",
+      "value": 3,
+      "from": "#277E73",
+      "to": "#418D84",
+      "method": "12% white blended into the previous sRGB color, rounded to integer channels.",
+      "colors": [
+        "#F0E4DC",
+        "#D7AD73",
+        "#7BB5BC",
+        "#418D84"
+      ],
+      "approved_RGBA_sha256": "90690e769777dcbfb1bbcb9d962ee071e5a4547d1c6f529c95d9b36dd76b3b70",
+      "changed_pixels": 488657,
+      "changes_confined_to_3_cells_and_legend": true,
+      "other_palette_entries_and_B_C_unchanged": true
+    }
+  ],
+  "B_C_pixel_identical_to_approved_option": true,
+  "Figure3_height_at_same_width_mm": 73.2839958355946,
+  "right_panel_bands_mm": {
+    "B": [
+      36.65,
+      73.3
+    ],
+    "C": [
+      0,
+      36.65
+    ]
+  },
+  "retained_original_analysis_shared_tasks": 42,
+  "retained_original_analysis_shared_hard_tasks": 12,
+  "task25_distance_A": 37.81336271743099,
+  "task29_distance_A": 1.368612436009551,
+  "task25_CA_rmsd_A": 0.004942228264171126,
+  "max_derived_PDB_rounding_error_A": 0.0006054700725917675,
+  "rendered_task25_pair_A": 37.81386176154497,
+  "rendered_task29_pair_A": 1.3686124080068431,
+  "separate_log_atom_overlap_A": 0.054772255750514795,
+  "carbon_sphere_radii_A": [
+    1.7000000476837158,
+    1.7000000476837158
+  ],
+  "protected_local_files_unchanged": 342,
+  "source_files_rehashed_unchanged": 22,
+  "tex_scores_original_artifacts_unchanged": true,
+  "original_coordinates_cameras_renders_provenance_unchanged": true,
+  "vector_annotations": true,
+  "image_aspect_ratios_preserved": true,
+  "complete_main_molecules_inside_crops": true,
+  "main_clash_not_obscured_by_inset": true,
+  "S2_copy": {
+    "copies": [
+      {
+        "source": "analysis/task39_policy_b_2026-11-20/current/figures/task_heatmap_all_twelve.pdf",
+        "destination": "figures/figure_S2/figure_S2.pdf",
+        "sha256": "2b50e874e24cfbbf65f0b66134cc09fbabf94c3cbe0a5cbe3d9f3e080d336ea5",
+        "byte_identical": true
+      },
+      {
+        "source": "analysis/task39_policy_b_2026-11-20/current/figures/task_heatmap_all_twelve.png",
+        "destination": "figures/figure_S2/figure_S2.png",
+        "sha256": "3e577a3dd8121015b0d75c6953b682501627d668729067f3837dae487cf806d2",
+        "byte_identical": true
+      }
+    ],
+    "existing_implicit_S2_in_SI": "figures/codex_regrade_human/figure_A1.pdf",
+    "numbering_conflict": true,
+    "tex_modified": false,
+    "note": "New named assets only; existing SI figures and their numbering are untouched."
+  },
+  "molecular_images_embedded_in_PDF": [
+    {
+      "width_px": 1292,
+      "height_px": 1629,
+      "x_dpi": 1402,
+      "y_dpi": 1402
+    },
+    {
+      "width_px": 1292,
+      "height_px": 1629,
+      "x_dpi": 1402,
+      "y_dpi": 1402
+    },
+    {
+      "width_px": 1250,
+      "height_px": 1000,
+      "x_dpi": 2646,
+      "y_dpi": 2646
+    },
+    {
+      "width_px": 1620,
+      "height_px": 1521,
+      "x_dpi": 1470,
+      "y_dpi": 1470
+    },
+    {
+      "width_px": 1650,
+      "height_px": 1100,
+      "x_dpi": 1822,
+      "y_dpi": 1822
+    }
+  ],
+  "PNG_size_px": [
+    4391,
+    1731
+  ],
+  "PDF_page_info": "Creator:         Matplotlib v3.11.1, https://matplotlib.org\nProducer:        Matplotlib pdf backend v3.11.1\nCreationDate:    Sat Nov 21 02:04:54 2026 GMT\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       no\nPage size:       526.961 x 207.78 pts\nPage rot:        0\nFile size:       1842946 bytes\nOptimized:       no\nPDF version:     1.4\n",
+  "PDF_font_info": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nBENLFW+LiberationSans-Bold           CID TrueType      Identity-H       yes yes yes     22  0\nCLHGCC+LiberationSans                CID TrueType      Identity-H       yes yes yes     29  0\n",
+  "PDF_image_info": "page   num  type   width height color comp bpc  enc interp  object ID x-ppi y-ppi size ratio\n--------------------------------------------------------------------------------------------\n   1     0 image    1292  1629  rgb     3   8  image  no        13  0  1402  1402  315K 5.1%\n   1     1 smask    1292  1629  gray    1   8  image  no        13  0  1402  1402 12.7K 0.6%\n   1     2 image    1292  1629  rgb     3   8  image  no        14  0  1402  1402  322K 5.2%\n   1     3 smask    1292  1629  gray    1   8  image  no        14  0  1402  1402 12.0K 0.6%\n   1     4 image    1250  1000  rgb     3   8  image  no        16  0  2646  2646  448K  12%\n   1     5 image    1620  1521  rgb     3   8  image  no        17  0  1470  1470  415K 5.7%\n   1     6 image    1650  1100  rgb     3   8  image  no        18  0  1822  1822  238K 4.5%\n",
+  "PDF_text": "                                                                                                                                                                                                                                                                                                                                                              A\n\n\n\n\n                                                                                                                                       Task ID\n                                                                                                                                                                                                                                                                         Shared by top 3\n\n\n\n\n                                                                                                                                                                                                                                                              GLM-5.2\n                                                                                                                                                                                                                                                           GPT-6 Astra\n                                                                                                                                                                                                                                                           GPT-6.1 Sol\n\n                                                                                                                                                                                                                                                        Gemini 4 Argon\n                                                                                                                                                                                                                                                       Claude Opus-5.5\n\n                                    Binding-pocket residues                                                                                                                                   03\n                                         Side-chain distance                                                                                                                                  04\n                                      Protein\u2013ligand H bonds                                                                                                                                  05\n                                           THR106 rotamers                                                                                                                                    06\n                                             Mg coordination                                                                                                                                  10\n                              Ligand pose / conform. RMSD                                                                                                                                     14\n                                     ICL2 interaction ranking                                                                                                                                 17\n                                      Most-open TPC2 frame                                                                                                                                    19\n                                                                                                                                                                                                                                                                                           Analysis\n\n\n\n\n                              Na+ permeation / conductance                                                                                                                                    31\n                                  MenG\u2013SAM RMSD / PBC                                                                                                                                         40\n\n\n\n\nStrict passes out of 3\n                             ATP8B1 helix RMSD / mapping                                                                                                                                      44\n                                     ATP8B1 insertion depth                                                                                                                                   45\n                             Glycoinsulin \u03b2-sheet propensity                                                                                                                                  50\n                               Solvated ligand from SMILES                                                                                                                                    01\n                                           TYK2 equilibration                                                                                                                                 07\n                                           mGlu5 holo-to-apo                                                                                                                                  09\n                           Glycoinsulin AMBER\u2013GROMACS                                                                                                                                         11\n                                          ICL1 water transfer                                                                                                                                 12\n                                Oxymyoglobin altloc cleanup                                                                                                                                   13\n                                                                                                                                                                                              21\n\n\n0\n                                         OX2R water transfer\n                                                                                                                                                                                                                                                                                                                    System\n\n\n\n\n                                      A2A\u2013ZM241385 POPC                                                                                                                                       23\n                                                                                                                                                                                                                                                                                                                  preparation\n\n\n\n\n                                          mGlu5\u201351D POPC                                                                                                                                      25\n1                                       D3 POPC membrane                                                                                                                                      26\n                                       A2A\u2013AZD4635 POPC                                                                                                                                       27\n                                PepT2\u2013ampicillin membrane                                                                                                                                     29\n                                    A2A ABFE dhdl analysis                                                                                                                                    20\n2\n\n\n                                     DHODH OpenFE RBFE                                                                                                                                        32\n                                           D3 OpenFE RBFE                                                                                                                                     33\n                                       OX2R OpenFE RBFE                                                                                                                                       34\n3\n\n\n\n\n                                           D3 OpenFE ABFE                                                                                                                                     35\n                                       mGlu5 OpenFE ABFE                                                                                                                                      36\n                                                                                                                                                                                                                                                                                           Free energy\n\n\n\n\n                                          A2A OpenFE ABFE                                                                                                                                     37\n                             D3 charged ABFE / GROMACS                                                                                                                                        39\n                                   PepT2 PCA CV suitability                                                                                                                                   22\n                                 PepT2 PCA umbrella setup                                                                                                                                     28\n                                    CAM-ion pore umbrellas                                                                                                                                    30\n                                   Argon hydration / REXEE                                                                                                                                    41\n                           Fixed-weight expanded ensemble                                                                                                                                     42\n                                                                                                                                                                                                                                                                                                                  sampling\n                                                                                                                                                                                                                                                                                                                  Enhanced\n\n\n\n\n                                      CB7\u201310 Wang\u2013Landau                                                                                                                                      43\n                                 CB7\u201310 alchemical MetaD                                                                                                                                      48\n                                 Ala\u2013Phe GAFF parameters                                                                                                                                      16\n                          Ion-charge scaling / water\u2013decane                                                                                                                                   18\n                                                                                                                                                                                              24\nE/M/H: easy/medium/hard\n\n\n\n\n                              SMIRNOFF ligand parameters\n                              CHARMM topology / FF repair                                                                                                                                     46\n                              Phosphoaspartate parameters                                                                                                                                     47\n                                                                                                                                                                                                                                                                                           Parameterization\n\n\n\n\n                             Reject incompatible trajectories                                                                                                                                 02\n                                                TYK2 clashes                                                                                                                                  08\n                                    MenG thermostat / COM                                                                                                                                     15\n                                    SLCO2A1 kinetic energy                                                                                                                                    49\n                                                                                                                                                                                                                                                                                                                 Diagnostics\n\n\n\n\n                                                                                                                                      Difficulty E E M E E E M M H M M H M M M M E M E H H H H H H H M M M M M M M H H H M M M M M E H H H E E M M H\n\n\n\n\n                               PepT2\u2013amoxicillin QM cluster                                                                                                                                   38\n                                                                                                                                                                                                                                                                                           QM\n\n\n\n\n     AMP702\n                                                                                                                                                                                                      Intermediate\n                                                                                                                                                                                                                                                                                                              Pocket\n\n\n\n\n     POPE808\n                                                                                                                                                                                                                                                            Lys117 HZ2\n\n\n\n\n     C6\n                                                                                                                                                                                                                                                                                                                               Correctness: 1.000; Process: 0.875\n\n\n\n\n                                                          Correctness: 1.000; Process: 0.9375\n                                                                                                                                                                                                      Submitted\n\n\n\n                                                                                          C Task 29 \u00b7 Claude Opus-5.5 \u00b7 replicate 2\n                                                                                                                                                                                                                                                                                                                                                              B Task 25 \u00b7 Claude Opus-5.5 \u00b7 replicate 3\n\n\n\n\n                                  1.37 \u00c5\n                                           Clash detail\n                                                                                                                                                                                                                                37.8 \u00c5\n\n\n\n\n     C316\n                                                                                                                                                              Cl\n\f",
+  "software": {
+    "PyMOL": "3.2.0a",
+    "NumPy": "2.2.6",
+    "SciPy": "1.18.1",
+    "Matplotlib": "3.11.1",
+    "Pillow": "12.3.0"
+  },
+  "scripts_sha256": {
+    "render_structures.py": "f9bcbd0cdc6a53a3b6ec4f54b7f5bee8b46272db1aa925dd2b47e663cd9099e9",
+    "make_figure_5.py": "0cb6e2c818ed0a231b17a1d22967bae9b89114388d384eb2f9ed3aa5fb3b2323",
+    "validate_figure_5.py": "f3d75e41fcd41208138d2481377e706966fa6b6a89c6e9adb75a42318574af2a",
+    "prepare_figure_5.py": "14769618bd488ba969787802f2bdd89eab6450150f241dde735639fcb56cfe49"
+  }
+}

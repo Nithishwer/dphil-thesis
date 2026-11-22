@@ -1,0 +1,9 @@
+{
+  "tracked_manuscript_files_checked": 124,
+  "changed_tracked_files": [],
+  "original_result_records_checked": 2100,
+  "all_original_results_unchanged": true,
+  "coordinate_sources_checked": 24,
+  "changed_coordinate_sources": [],
+  "scope": "Pre-analysis tracked manuscript hashes; original result hashes recorded during provenance audit; coordinate hashes from deterministic checks."
+}

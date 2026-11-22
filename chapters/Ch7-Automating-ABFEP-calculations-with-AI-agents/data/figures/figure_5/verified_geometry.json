@@ -1,0 +1,257 @@
+{
+  "shared_tasks": 42,
+  "shared_hard_tasks": 12,
+  "shared_task_ids": [
+    "03_id_bp_resid",
+    "04_traj_ana_dist",
+    "05_traj_ana_hbonds",
+    "06_traj_ana_rotamers",
+    "10_traj_ana_mg_coord",
+    "14_traj_ana_lig_rmsd",
+    "17_prolif_int",
+    "19_traj_ana_open",
+    "31_traj_ana_na_conductance_6nq0",
+    "40_traj_ana_meng_sam_rmsd",
+    "44_traj_ana_atp8b_rmsd",
+    "45_atp8b_insertion_depth",
+    "50_glycoinsulin_beta_sheet_propensity",
+    "01_similes2sim",
+    "07_tyk2_equil",
+    "09_holo2apo",
+    "12_xtal_waters",
+    "13_altloc_clean",
+    "21_water_transfer_ox2r",
+    "26_d3_receptor_membrane_setup",
+    "20_fep_abfe_dhdl_analysis",
+    "33_fep_openfe_rbfe_d3",
+    "34_fep_openfe_rbfe_def_ox2_s1",
+    "35_fep_openfe_abfe_d3",
+    "36_fep_openfe_abfe_mglu5r",
+    "37_fep_openfe_abfe_a2ar",
+    "22_traj_ana_pept2_pca_cv_suitability",
+    "28_traj_ana_pept2_pca_plumed_setup",
+    "30_cam_umbrella_pore_6nq0",
+    "41_rexee_argon_hydration_setup",
+    "42_expanded_ensemble_mdp",
+    "43_cb7_10_weight_updating_ee",
+    "48_cb7_10_alchemical_metadynamics",
+    "16_gaff_param",
+    "24_ligand_parameterization_smirnoff_openfe",
+    "46_meng_dmk_ff_patch",
+    "47_d2p_residue_parameterization",
+    "02_conc_diff_sys_traj",
+    "08_clash_check",
+    "15_meng_coupling_groups",
+    "49_slco2a1_physical_validation",
+    "38_pept2_qm_cluster_orca"
+  ],
+  "trials": {
+    "25": {
+      "trial_name": "25_mglu5_membrane_setup__5qy4iHm",
+      "trial_id": "8fab37cd-775f-4f91-b5bf-d4953037bb87",
+      "task_id": "25_mglu5_membrane_setup",
+      "replicate": 3,
+      "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm",
+      "numerical_score_authority": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/opus-5.5/25_mglu5_membrane_setup__repeat-03/regraded-reward.json",
+      "scores": {
+        "correctness": 1.0,
+        "process": 0.875
+      }
+    },
+    "29": {
+      "trial_name": "29_pept2_beta_lactam_membrane_se__Z4DQoGB",
+      "trial_id": "f9f2a3e2-0910-4868-9578-a54e42e53d5c",
+      "task_id": "29_pept2_beta_lactam_membrane_setup",
+      "replicate": 2,
+      "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB",
+      "numerical_score_authority": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/opus-5.5/29_pept2_beta_lactam_membrane_setup__repeat-02/regraded-reward.json",
+      "scores": {
+        "correctness": 1.0,
+        "process": 0.9375
+      }
+    }
+  },
+  "task25": {
+    "final_artifact": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/system.gro",
+    "intermediate_artifact": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/complex_oriented.pdb",
+    "box_A": [
+      85.38,
+      85.38,
+      100.28999999999999
+    ],
+    "final_nearest_pair": {
+      "distance_A": 37.81336271743099,
+      "first": {
+        "row": 4275,
+        "name": "CL",
+        "resname": "LIG",
+        "resid": 267,
+        "xyz": [
+          43.29,
+          49.28,
+          53.949999999999996
+        ]
+      },
+      "second": {
+        "row": 1873,
+        "name": "HZ2",
+        "resname": "LYS",
+        "resid": 117,
+        "xyz": [
+          112.99,
+          78.06,
+          72.81
+        ]
+      },
+      "first_whole_molecule_image_shift_lattice": [
+        1,
+        0,
+        0
+      ]
+    },
+    "intermediate_nearest_pair": {
+      "distance_A": 1.757868595771596,
+      "first": {
+        "row": 4279,
+        "name": "H4",
+        "resname": "LIG",
+        "resid": 0,
+        "xyz": [
+          -15.27,
+          -16.83,
+          4.985
+        ]
+      },
+      "second": {
+        "row": 1005,
+        "name": "HG",
+        "resname": "CYS",
+        "resid": 631,
+        "xyz": [
+          -16.036,
+          -17.819,
+          6.22
+        ]
+      },
+      "first_whole_molecule_image_shift_lattice": [
+        0,
+        0,
+        0
+      ]
+    },
+    "protein_CA_matches": 264,
+    "protein_CA_rmsd_A": 0.004942228264171126,
+    "row_vector_rotation": [
+      [
+        0.9999999999887709,
+        -4.229741537528272e-06,
+        -2.1373108137062654e-06
+      ],
+      [
+        4.2297553187681315e-06,
+        0.9999999999702662,
+        6.448103229262734e-06
+      ],
+      [
+        2.137283540071489e-06,
+        -6.448112269854953e-06,
+        0.999999999976927
+      ]
+    ],
+    "final_translation_A": [
+      -86.61753778806786,
+      -84.79979731544228,
+      -97.97774803827271
+    ],
+    "intermediate_translation_A": [
+      14.220958333333341,
+      15.639893939393922,
+      1.4478371212121215
+    ],
+    "final_ligand_whole_molecule_translation_A": [
+      85.38,
+      0.0,
+      0.0
+    ],
+    "display_endpoints_A": [
+      [
+        42.05278595927638,
+        -35.520689433408144,
+        -44.027705284772765
+      ],
+      [
+        26.3729480009781,
+        -6.740744723313995,
+        -25.167486195763416
+      ]
+    ],
+    "display_receptor_center_A": [
+      0,
+      0,
+      0
+    ],
+    "display_ligand_center_A": [
+      42.34061963609041,
+      -40.42211097327439,
+      -45.30702321918653
+    ]
+  },
+  "task29": {
+    "artifact": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB/artifacts/app/outputs/system.gro",
+    "box_A": [
+      110.0,
+      110.0,
+      100.0
+    ],
+    "carbon_pair": {
+      "distance_A": 1.368612436009551,
+      "first": {
+        "row": 7575,
+        "name": "C6",
+        "resname": "AMP",
+        "resid": 702,
+        "xyz": [
+          52.46000000000001,
+          72.58,
+          51.84
+        ]
+      },
+      "second": {
+        "row": 20845,
+        "name": "C316",
+        "resname": "POPE",
+        "resid": 808,
+        "xyz": [
+          53.010000000000005,
+          72.67,
+          53.09
+        ]
+      },
+      "first_whole_molecule_image_shift_lattice": [
+        0,
+        0,
+        0
+      ]
+    },
+    "global_translation_A": [
+      -52.73500000000001,
+      -72.625,
+      -52.465
+    ],
+    "periodic_imaging": "none: pair and entire AMP/POPE are continuous in the saved image",
+    "display_endpoints_A": [
+      [
+        -0.2749999999999986,
+        -0.045000000000001705,
+        -0.625
+      ],
+      [
+        0.2749999999999986,
+        0.045000000000001705,
+        0.625
+      ]
+    ],
+    "topology_separate_molecules": true,
+    "intermolecular_interactions_declared": false
+  }
+}

@@ -1,0 +1,51 @@
+task_id,number,category,difficulty,short_description,display_label,opus-5.5,gpt-6.1-sol,gpt-6-astra,gemini-4-argon,glm-5.2
+03_id_bp_resid,3,analysis,easy,Identify binding-pocket residues,Binding-pocket residues,3,3,3,3,3
+04_traj_ana_dist,4,analysis,easy,Trajectory side-chain distance,Side-chain distance,3,3,3,3,3
+05_traj_ana_hbonds,5,analysis,medium,Protein–ligand hydrogen bonds,Protein–ligand H bonds,3,3,3,3,2
+06_traj_ana_rotamers,6,analysis,easy,THR106 rotamer fractions,THR106 rotamers,3,3,3,3,3
+10_traj_ana_mg_coord,10,analysis,easy,Magnesium coordination numbers,Mg coordination,3,3,3,3,3
+14_traj_ana_lig_rmsd,14,analysis,easy,Ligand pose and conformation RMSD,Ligand pose / conform. RMSD,3,3,3,3,3
+17_prolif_int,17,analysis,medium,ICL2 ProLIF interaction ranking,ICL2 interaction ranking,3,3,3,1,3
+19_traj_ana_open,19,analysis,medium,Most-open TPC2 frame,Most-open TPC2 frame,3,3,3,3,1
+31_traj_ana_na_conductance_6nq0,31,analysis,hard,Na+ permeation and conductance,Na+ permeation / conductance,3,3,3,3,3
+40_traj_ana_meng_sam_rmsd,40,analysis,medium,MenG SAM RMSD with periodic imaging,MenG–SAM RMSD / PBC,3,3,3,3,3
+44_traj_ana_atp8b_rmsd,44,analysis,medium,ATP8B1 helix RMSD with residue mapping,ATP8B1 helix RMSD / mapping,3,3,3,3,3
+45_atp8b_insertion_depth,45,analysis,hard,ATP8B1 membrane insertion depth,ATP8B1 insertion depth,3,3,3,3,0
+50_glycoinsulin_beta_sheet_propensity,50,analysis,medium,Glycoinsulin beta-sheet propensity,Glycoinsulin β-sheet propensity,3,3,3,3,3
+01_similes2sim,1,system_preparation,medium,SMILES to solvated GROMACS ligand,Solvated ligand from SMILES,3,3,3,3,3
+07_tyk2_equil,7,system_preparation,medium,TYK2 protein equilibration setup,TYK2 equilibration,3,3,3,2,2
+09_holo2apo,9,system_preparation,medium,mGlu5 holo-to-apo conversion,mGlu5 holo-to-apo,3,3,3,0,0
+11_amb2gmx_em,11,system_preparation,easy,Glycoinsulin AMBER-to-GROMACS conversion,Glycoinsulin AMBER–GROMACS,3,0,0,1,2
+12_xtal_waters,12,system_preparation,medium,ICL1 crystallographic-water transfer,ICL1 water transfer,3,3,3,2,3
+13_altloc_clean,13,system_preparation,easy,Oxymyoglobin alternate-location cleanup,Oxymyoglobin altloc cleanup,3,3,3,3,3
+21_water_transfer_ox2r,21,system_preparation,hard,OX2R crystallographic-water transfer,OX2R water transfer,3,3,3,0,2
+23_a2ar_membrane_equilibration,23,system_preparation,hard,A2A–ZM241385 POPC membrane preparation,A2A–ZM241385 POPC,3,0,0,3,0
+25_mglu5_membrane_setup,25,system_preparation,hard,mGlu5–51D POPC membrane preparation,mGlu5–51D POPC,1,1,0,3,0
+26_d3_receptor_membrane_setup,26,system_preparation,hard,D3 POPC membrane preparation,D3 POPC membrane,3,3,3,3,0
+27_a2ar_6gt3_md_setup,27,system_preparation,hard,A2A–AZD4635 POPC membrane preparation,A2A–AZD4635 POPC,3,0,1,3,0
+29_pept2_beta_lactam_membrane_setup,29,system_preparation,hard,PepT2–ampicillin membrane preparation,PepT2–ampicillin membrane,1,1,1,0,0
+20_fep_abfe_dhdl_analysis,20,free_energy,hard,A2A ABFE dhdl analysis with alchemlyb,A2A ABFE dhdl analysis,3,3,3,3,3
+32_fep_openfe_rbfe_dhodh,32,free_energy,medium,DHODH OpenFE RBFE network,DHODH OpenFE RBFE,2,3,3,3,3
+33_fep_openfe_rbfe_d3,33,free_energy,medium,D3 OpenFE RBFE network,D3 OpenFE RBFE,3,3,3,2,2
+34_fep_openfe_rbfe_def_ox2_s1,34,free_energy,medium,OX2R OpenFE RBFE network,OX2R OpenFE RBFE,3,3,3,0,3
+35_fep_openfe_abfe_d3,35,free_energy,medium,D3 OpenFE ABFE setup,D3 OpenFE ABFE,3,3,3,1,3
+36_fep_openfe_abfe_mglu5r,36,free_energy,medium,mGlu5 OpenFE ABFE setup,mGlu5 OpenFE ABFE,3,3,3,3,0
+37_fep_openfe_abfe_a2ar,37,free_energy,medium,A2A OpenFE ABFE setup,A2A OpenFE ABFE,3,3,3,3,0
+39_fep_gmx_d3_abfe,39,free_energy,medium,D3 charged-ligand GROMACS ABFE setup,D3 charged ABFE / GROMACS,0,0,0,0,0
+22_traj_ana_pept2_pca_cv_suitability,22,enhanced_sampling,hard,Assess PepT2 PCA collective variable,PepT2 PCA CV suitability,3,3,3,3,3
+28_traj_ana_pept2_pca_plumed_setup,28,enhanced_sampling,hard,PepT2 PCA umbrella-sampling setup,PepT2 PCA umbrella setup,3,3,3,3,0
+30_cam_umbrella_pore_6nq0,30,enhanced_sampling,hard,CAM-ion pore umbrella sampling,CAM-ion pore umbrellas,3,3,3,0,2
+41_rexee_argon_hydration_setup,41,enhanced_sampling,medium,Argon-hydration REXEE simulation,Argon hydration / REXEE,3,3,3,3,1
+42_expanded_ensemble_mdp,42,enhanced_sampling,medium,Expanded-ensemble fixed-weight conversion,Fixed-weight expanded ensemble,3,3,3,0,0
+43_cb7_10_weight_updating_ee,43,enhanced_sampling,medium,CB7–10 Wang–Landau simulation,CB7–10 Wang–Landau,3,3,3,2,1
+48_cb7_10_alchemical_metadynamics,48,enhanced_sampling,medium,CB7–10 alchemical metadynamics,CB7–10 alchemical MetaD,3,3,3,3,3
+16_gaff_param,16,parameterization,medium,GAFF Ala-Phe ligand parameters,Ala–Phe GAFF parameters,3,3,3,3,3
+18_scale_charge,18,parameterization,easy,Ion-charge scaling in water–decane,Ion-charge scaling / water–decane,3,1,1,0,2
+24_ligand_parameterization_smirnoff_openfe,24,parameterization,hard,SMIRNOFF ligand parameters,SMIRNOFF ligand parameters,3,3,3,3,1
+46_meng_dmk_ff_patch,46,parameterization,hard,CHARMM topology and force-field repair,CHARMM topology / FF repair,3,3,3,3,1
+47_d2p_residue_parameterization,47,parameterization,hard,Phosphoaspartate residue parameters,Phosphoaspartate parameters,3,3,3,3,2
+02_conc_diff_sys_traj,2,diagnostics,easy,Reject incompatible trajectory concatenation,Reject incompatible trajectories,3,3,3,3,3
+08_clash_check,8,diagnostics,easy,TYK2 clash assessment,TYK2 clashes,3,3,3,3,3
+15_meng_coupling_groups,15,diagnostics,medium,MenG thermostat and COM-removal groups,MenG thermostat / COM,3,3,3,2,3
+49_slco2a1_physical_validation,49,diagnostics,medium,SLCO2A1 kinetic-energy validation,SLCO2A1 kinetic energy,3,3,3,3,3
+38_pept2_qm_cluster_orca,38,quantum_chemistry,hard,PepT2–amoxicillin ORCA QM cluster,PepT2–amoxicillin QM cluster,3,3,3,3,1

@@ -1,0 +1,1685 @@
+{
+  "method": "New deterministic artifact inspection, distinct from original grading. Fixed-width PDB/GRO parsing; nanometres to Angstroms; orthorhombic 3D minimum-image distances.",
+  "coordinate_geometry": [
+    {
+      "task": 25,
+      "replicate": 1,
+      "trial_name": "25_mglu5_membrane_setup__8YSEgrj",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/system.gro",
+      "sha256": "6078400bbd24470e578b71dade8adbd8a420c479cbb4c526999fd28c65e757c4",
+      "box_nm": [
+        7.9,
+        7.9,
+        10.22
+      ],
+      "n_ligand_atoms": 28,
+      "n_partner_atoms": 4253,
+      "all_direct": {
+        "distance_A": 41.877564399090836,
+        "atom_a": {
+          "row": 4287,
+          "resid": "268",
+          "resname": "LIG",
+          "atom": "H1",
+          "position_nm": [
+            0.423,
+            0.657,
+            0.776
+          ],
+          "record": "  268LIG     H1 4287   0.423   0.657   0.776"
+        },
+        "atom_b": {
+          "row": 4219,
+          "resid": "264",
+          "resname": "GLU",
+          "atom": "OE2",
+          "position_nm": [
+            2.507,
+            3.919,
+            2.374
+          ],
+          "record": "  264GLU    OE2 4219   2.507   3.919   2.374"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 30.188299057747532,
+        "atom_a": {
+          "row": 4290,
+          "resid": "268",
+          "resname": "LIG",
+          "atom": "H4",
+          "position_nm": [
+            0.177,
+            -0.111,
+            0.661
+          ],
+          "record": "  268LIG     H4 4290   0.177  -0.111   0.661"
+        },
+        "atom_b": {
+          "row": 1815,
+          "resid": "114",
+          "resname": "ILE",
+          "atom": "HD12",
+          "position_nm": [
+            6.518,
+            5.451,
+            1.764
+          ],
+          "record": "  114ILE   HD12 1815   6.518   5.451   1.764"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 31.796672781912264,
+        "atom_a": {
+          "row": 4275,
+          "resid": "268",
+          "resname": "LIG",
+          "atom": "C12",
+          "position_nm": [
+            0.18,
+            -0.023,
+            0.595
+          ],
+          "record": "  268LIG    C12 4275   0.180  -0.023   0.595"
+        },
+        "atom_b": {
+          "row": 1766,
+          "resid": "112",
+          "resname": "LYS",
+          "atom": "CD",
+          "position_nm": [
+            6.078,
+            5.763,
+            1.873
+          ],
+          "record": "  112LYS     CD 1766   6.078   5.763   1.873"
+        }
+      },
+      "intermediates": [
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/complex.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 4253,
+          "all_direct": {
+            "distance_A": 1.8083567125984819,
+            "atom_a": {
+              "row": 4292,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "H4",
+              "position_nm": [
+                -2.4552,
+                1.2587,
+                4.5197
+              ],
+              "record": "HETATM   25 H4   LIG L 901     -24.552  12.587  45.197  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 1016,
+              "resid": "631",
+              "resname": "CYS",
+              "atom": "HG",
+              "position_nm": [
+                -2.5135,
+                1.1720000000000002,
+                4.6673
+              ],
+              "record": "ATOM   1016  HG  CYS A 631     -25.135  11.720  46.673  1.00  0.00           H  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9435792837971873,
+            "atom_a": {
+              "row": 4278,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                -2.5039000000000002,
+                1.8251000000000002,
+                4.3323
+              ],
+              "record": "HETATM   11  F1  LIG L 901     -25.039  18.251  43.323  1.00 46.71           F  "
+            },
+            "atom_b": {
+              "row": 3886,
+              "resid": "809",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                -2.6686,
+                1.8568000000000002,
+                4.090400000000001
+              ],
+              "record": "ATOM   3886  CB  SER A 809     -26.686  18.568  40.904  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            7.0015694339622705,
+            3.0688807547169836,
+            1.2328815094339616
+          ],
+          "ligand_translation_nm": [
+            2.631789285714285,
+            -1.3616107142857143,
+            -3.8439928571428568
+          ],
+          "protein_minus_ligand_translation_nm": [
+            4.369780148247985,
+            4.430491469002698,
+            5.076874366576819
+          ],
+          "protein_translation_max_residual_A": 1.5299548946785575,
+          "ligand_translation_max_residual_A": 0.2690112043414273
+        },
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/complex_oriented.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 4253,
+          "all_direct": {
+            "distance_A": 1.8081603911157869,
+            "atom_a": {
+              "row": 4291,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "H4",
+              "position_nm": [
+                -0.1078,
+                -0.12,
+                0.6607000000000001
+              ],
+              "record": "HETATM   25 H4   LIG L 901      -1.078  -1.200   6.607  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 1016,
+              "resid": "631",
+              "resname": "CYS",
+              "atom": "HG",
+              "position_nm": [
+                -0.16599999999999998,
+                -0.2132,
+                0.8042999999999999
+              ],
+              "record": "ATOM   1016  HG  CYS A 631      -1.660  -2.132   8.043  1.00  0.00           H  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9435738482327904,
+            "atom_a": {
+              "row": 4277,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                -0.15660000000000002,
+                0.4542,
+                0.4988
+              ],
+              "record": "HETATM   11  F1  LIG L 901      -1.566   4.542   4.988  1.00 46.71           F  "
+            },
+            "atom_b": {
+              "row": 3886,
+              "resid": "809",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                -0.3215,
+                0.4967,
+                0.25870000000000004
+              ],
+              "record": "ATOM   3886  CB  SER A 809      -3.215   4.967   2.587  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            4.654616603773581,
+            4.418302641509433,
+            5.0878739622641485
+          ],
+          "ligand_translation_nm": [
+            0.28454642857142864,
+            0.00873928571428571,
+            5.3571428571419577e-05
+          ],
+          "protein_minus_ligand_translation_nm": [
+            4.3700701752021525,
+            4.4095633557951475,
+            5.087820390835577
+          ],
+          "protein_translation_max_residual_A": 0.008431848116263253,
+          "ligand_translation_max_residual_A": 0.006934367972907394
+        },
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/pm/bilayer_complex.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 4253,
+          "all_direct": {
+            "distance_A": 1.8081603911157869,
+            "atom_a": {
+              "row": 4295,
+              "resid": "268",
+              "resname": "LIG",
+              "atom": "H4",
+              "position_nm": [
+                0.1767,
+                -0.11120000000000001,
+                0.6607000000000001
+              ],
+              "record": "HETATM 4290  H4  LIG B 268       1.767  -1.112   6.607  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 1019,
+              "resid": "65",
+              "resname": "CYS",
+              "atom": "HG",
+              "position_nm": [
+                0.11850000000000001,
+                -0.2044,
+                0.8042999999999999
+              ],
+              "record": "ATOM   1016  HG  CYS A  65       1.185  -2.044   8.043  1.00  0.00           H  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9435738482327904,
+            "atom_a": {
+              "row": 4281,
+              "resid": "268",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                0.12789999999999999,
+                0.46299999999999997,
+                0.4988
+              ],
+              "record": "HETATM 4276  F1  LIG B 268       1.279   4.630   4.988  1.00  0.00           F  "
+            },
+            "atom_b": {
+              "row": 3889,
+              "resid": "243",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                -0.037,
+                0.5055,
+                0.25870000000000004
+              ],
+              "record": "ATOM   3886  CB  SER A 243      -0.370   5.055   2.587  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            4.370116603773586,
+            4.409502641509437,
+            5.0878739622641485
+          ],
+          "ligand_translation_nm": [
+            4.642857142857518e-05,
+            -6.0714285714287084e-05,
+            5.3571428571419577e-05
+          ],
+          "protein_minus_ligand_translation_nm": [
+            4.370070175202158,
+            4.409563355795152,
+            5.087820390835577
+          ],
+          "protein_translation_max_residual_A": 0.008431848116259175,
+          "ligand_translation_max_residual_A": 0.006934367972906567
+        },
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/pm/complex_oriented.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 4253,
+          "all_direct": {
+            "distance_A": 1.8081603911157869,
+            "atom_a": {
+              "row": 4291,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "H4",
+              "position_nm": [
+                -0.1078,
+                -0.12,
+                0.6607000000000001
+              ],
+              "record": "HETATM   25 H4   LIG L 901      -1.078  -1.200   6.607  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 1016,
+              "resid": "631",
+              "resname": "CYS",
+              "atom": "HG",
+              "position_nm": [
+                -0.16599999999999998,
+                -0.2132,
+                0.8042999999999999
+              ],
+              "record": "ATOM   1016  HG  CYS A 631      -1.660  -2.132   8.043  1.00  0.00           H  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9435738482327904,
+            "atom_a": {
+              "row": 4277,
+              "resid": "901",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                -0.15660000000000002,
+                0.4542,
+                0.4988
+              ],
+              "record": "HETATM   11  F1  LIG L 901      -1.566   4.542   4.988  1.00 46.71           F  "
+            },
+            "atom_b": {
+              "row": 3886,
+              "resid": "809",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                -0.3215,
+                0.4967,
+                0.25870000000000004
+              ],
+              "record": "ATOM   3886  CB  SER A 809      -3.215   4.967   2.587  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            4.654616603773581,
+            4.418302641509433,
+            5.0878739622641485
+          ],
+          "ligand_translation_nm": [
+            0.28454642857142864,
+            0.00873928571428571,
+            5.3571428571419577e-05
+          ],
+          "protein_minus_ligand_translation_nm": [
+            4.3700701752021525,
+            4.4095633557951475,
+            5.087820390835577
+          ],
+          "protein_translation_max_residual_A": 0.008431848116263253,
+          "ligand_translation_max_residual_A": 0.006934367972907394
+        }
+      ]
+    },
+    {
+      "task": 25,
+      "replicate": 2,
+      "trial_name": "25_mglu5_membrane_setup__miVipsZ",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__miVipsZ/artifacts/app/outputs/system.gro",
+      "sha256": "86f6ffc126117938aed2028dd03a89a244cc3ef0604cdb30617ab72479fa675c",
+      "box_nm": [
+        7.882,
+        7.882,
+        10.431
+      ],
+      "n_ligand_atoms": 28,
+      "n_partner_atoms": 4242,
+      "all_direct": {
+        "distance_A": 1.9357944105715332,
+        "atom_a": {
+          "row": 4279,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "H12",
+          "position_nm": [
+            3.695,
+            3.725,
+            5.897
+          ],
+          "record": "  267LIG    H12 4279   3.695   3.725   5.897"
+        },
+        "atom_b": {
+          "row": 1003,
+          "resid": "64",
+          "resname": "CYS",
+          "atom": "HG",
+          "position_nm": [
+            3.604,
+            3.799,
+            6.051
+          ],
+          "record": "   64CYS     HG 1003   3.604   3.799   6.051"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 1.9357944105715332,
+        "atom_a": {
+          "row": 4279,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "H12",
+          "position_nm": [
+            3.695,
+            3.725,
+            5.897
+          ],
+          "record": "  267LIG    H12 4279   3.695   3.725   5.897"
+        },
+        "atom_b": {
+          "row": 1003,
+          "resid": "64",
+          "resname": "CYS",
+          "atom": "HG",
+          "position_nm": [
+            3.604,
+            3.799,
+            6.051
+          ],
+          "record": "   64CYS     HG 1003   3.604   3.799   6.051"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 2.973919972023457,
+        "atom_a": {
+          "row": 4265,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "F1",
+          "position_nm": [
+            4.28,
+            3.77,
+            5.778
+          ],
+          "record": "  267LIG     F1 4265   4.280   3.770   5.778"
+        },
+        "atom_b": {
+          "row": 3873,
+          "resid": "242",
+          "resname": "SER",
+          "atom": "CB",
+          "position_nm": [
+            4.344,
+            3.935,
+            5.539
+          ],
+          "record": "  242SER     CB 3873   4.344   3.935   5.539"
+        }
+      },
+      "intermediates": [
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__miVipsZ/artifacts/app/outputs/complex_prepared.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 2064,
+          "all_direct": {
+            "distance_A": 2.4877051674183583,
+            "atom_a": {
+              "row": 2095,
+              "resid": "900",
+              "resname": "LIG",
+              "atom": "H15",
+              "position_nm": [
+                -0.2118,
+                0.2042,
+                0.25
+              ],
+              "record": "HETATM   26  H15 LIG L 900      -2.118   2.042   2.500  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 439,
+              "resid": "624",
+              "resname": "GLY",
+              "atom": "O",
+              "position_nm": [
+                -0.4368,
+                0.2258,
+                0.1461
+              ],
+              "record": "ATOM    898  O   GLY A 624      -4.368   2.258   1.461  1.00  0.00           O  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9723650516045304,
+            "atom_a": {
+              "row": 2080,
+              "resid": "900",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                0.3908,
+                0.1623,
+                0.5624
+              ],
+              "record": "HETATM   11  F1  LIG L 900       3.908   1.623   5.624  1.00 46.71           F  "
+            },
+            "atom_b": {
+              "row": 1890,
+              "resid": "809",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                0.4545,
+                0.3267,
+                0.3231
+              ],
+              "record": "ATOM   3875  CB  SER A 809       4.545   3.267   3.231  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            3.8890928030302985,
+            3.6083765151515124,
+            5.215500757575752
+          ],
+          "ligand_translation_nm": [
+            3.889153571428572,
+            3.6080071428571427,
+            5.215732142857142
+          ],
+          "protein_minus_ligand_translation_nm": [
+            -6.076839827340308e-05,
+            0.0003693722943696187,
+            -0.0002313852813902173
+          ],
+          "protein_translation_max_residual_A": 0.007971051597262128,
+          "ligand_translation_max_residual_A": 0.006338858134468274
+        }
+      ]
+    },
+    {
+      "task": 25,
+      "replicate": 3,
+      "trial_name": "25_mglu5_membrane_setup__5qy4iHm",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/system.gro",
+      "sha256": "95a6ca1902f806e4de364393a2c5dfe4d8c8437f8fbd8bd60259a31b7a078798",
+      "box_nm": [
+        8.538,
+        8.538,
+        10.029
+      ],
+      "n_ligand_atoms": 28,
+      "n_partner_atoms": 4242,
+      "all_direct": {
+        "distance_A": 42.31487917978733,
+        "atom_a": {
+          "row": 4276,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "H1",
+          "position_nm": [
+            4.515,
+            4.856,
+            5.597
+          ],
+          "record": "  267LIG     H1 4276   4.515   4.856   5.597"
+        },
+        "atom_b": {
+          "row": 4208,
+          "resid": "263",
+          "resname": "GLU",
+          "atom": "OE2",
+          "position_nm": [
+            6.944,
+            8.099,
+            6.817
+          ],
+          "record": "  263GLU    OE2 4208   6.944   8.099   6.817"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 37.813362717431,
+        "atom_a": {
+          "row": 4275,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "CL",
+          "position_nm": [
+            4.329,
+            4.928,
+            5.395
+          ],
+          "record": "  267LIG     CL 4275   4.329   4.928   5.395"
+        },
+        "atom_b": {
+          "row": 1873,
+          "resid": "117",
+          "resname": "LYS",
+          "atom": "HZ2",
+          "position_nm": [
+            11.299,
+            7.806,
+            7.281
+          ],
+          "record": "  117LYS    HZ2 1873  11.299   7.806   7.281"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 38.634205052000226,
+        "atom_a": {
+          "row": 4275,
+          "resid": "267",
+          "resname": "LIG",
+          "atom": "CL",
+          "position_nm": [
+            4.329,
+            4.928,
+            5.395
+          ],
+          "record": "  267LIG     CL 4275   4.329   4.928   5.395"
+        },
+        "atom_b": {
+          "row": 1871,
+          "resid": "117",
+          "resname": "LYS",
+          "atom": "NZ",
+          "position_nm": [
+            11.276,
+            7.904,
+            7.276
+          ],
+          "record": "  117LYS     NZ 1871  11.276   7.904   7.276"
+        }
+      },
+      "intermediates": [
+        {
+          "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/complex_oriented.pdb",
+          "ligand_atoms": 28,
+          "protein_atoms": 4242,
+          "all_direct": {
+            "distance_A": 1.7578685957715956,
+            "atom_a": {
+              "row": 4281,
+              "resid": "0",
+              "resname": "LIG",
+              "atom": "H4",
+              "position_nm": [
+                -1.527,
+                -1.6829999999999998,
+                0.49850000000000005
+              ],
+              "record": "ATOM   4280  H4  LIG B   0     -15.270 -16.830   4.985  1.00  0.00           H  "
+            },
+            "atom_b": {
+              "row": 1006,
+              "resid": "631",
+              "resname": "CYS",
+              "atom": "HG",
+              "position_nm": [
+                -1.6036000000000001,
+                -1.7818999999999998,
+                0.622
+              ],
+              "record": "ATOM   1005  HG  CYS A 631     -16.036 -17.819   6.220  1.00  0.00           H  "
+            }
+          },
+          "heavy_direct": {
+            "distance_A": 2.9141060378785117,
+            "atom_a": {
+              "row": 4267,
+              "resid": "0",
+              "resname": "LIG",
+              "atom": "F1",
+              "position_nm": [
+                -1.5582,
+                -1.1036,
+                0.3512
+              ],
+              "record": "ATOM   4266  F1  LIG B   0     -15.582 -11.036   3.512  1.00  0.00           F  "
+            },
+            "atom_b": {
+              "row": 3876,
+              "resid": "809",
+              "resname": "SER",
+              "atom": "CB",
+              "position_nm": [
+                -1.6944,
+                -1.0515,
+                0.0989
+              ],
+              "record": "ATOM   3875  CB  SER A 809     -16.944 -10.515   0.989  1.00  0.00           C  "
+            }
+          },
+          "protein_CA_translation_nm": [
+            10.083792803030299,
+            10.044068939393942,
+            9.94252234848486
+          ],
+          "ligand_translation_nm": [
+            5.814789285714285,
+            5.774964285714286,
+            4.927967857142859
+          ],
+          "protein_minus_ligand_translation_nm": [
+            4.269003517316014,
+            4.269104653679656,
+            5.014554491342002
+          ],
+          "protein_translation_max_residual_A": 0.007780614684894905,
+          "ligand_translation_max_residual_A": 0.00757530224359485
+        }
+      ]
+    },
+    {
+      "task": 29,
+      "replicate": 1,
+      "trial_name": "29_pept2_beta_lactam_membrane_se__VNfS7Ud",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__VNfS7Ud/artifacts/app/outputs/system.gro",
+      "sha256": "5c533403168b5546962061292e796f3f9746a5a2f4ffb4519719975eb3b76040",
+      "box_nm": [
+        11.5,
+        11.5,
+        10.0
+      ],
+      "n_ligand_atoms": 43,
+      "n_partner_atoms": 39799,
+      "all_direct": {
+        "distance_A": 1.902209241907947,
+        "atom_a": {
+          "row": 7595,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "H16",
+          "position_nm": [
+            6.129,
+            7.449,
+            5.315
+          ],
+          "record": "  702AMP    H16 7595   6.129   7.449   5.315"
+        },
+        "atom_b": {
+          "row": 20209,
+          "resid": "821",
+          "resname": "POPE",
+          "atom": "H12X",
+          "position_nm": [
+            6.055,
+            7.557,
+            5.453
+          ],
+          "record": "  821POPE  H12X20209   6.055   7.557   5.453"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 1.902209241907947,
+        "atom_a": {
+          "row": 7595,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "H16",
+          "position_nm": [
+            6.129,
+            7.449,
+            5.315
+          ],
+          "record": "  702AMP    H16 7595   6.129   7.449   5.315"
+        },
+        "atom_b": {
+          "row": 20209,
+          "resid": "821",
+          "resname": "POPE",
+          "atom": "H12X",
+          "position_nm": [
+            6.055,
+            7.557,
+            5.453
+          ],
+          "record": "  821POPE  H12X20209   6.055   7.557   5.453"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 3.788218578698961,
+        "atom_a": {
+          "row": 7579,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "C13",
+          "position_nm": [
+            6.141,
+            7.347,
+            5.277
+          ],
+          "record": "  702AMP    C13 7579   6.141   7.347   5.277"
+        },
+        "atom_b": {
+          "row": 20208,
+          "resid": "821",
+          "resname": "POPE",
+          "atom": "C312",
+          "position_nm": [
+            6.097,
+            7.644,
+            5.508
+          ],
+          "record": "  821POPE  C31220208   6.097   7.644   5.508"
+        }
+      },
+      "carbon_periodic": {
+        "distance_A": 3.788218578698961,
+        "atom_a": {
+          "row": 7579,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "C13",
+          "position_nm": [
+            6.141,
+            7.347,
+            5.277
+          ],
+          "record": "  702AMP    C13 7579   6.141   7.347   5.277"
+        },
+        "atom_b": {
+          "row": 20208,
+          "resid": "821",
+          "resname": "POPE",
+          "atom": "C312",
+          "position_nm": [
+            6.097,
+            7.644,
+            5.508
+          ],
+          "record": "  821POPE  C31220208   6.097   7.644   5.508"
+        }
+      },
+      "topology_path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__VNfS7Ud/artifacts/app/outputs/topol.top",
+      "topology_molecules_section": "\nProtein_chain_A    1\nAMP                1\nPOPE            230\nPOPG            87\nSOL             25020\nK+              147\nCl-             68\n",
+      "intermolecular_interactions_declared": false
+    },
+    {
+      "task": 29,
+      "replicate": 2,
+      "trial_name": "29_pept2_beta_lactam_membrane_se__Z4DQoGB",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB/artifacts/app/outputs/system.gro",
+      "sha256": "4cc07f55ad5c4e6a8c848cbe6eb8931a35a98ce353b21a36186b72e5d686d2bd",
+      "box_nm": [
+        11.0,
+        11.0,
+        10.0
+      ],
+      "n_ligand_atoms": 43,
+      "n_partner_atoms": 39658,
+      "all_direct": {
+        "distance_A": 0.8502352615599942,
+        "atom_a": {
+          "row": 7595,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "H12",
+          "position_nm": [
+            5.541,
+            7.28,
+            5.351
+          ],
+          "record": "  702AMP    H12 7595   5.541   7.280   5.351"
+        },
+        "atom_b": {
+          "row": 20843,
+          "resid": "808",
+          "resname": "POPE",
+          "atom": "H15X",
+          "position_nm": [
+            5.488,
+            7.342,
+            5.375
+          ],
+          "record": "  808POPE  H15X20843   5.488   7.342   5.375"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 0.8502352615599942,
+        "atom_a": {
+          "row": 7595,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "H12",
+          "position_nm": [
+            5.541,
+            7.28,
+            5.351
+          ],
+          "record": "  702AMP    H12 7595   5.541   7.280   5.351"
+        },
+        "atom_b": {
+          "row": 20843,
+          "resid": "808",
+          "resname": "POPE",
+          "atom": "H15X",
+          "position_nm": [
+            5.488,
+            7.342,
+            5.375
+          ],
+          "record": "  808POPE  H15X20843   5.488   7.342   5.375"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 1.368612436009551,
+        "atom_a": {
+          "row": 7575,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "C6",
+          "position_nm": [
+            5.246,
+            7.258,
+            5.184
+          ],
+          "record": "  702AMP     C6 7575   5.246   7.258   5.184"
+        },
+        "atom_b": {
+          "row": 20845,
+          "resid": "808",
+          "resname": "POPE",
+          "atom": "C316",
+          "position_nm": [
+            5.301,
+            7.267,
+            5.309
+          ],
+          "record": "  808POPE  C31620845   5.301   7.267   5.309"
+        }
+      },
+      "carbon_periodic": {
+        "distance_A": 1.368612436009551,
+        "atom_a": {
+          "row": 7575,
+          "resid": "702",
+          "resname": "AMP",
+          "atom": "C6",
+          "position_nm": [
+            5.246,
+            7.258,
+            5.184
+          ],
+          "record": "  702AMP     C6 7575   5.246   7.258   5.184"
+        },
+        "atom_b": {
+          "row": 20845,
+          "resid": "808",
+          "resname": "POPE",
+          "atom": "C316",
+          "position_nm": [
+            5.301,
+            7.267,
+            5.309
+          ],
+          "record": "  808POPE  C31620845   5.301   7.267   5.309"
+        }
+      },
+      "topology_path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB/artifacts/app/outputs/topol.top",
+      "topology_molecules_section": "\n; Compound        #mols\nProtein_chain_A     1\nAMP                 1\nPOPE              120\nPOPG               40\nPOPE              117\nPOPG               39\nSOL         21456\nK+               129\nCl-              58\n",
+      "intermolecular_interactions_declared": false,
+      "minimization_log_path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB/artifacts/app/outputs/em_test_mdrun.log",
+      "minimization_log_tail": "       2000\n           Step           Time\n              0        0.00000\n\n   Energies (kJ/mol)\n           Bond          Angle            U-B    Proper Dih.  Improper Dih.\n    3.94693e+04    3.33053e+03    1.46542e+05   -1.48913e+03    4.10140e+02\n Per. Imp. Dih.          LJ-14     Coulomb-14        LJ (SR)  Disper. corr.\n    3.34388e+01    1.97390e+04    3.02008e+05    1.54165e+25   -1.76820e+04\n   Coulomb (SR)   Coul. recip.      Potential Pres. DC (bar) Pressure (bar)\n   -1.49274e+06    1.27987e+05    1.54165e+25   -2.42973e+02    8.46225e+23\n\n           Step           Time\n              1        1.00000\n\n           Step           Time\n              2        2.00000\n\n           Step           Time\n              3        3.00000\n\n           Step           Time\n              4        4.00000\n\n           Step           Time\n              5        5.00000\n\n           Step           Time\n              6        6.00000\n\n           Step           Time\n              7        7.00000\n\n           Step           Time\n              8        8.00000\n\n           Step           Time\n              9        9.00000\n\n           Step           Time\n             10       10.00000\n\n           Step           Time\n             11       11.00000\n\n           Step           Time\n             12       12.00000\n\n           Step           Time\n             13       13.00000\n\n           Step           Time\n             14       14.00000\n\n\nEnergy minimization has stopped because the force on at least one atom is not\nfinite. This usually means atoms are overlapping. Modify the input\ncoordinates to remove atom overlap or use soft-core potentials with the free\nenergy code to avoid infinite forces.\nYou could also be lucky that switching to double precision is sufficient to\nobtain finite forces.\n\nSteepest Descents converged to machine precision in 15 steps,\nbut did not reach the requested Fmax < 1000.\nPotential Energy  =  1.5416479e+25\nMaximum force     =            inf on atom 44170\nNorm of force     =            inf\n\n    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S\n\n av. #atoms communicated per step for force:  2 x 119513.0\n\nFinished mdrun on rank 0 Sun Nov  8 10:47:09 2026\n\n",
+      "reported_infinite_force_atom": {
+        "row": 44170,
+        "resid": "994",
+        "resname": "POPG",
+        "atom": "H4X",
+        "position_nm": [
+          1.211,
+          9.09,
+          3.566
+        ],
+        "record": "  994POPG   H4X44170   1.211   9.090   3.566"
+      },
+      "infinite_force_atom_nearest_periodic": {
+        "distance_A": 0.05477225575050815,
+        "atom_a": {
+          "row": 44170,
+          "resid": "994",
+          "resname": "POPG",
+          "atom": "H4X",
+          "position_nm": [
+            1.211,
+            9.09,
+            3.566
+          ],
+          "record": "  994POPG   H4X44170   1.211   9.090   3.566"
+        },
+        "atom_b": {
+          "row": 31014,
+          "resid": "889",
+          "resname": "POPE",
+          "atom": "C34",
+          "position_nm": [
+            1.212,
+            9.085,
+            3.568
+          ],
+          "record": "  889POPE   C3431014   1.212   9.085   3.568"
+        }
+      }
+    },
+    {
+      "task": 29,
+      "replicate": 3,
+      "trial_name": "29_pept2_beta_lactam_membrane_se__LPurh2R",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/29_pept2_beta_lactam_membrane_se__LPurh2R/artifacts/app/outputs/system.gro",
+      "sha256": "8f98d072dc40b6b6afe95fe1ef96a6009e6a2a7a71167c5f1b83298ab5ef0e50",
+      "box_nm": [
+        12.2996,
+        11.7302,
+        10.7
+      ],
+      "n_ligand_atoms": 43,
+      "n_partner_atoms": 49573,
+      "all_direct": {
+        "distance_A": 13.577912210645643,
+        "atom_a": {
+          "row": 7593,
+          "resid": "702",
+          "resname": "AIC",
+          "atom": "H17",
+          "position_nm": [
+            6.635,
+            6.432,
+            5.649
+          ],
+          "record": "  702AIC    H17 7593   6.635   6.432   5.649"
+        },
+        "atom_b": {
+          "row": 54504,
+          "resid": "1076",
+          "resname": "POPG",
+          "atom": "H16Z",
+          "position_nm": [
+            7.469,
+            7.428,
+            5.254
+          ],
+          "record": " 1076POPG  H16Z54504   7.469   7.428   5.254"
+        }
+      },
+      "all_periodic": {
+        "distance_A": 13.577912210645643,
+        "atom_a": {
+          "row": 7593,
+          "resid": "702",
+          "resname": "AIC",
+          "atom": "H17",
+          "position_nm": [
+            6.635,
+            6.432,
+            5.649
+          ],
+          "record": "  702AIC    H17 7593   6.635   6.432   5.649"
+        },
+        "atom_b": {
+          "row": 54504,
+          "resid": "1076",
+          "resname": "POPG",
+          "atom": "H16Z",
+          "position_nm": [
+            7.469,
+            7.428,
+            5.254
+          ],
+          "record": " 1076POPG  H16Z54504   7.469   7.428   5.254"
+        }
+      },
+      "heavy_periodic": {
+        "distance_A": 15.559656165866905,
+        "atom_a": {
+          "row": 7579,
+          "resid": "702",
+          "resname": "AIC",
+          "atom": "C9",
+          "position_nm": [
+            6.743,
+            6.336,
+            5.894
+          ],
+          "record": "  702AIC     C9 7579   6.743   6.336   5.894"
+        },
+        "atom_b": {
+          "row": 54501,
+          "resid": "1076",
+          "resname": "POPG",
+          "atom": "C316",
+          "position_nm": [
+            7.549,
+            7.463,
+            5.186
+          ],
+          "record": " 1076POPG  C31654501   7.549   7.463   5.186"
+        }
+      },
+      "carbon_periodic": {
+        "distance_A": 15.559656165866905,
+        "atom_a": {
+          "row": 7579,
+          "resid": "702",
+          "resname": "AIC",
+          "atom": "C9",
+          "position_nm": [
+            6.743,
+            6.336,
+            5.894
+          ],
+          "record": "  702AIC     C9 7579   6.743   6.336   5.894"
+        },
+        "atom_b": {
+          "row": 54501,
+          "resid": "1076",
+          "resname": "POPG",
+          "atom": "C316",
+          "position_nm": [
+            7.549,
+            7.463,
+            5.186
+          ],
+          "record": " 1076POPG  C31654501   7.549   7.463   5.186"
+        }
+      },
+      "topology_path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/29_pept2_beta_lactam_membrane_se__LPurh2R/artifacts/app/outputs/topol.top",
+      "topology_molecules_section": "\nProtein_chain_A     1\nProtein_chain_B     1\nAIC                 1\nPOPE              296\nPOPG              99\nSOL         31003\nK+               230\nCl-              139\n",
+      "intermolecular_interactions_declared": false
+    }
+  ],
+  "task11_delivered_boxes": [
+    {
+      "model": "gemini-4-argon",
+      "replicate": 1,
+      "trial_name": "11_amb2gmx_em__w23rZnc",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-10-20__23-06-43/11_amb2gmx_em__w23rZnc/artifacts/app/outputs/system.gro",
+      "absent": true,
+      "strict_pass": false,
+      "status": "error"
+    },
+    {
+      "model": "gemini-4-argon",
+      "replicate": 2,
+      "trial_name": "11_amb2gmx_em__Mmg8ESr",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-10-20__23-06-43/11_amb2gmx_em__Mmg8ESr/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        64.85953,
+        60.14098,
+        59.72475
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    },
+    {
+      "model": "gemini-4-argon",
+      "replicate": 3,
+      "trial_name": "11_amb2gmx_em__WqbQ2sm",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-11-13__18-18-04/11_amb2gmx_em__WqbQ2sm/artifacts/app/outputs/system.gro",
+      "absent": true,
+      "strict_pass": false,
+      "status": "error"
+    },
+    {
+      "model": "glm-5.2",
+      "replicate": 1,
+      "trial_name": "11_amb2gmx_em__LJ5n3Hp",
+      "path": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep1/2026-08-26__01-09-50/11_amb2gmx_em__LJ5n3Hp/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        7.0,
+        7.0,
+        7.0
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    },
+    {
+      "model": "glm-5.2",
+      "replicate": 2,
+      "trial_name": "11_amb2gmx_em__raBx4vP",
+      "path": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep2/2026-08-26__13-03-10/11_amb2gmx_em__raBx4vP/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        5.243,
+        5.007,
+        4.987
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    },
+    {
+      "model": "glm-5.2",
+      "replicate": 3,
+      "trial_name": "11_amb2gmx_em__jxqzCMC",
+      "path": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep3/2026-08-26__14-16-29/11_amb2gmx_em__jxqzCMC/artifacts/app/outputs/system.gro",
+      "absent": true,
+      "strict_pass": false,
+      "status": "error"
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 1,
+      "trial_name": "11_amb2gmx_em__eEnAK4b",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__eEnAK4b/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 2,
+      "trial_name": "11_amb2gmx_em__DMRhH6i",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__DMRhH6i/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 3,
+      "trial_name": "11_amb2gmx_em__XJyWjVQ",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__XJyWjVQ/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "replicate": 1,
+      "trial_name": "11_amb2gmx_em__ybs2XUz",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__ybs2XUz/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "replicate": 2,
+      "trial_name": "11_amb2gmx_em__jik3KSL",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__jik3KSL/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "replicate": 3,
+      "trial_name": "11_amb2gmx_em__ycafWr6",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__ycafWr6/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "usable_positive_box": false,
+      "strict_pass": false,
+      "status": "completed"
+    },
+    {
+      "model": "opus-5.5",
+      "replicate": 1,
+      "trial_name": "11_amb2gmx_em__JedEAit",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/11_amb2gmx_em__JedEAit/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        5.24298,
+        5.00705,
+        4.98624
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    },
+    {
+      "model": "opus-5.5",
+      "replicate": 2,
+      "trial_name": "11_amb2gmx_em__KPTyvH4",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/11_amb2gmx_em__KPTyvH4/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        5.24298,
+        5.00705,
+        4.98624
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    },
+    {
+      "model": "opus-5.5",
+      "replicate": 3,
+      "trial_name": "11_amb2gmx_em__zzcYX4w",
+      "path": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/11_amb2gmx_em__zzcYX4w/artifacts/app/outputs/system.gro",
+      "atom_count": 829,
+      "box_nm": [
+        6.24298,
+        6.00705,
+        5.98624
+      ],
+      "usable_positive_box": true,
+      "strict_pass": true,
+      "status": "completed"
+    }
+  ],
+  "task17_recorded_rankings": [
+    {
+      "replicate": 2,
+      "trial_name": "17_prolif_int__STe7b2G",
+      "transcript": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/gemini-4-argon/17_prolif_int__repeat-02/evidence/transcript.txt",
+      "ranking_event": 5,
+      "recorded_ranking_rows": 20,
+      "recorded_first_ten": [
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE222",
+          "interaction_type": "Hydrophobic",
+          "occupancy": 84.615385
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE230",
+          "interaction_type": "Hydrophobic",
+          "occupancy": 84.615385
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "HIS266",
+          "interaction_type": "PiStacking",
+          "occupancy": 80.769231
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "HIS266",
+          "interaction_type": "VdWContact",
+          "occupancy": 73.076923
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ASP224",
+          "interaction_type": "VdWContact",
+          "occupancy": 69.230769
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "GLN58",
+          "interaction_type": "VdWContact",
+          "occupancy": 69.230769
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "GLU38",
+          "interaction_type": "VdWContact",
+          "occupancy": 61.538462
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ASP224",
+          "interaction_type": "HBDonor",
+          "occupancy": 57.692308
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE230",
+          "interaction_type": "VdWContact",
+          "occupancy": 46.153846
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "LEU232",
+          "interaction_type": "VdWContact",
+          "occupancy": 38.461538
+        }
+      ],
+      "same_row_set_as_reference": true,
+      "maximum_occupancy_error_percentage_points": 0.004615000000001146,
+      "reference_path": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena-dev/tasks/17_prolif_int/tests/correctness/expected_outputs/prolif_interactions.csv",
+      "reference_sha256": "e1eb91260e5970730af05cd5cddddf05e255c07b8111eb5d599f38e3d3e4aa95",
+      "subsequent_events": [
+        {
+          "event": "0006 (trajectory.steps[5])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\nimport inspect\\n\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nlig = u.select_atoms('resname HIT')\\nprot = u.select_atoms('protein')\\n\\nprint('lig atom attributes:', dir(lig[0]))\\nfor attr in ['resname', 'resid', 'resnum', 'segid', 'chainID']:\\n    try:\\n        print('lig', attr, getattr(lig[0], attr))\\n        print('prot[0]', attr, getattr(prot[0], attr))\\n    except Exception as e:\\n        print(attr, 'error:', e)\\n\\nmol_lig = plf.Molecule.from_mda(lig)\\nprint('mol_lig residues:', list(mol_lig.residues.keys()))\\nr_id = list(mol_lig.residues.keys())[0]\\nprint('ResidueId:', repr(r_id), 'name:', r"
+        },
+        {
+          "event": "0007 (trajectory.steps[6])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nfor seg in u.segments[:3]:\\n    print('=== Segment:', seg.segid)\\n    res_list = [(r.resname, r.resid, r.resnum, r.atoms[0].chainID) for r in seg.residues]\\n    print(res_list[:15])\\n    print('...')\\n    print(res_list[-15:])\\n\\\"\""
+        },
+        {
+          "event": "0008 (trajectory.steps[7])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nu_false = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc', tpr_resid_from_one=False)\\nfor seg in u_false.segments[:3]:\\n    print('=== tpr_resid_from_one=False, Segment:', seg.segid)\\n    res_list = [(r.resname, r.resid, r.resnum, r.atoms[0].chainID) for r in seg.residues]\\n    print(res_list[:10])\\n    print('...')\\n    print(res_list[-10:])\\n\\\"\""
+        },
+        {
+          "event": "0009 (trajectory.steps[8])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.topology.TPRParser import TPRParser\\nimport inspect\\nprint(inspect.getsource(TPRParser.parse))\\n\\\"\""
+        },
+        {
+          "event": "0010 (trajectory.steps[9])",
+          "summary": "python3 -c \\\"\\nimport prolif as plf\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nimport inspect\\nprint('=== plf.Molecule.from_mda ===')\\nprint(inspect.getsource(plf.Molecule.from_mda))\\nprint('=== tpr_utils.do_mtop ===')\\nprint(inspect.getsource(tpr_utils.do_mtop))\\n\\\"\""
+        },
+        {
+          "event": "0011 (trajectory.steps[10])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nimport inspect\\nprint(inspect.getsource(tpr_utils.do_moltype))\\n\\\"\""
+        },
+        {
+          "event": "0012 (trajectory.steps[11])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nimport inspect\\nprint(inspect.getsource(tpr_utils.do_atoms))\\n\\\"\""
+        },
+        {
+          "event": "0013 (trajectory.steps[12])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nimport inspect\\nprint(inspect.getsource(tpr_utils.do_resinfo))\\n\\\"\""
+        },
+        {
+          "event": "0014 (trajectory.steps[13])",
+          "summary": "which gmx; python3 -c \\\"\\nimport MDAnalysis as mda\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nfrom MDAnalysis.lib.util import openany\\n\\norig_do_resinfo = tpr_utils.do_resinfo\\ndef debug_do_resinfo(data, symtab, fver, nres):\\n    resnames = []\\n    resnrs = []\\n    ics = []\\n    for i in range(nres):\\n        resnames.append(symtab[data.unpack_int()])\\n        resnrs.append(data.unpack_int())\\n        ics.append(data.unpack_uchar())\\n    if nres < 500:\\n        print('nres:', nres, 'first 5:', list(zip(resnames[:5], resnrs[:5], ics[:5])), 'last 5:', list(zip(resnames[-5:], resnrs[-5:], ics[-5:])))\\n    return resnames\\n\\ntpr_utils.do_resinfo = debug_do_resinfo\\nu = mda.Universe"
+        },
+        {
+          "event": "0015 (trajectory.steps[14])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\n\\ndef debug_do_resinfo(data, symtab, fver, nres):\\n    resnames = []\\n    resnrs = []\\n    ics = []\\n    for i in range(nres):\\n        resnames.append(symtab[data.unpack_int()])\\n        resnrs.append(data.unpack_int())\\n        ics.append(data.unpack_uchar())\\n    if nres == 162:\\n        for idx, (rn, rnr) in enumerate(zip(resnames, resnrs)):\\n            if rn in (b'ILE', b'HIS'):\\n                print(f'idx={idx}, mda_A={idx+1}, mda_D={idx+163}, resname={rn.decode()}, resnr={rnr}')\\n    return resnames\\n\\ntpr_utils.do_resinfo = debug_do_resinfo\\nu = mda.Universe('/app/inputs/topology.tpr', "
+        },
+        {
+          "event": "0016 (trajectory.steps[15])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\nimport inspect\\nfrom MDAnalysis.converters.RDKit import RDKitConverter\\n\\nprint(inspect.getsource(plf.Molecule._use_segid))\\n\\\"\""
+        },
+        {
+          "event": "0017 (trajectory.steps[16])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\nimport inspect\\nfrom MDAnalysis.converters import RDKit\\nprint(inspect.getsource(RDKit.atom_group_to_mol))\\nprint(inspect.getsource(plf.Fingerprint.to_dataframe))\\n\\\"\""
+        },
+        {
+          "event": "0018 (trajectory.steps[17])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\nimport inspect\\nfrom MDAnalysis.converters import RDKit\\nprint(inspect.getsource(RDKit.atomgroup_to_mol))\\nprint(inspect.getsource(plf.utils.to_dataframe))\\n\\\"\""
+        },
+        {
+          "event": "0019 (trajectory.steps[18])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.converters import RDKit\\nimport inspect\\nprint('RDATTRIBUTES:', RDKit.RDATTRIBUTES)\\nprint(inspect.getsource(RDKit._add_mda_attr_to_rdkit))\\n\\\"\""
+        },
+        {
+          "event": "0020 (trajectory.steps[19])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis.topology.TPRParser as tp\\nimport inspect\\nprint(inspect.getsource(tp))\\n\\\"\""
+        },
+        {
+          "event": "0021 (trajectory.steps[20])",
+          "summary": "pip list; ls -la /root /tmp\""
+        },
+        {
+          "event": "0022 (trajectory.steps[21])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\n\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nlig = u.select_atoms('resname HIT')\\nprot = u.select_atoms('protein')\\nfp = plf.Fingerprint()\\nfp.run(u.trajectory[:2], lig, prot)\\nfor frame, data in fp.ifp.items():\\n    print('Frame', frame)\\n    for (lig_res, prot_res), inter in list(data.items())[:3]:\\n        print(' ', type(lig_res), repr(lig_res), str(lig_res), '|', f'{lig_res.name}{lig_res.number}')\\n        print(' ', type(prot_res), repr(prot_res), str(prot_res), '|', f'{prot_res.name}{prot_res.number}')\\n\\\"\""
+        },
+        {
+          "event": "0023 (trajectory.steps[22])",
+          "summary": "git rev-parse --show-toplevel && git log -n 5 --stat\""
+        },
+        {
+          "event": "0024 (trajectory.steps[23])",
+          "summary": "ls -la /app/inputs /app/outputs && ls -lt /usr/local/lib/python3.10/dist-packages | head -n 25\""
+        },
+        {
+          "event": "0025 (trajectory.steps[24])",
+          "summary": "date && stat /app/inputs/.trajectory.xtc_offsets.npz /app/inputs/.trajectory.xtc_offsets.lock\""
+        },
+        {
+          "event": "0026 (trajectory.steps[25])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nfor r in u.residues[:325]:\\n    if r.resid in (82, 147, 222, 230, 244, 266, 325):\\n        print(r.resid, r.resname, r.segid)\\n\\\"\""
+        },
+        {
+          "event": "0027 (trajectory.steps[26])",
+          "summary": "python3 -c \\\"\\nimport prolif, os, glob\\nprolif_dir = os.path.dirname(prolif.__file__)\\nfor f in sorted(glob.glob(os.path.join(prolif_dir, '*.py'))):\\n    print('===', os.path.basename(f))\\n    with open(f) as fh:\\n        for line in fh:\\n            if 'def ' in line or 'class ' in line or 'chain' in line:\\n                print('  ', line.rstrip())\\n\\\"\""
+        }
+      ],
+      "method": "Parse historical stdout only; normalize chain suffixes; compare unordered tied ranks and numeric occupancies to saved reference. No ProLIF recomputation."
+    },
+    {
+      "replicate": 3,
+      "trial_name": "17_prolif_int__53mZX2z",
+      "transcript": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/gemini-4-argon/17_prolif_int__repeat-03/evidence/transcript.txt",
+      "ranking_event": 17,
+      "recorded_ranking_rows": 31,
+      "recorded_first_ten": [
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE222",
+          "interaction_type": "Hydrophobic",
+          "occupancy": 84.615385
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE230",
+          "interaction_type": "Hydrophobic",
+          "occupancy": 84.615385
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "HIS266",
+          "interaction_type": "PiStacking",
+          "occupancy": 80.769231
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "HIS266",
+          "interaction_type": "VdWContact",
+          "occupancy": 73.076923
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ASP224",
+          "interaction_type": "VdWContact",
+          "occupancy": 69.230769
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "GLN58",
+          "interaction_type": "VdWContact",
+          "occupancy": 69.230769
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "GLU38",
+          "interaction_type": "VdWContact",
+          "occupancy": 61.538462
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ASP224",
+          "interaction_type": "HBDonor",
+          "occupancy": 57.692308
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "ILE230",
+          "interaction_type": "VdWContact",
+          "occupancy": 46.153846
+        },
+        {
+          "ligand_residue": "HIT325",
+          "protein_residue": "LEU232",
+          "interaction_type": "VdWContact",
+          "occupancy": 38.461538
+        }
+      ],
+      "same_row_set_as_reference": true,
+      "maximum_occupancy_error_percentage_points": 0.004615000000001146,
+      "reference_path": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena-dev/tasks/17_prolif_int/tests/correctness/expected_outputs/prolif_interactions.csv",
+      "reference_sha256": "e1eb91260e5970730af05cd5cddddf05e255c07b8111eb5d599f38e3d3e4aa95",
+      "subsequent_events": [
+        {
+          "event": "0018 (trajectory.steps[17])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nimport prolif as plf\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nlig = plf.Molecule.from_mda(u, 'resname HIT')\\nprot = plf.Molecule.from_mda(u, 'protein')\\nprint('lig[0].resid:', repr(lig[0].resid), str(lig[0].resid))\\nprint('prot[0].resid:', repr(prot[0].resid), str(prot[0].resid))\\n\\\"\""
+        },
+        {
+          "event": "0019 (trajectory.steps[18])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nfor seg in u.segments[:3]:\\n    print(seg.segid)\\n    print([(r.resid, r.resname) for r in seg.residues[:10]])\\n\\\"\""
+        },
+        {
+          "event": "0020 (trajectory.steps[19])",
+          "summary": "python3 -c \\\"\\nimport inspect\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nprint(inspect.getsource(tpr_utils.do_moltype))\\nprint(inspect.getsource(tpr_utils.do_atoms))\\n\\\"\""
+        },
+        {
+          "event": "0021 (trajectory.steps[20])",
+          "summary": "python3 -c \\\"\\nimport inspect\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nprint(inspect.getsource(tpr_utils.do_resinfo))\\n\\\"\""
+        },
+        {
+          "event": "0022 (trajectory.steps[21])",
+          "summary": "python3 -c \\\"\\nfrom MDAnalysis.topology.tpr import utils as tpr_utils\\nfrom MDAnalysis.topology.tpr import setting as S\\n\\norig_do_resinfo = tpr_utils.do_resinfo\\ndef debug_do_resinfo(data, symtab, fver, nres):\\n    resnames = []\\n    resnrs = []\\n    ics = []\\n    for i in range(nres):\\n        resnames.append(symtab[data.unpack_int()].decode())\\n        resnrs.append(data.unpack_int())\\n        ics.append(data.unpack_uchar())\\n    print('Mol nres:', nres, 'first 5 (resname, resnr, ic):', list(zip(resnames[:5], resnrs[:5], ics[:5])))\\n    print('  last 5:', list(zip(resnames[-5:], resnrs[-5:], ics[-5:])))\\n    return [r.encode() for r in resnames]\\n\\ntpr_utils.do_resinfo = debug_do_resinfo\\"
+        },
+        {
+          "event": "0023 (trajectory.steps[22])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis as mda\\nu = mda.Universe('/app/inputs/topology.tpr', '/app/inputs/trajectory.xtc')\\nfor r in u.residues[:325]:\\n    orig_resnr = (r.resid - 1) % 162 + 623 if r.resid <= 324 else 1\\n    if orig_resnr == 704 or r.resid == 147 or (r.resid - 162) == 147:\\n        print(r.segid, r.resname, 'mda_resid:', r.resid, 'chain_local_resid:', (r.resid-1)%162+1, 'orig_resnr:', orig_resnr)\\n\\\"\""
+        },
+        {
+          "event": "0024 (trajectory.steps[23])",
+          "summary": "python3 -c \\\"\\nimport inspect\\nimport prolif as plf\\nprint(inspect.getsource(plf.Fingerprint.to_dataframe))\\nprint(inspect.getsource(plf.dataframe.to_dataframe))\\n\\\"\""
+        },
+        {
+          "event": "0025 (trajectory.steps[24])",
+          "summary": "python3 -c \\\"\\nimport MDAnalysis.topology.TPRParser as p\\nimport inspect\\nprint(inspect.getsource(p))\\n\\\"\""
+        },
+        {
+          "event": "0026 (trajectory.steps[25])",
+          "summary": "python3 -c \\\"\\nimport inspect\\nfrom MDAnalysis.converters import RDKit\\nprint(inspect.getsource(RDKit._add_mda_attr_to_rdkit))\\nprint('RDATTRIBUTES:', RDKit.RDATTRIBUTES)\\n\\\"\""
+        },
+        {
+          "event": "0027 (trajectory.steps[26])",
+          "summary": "git status && git log -n 5\""
+        }
+      ],
+      "method": "Parse historical stdout only; normalize chain suffixes; compare unordered tied ranks and numeric occupancies to saved reference. No ProLIF recomputation."
+    }
+  ],
+  "source_sha256": {
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-10-20__23-06-43/11_amb2gmx_em__Mmg8ESr/artifacts/app/outputs/system.gro": "bc50178eff275a844dac445dc5e72a36254ec8b8b6b743dc447aa326635b6f73",
+    "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep1/2026-08-26__01-09-50/11_amb2gmx_em__LJ5n3Hp/artifacts/app/outputs/system.gro": "dd1241c66c93ebe94638a90d312e7a31f98bb53a800d88d211e317084374f2b7",
+    "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep2/2026-08-26__13-03-10/11_amb2gmx_em__raBx4vP/artifacts/app/outputs/system.gro": "cc83c2e65fde56daa5145b688d4fac5a28e0a2fcbfd6cdd10be2e7eda61a5139",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__eEnAK4b/artifacts/app/outputs/system.gro": "6a42887024320a405d555c6bad0aeaa4429f35c4f47ce38914d0298abd7155df",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__DMRhH6i/artifacts/app/outputs/system.gro": "d617cc3f80354c11b52fd44447e1364c1ff4c14c3dea3dcb07958101eab3a9d0",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-06__16-55-58/11_amb2gmx_em__XJyWjVQ/artifacts/app/outputs/system.gro": "a13f5ad4ad090dabbd83b1a0d41ea73593bc729a5cf95736d2aad9893592fa5e",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__ybs2XUz/artifacts/app/outputs/system.gro": "6a42887024320a405d555c6bad0aeaa4429f35c4f47ce38914d0298abd7155df",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__jik3KSL/artifacts/app/outputs/system.gro": "bd20d9abc0f0b9593d767e8a526963befc3befc6ceb0e681411419e1f44279b9",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/11_amb2gmx_em__ycafWr6/artifacts/app/outputs/system.gro": "cd611e71f2fa7f5b3b879b18de1e994d8a214ef58297f614c044aa996ac3e51e",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/11_amb2gmx_em__JedEAit/artifacts/app/outputs/system.gro": "31b0f4ddff039603b12bc451ab084f91a66c727649ba78e7306e510a5358623b",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/11_amb2gmx_em__KPTyvH4/artifacts/app/outputs/system.gro": "31b0f4ddff039603b12bc451ab084f91a66c727649ba78e7306e510a5358623b",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/11_amb2gmx_em__zzcYX4w/artifacts/app/outputs/system.gro": "42d71508143436f4c27bb95b0217cda8066a518d31e7ab20cc73a1799fff2751",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/system.gro": "6078400bbd24470e578b71dade8adbd8a420c479cbb4c526999fd28c65e757c4",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/complex.pdb": "c512d0ff194664461ea59f8d8224a547ee76db49fcc30ed409e029964527ce04",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/complex_oriented.pdb": "344ac5b9a25a39f4c44fd7172f1d9bc6f9c08606e26632231a5cb722651ccb1a",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/pm/bilayer_complex.pdb": "2fa2b530e8fe94bf0e276e7159aee1cfacbd083fb2145d8a1daf9ad7cb0b8e86",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__8YSEgrj/artifacts/app/outputs/work/pm/complex_oriented.pdb": "344ac5b9a25a39f4c44fd7172f1d9bc6f9c08606e26632231a5cb722651ccb1a",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__miVipsZ/artifacts/app/outputs/system.gro": "86f6ffc126117938aed2028dd03a89a244cc3ef0604cdb30617ab72479fa675c",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/25_mglu5_membrane_setup__miVipsZ/artifacts/app/outputs/complex_prepared.pdb": "2b9ccd3016a1c381dd887720812cba87cb0065aa1fc9ea262e881801b3d7c2c4",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/system.gro": "95a6ca1902f806e4de364393a2c5dfe4d8c8437f8fbd8bd60259a31b7a078798",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/25_mglu5_membrane_setup__5qy4iHm/artifacts/app/outputs/complex_oriented.pdb": "fd9756eee54a6159e24ecfd825f6ead55b159b689781e81aac6e339c7d4e0e4a",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__VNfS7Ud/artifacts/app/outputs/system.gro": "5c533403168b5546962061292e796f3f9746a5a2f4ffb4519719975eb3b76040",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/29_pept2_beta_lactam_membrane_se__Z4DQoGB/artifacts/app/outputs/system.gro": "4cc07f55ad5c4e6a8c848cbe6eb8931a35a98ce353b21a36186b72e5d686d2bd",
+    "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/29_pept2_beta_lactam_membrane_se__LPurh2R/artifacts/app/outputs/system.gro": "8f98d072dc40b6b6afe95fe1ef96a6009e6a2a7a71167c5f1b83298ab5ef0e50"
+  }
+}

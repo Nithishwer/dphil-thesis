@@ -1,0 +1,19 @@
+; D2P-specific additions from the supplied Damjanovic (2009) table.
+; Existing CHARMM types and all other interaction parameters are unchanged.
+[ bondtypes ]
+; i    j     funct    b0 (nm)   kb (kJ mol^-1 nm^-2)
+  ON2  CD       1     0.1400    192464.0
+
+[ angletypes ]
+; i    j    k    funct theta0  ktheta     S0 (nm)   kub
+  CD   ON2  P       5  120.0   167.36     0.2330    29288.0
+  ON2  CD   CT2     5  110.5   460.24     0.0000        0.0
+  ON2  CD   CT3     5  110.5   460.24     0.0000        0.0
+  ON2  CD   OB      5  123.0   418.40     0.2262   175728.0
+
+[ dihedraltypes ]
+; i    j    k    l     funct   phase     kphi      multiplicity
+  X    CD   ON2  X        9     180.0    41.84000       1
+  X    CD   ON2  X        9     180.0     9.41400       2
+  X    CD   ON2  X        9     180.0     5.69024       3
+  CD   ON2  P    ON3      9       0.0     0.41840       3

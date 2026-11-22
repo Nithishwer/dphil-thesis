@@ -1,0 +1,20 @@
+{
+  "copies": [
+    {
+      "source": "analysis/task39_policy_b_2026-11-20/current/figures/task_heatmap_all_twelve.pdf",
+      "destination": "figures/figure_S2/figure_S2.pdf",
+      "sha256": "2b50e874e24cfbbf65f0b66134cc09fbabf94c3cbe0a5cbe3d9f3e080d336ea5",
+      "byte_identical": true
+    },
+    {
+      "source": "analysis/task39_policy_b_2026-11-20/current/figures/task_heatmap_all_twelve.png",
+      "destination": "figures/figure_S2/figure_S2.png",
+      "sha256": "3e577a3dd8121015b0d75c6953b682501627d668729067f3837dae487cf806d2",
+      "byte_identical": true
+    }
+  ],
+  "existing_implicit_S2_in_SI": "figures/codex_regrade_human/figure_A1.pdf",
+  "numbering_conflict": true,
+  "tex_modified": false,
+  "note": "New named assets only; existing SI figures and their numbering are untouched."
+}

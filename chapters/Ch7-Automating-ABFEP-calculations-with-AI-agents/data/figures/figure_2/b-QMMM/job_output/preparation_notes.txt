@@ -1,0 +1,28 @@
+Preparation details
+
+Selected exactly TYR X188, ASN X192, ASN X348, GLU X412 (biological E622),
+and unk X915. All 108 selected PDB atoms, including their hydrogens, retain
+their original coordinates. No water, lipid, ion, or other residue is included.
+Original atoms are ordered first, by the requested residue order and PDB order;
+48 synthetic cap atoms follow. atom_map.tsv records all 0-based indices.
+
+Each isolated residue has CH3-C(=O)- (acetyl, ACE) at its N boundary and
+-NH-CH3 (N-methylamide, NME) at its C boundary. Caps retain peptide amide
+chemistry, have explicit hydrogens, and have been relaxed with MMFF94s while
+all original atoms were fixed. Nearby excluded peptide atoms supplied only
+orientation vectors; none were extracted into the cluster.
+
+Ligand heavy-atom connectivity and bond orders were mapped from ligand.sdf.
+All four ligand stereocenters agree with the SDF. PDB protonation is retained:
+N3x is NH3+, the ligand carboxyl group is COO-, and GLU412 is COO-. The SDF
+is a neutral NH2/COOH reference, so its proton locations were not substituted
+for the PDB's zwitterionic ligand. The structural formal-charge sum is -1;
+the requested ORCA charge 0 and multiplicity 2 define a 625-electron radical
+state, one electron fewer than the conventional closed-shell formal-charge
+assignment. No proton has been added or removed to change that choice.
+
+ORCA freezes every heavy atom (including the caps) with Cartesian constraints.
+All hydrogens may relax, subject to the H2x--OE1 distance scan. The exact
+starting distance is calculated from the unchanged PDB coordinates.
+ORCA is not installed here; the input was checked structurally and against
+the documented ORCA scan/constraint syntax, but no QM calculation was run.

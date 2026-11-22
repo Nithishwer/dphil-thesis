@@ -34,7 +34,7 @@ machine; no external font installation is needed.
 - `frontmatter/personalize.tex`: title, author, advisor, degree, and date.
 - `frontmatter/`: abstract, previous publications, and acknowledgments.
 - `chapters/`: one folder per chapter and appendix, each containing its `.tex`
-  source and a `figures/` folder.
+  source and separate `data/`, `scripts/`, and `figures/` folders.
 - `references.bib`: bibliography entries.
 - `Dissertate.cls`: typography and page layout.
 
@@ -43,13 +43,23 @@ For example, Chapter 1 is organized as:
 ```text
 chapters/Ch1-Introduction/
 ├── Ch1-Introduction.tex
+├── data/
+├── scripts/
 └── figures/
 ```
 
-Keep each chapter's figures in its own `figures/` folder. Figure paths in LaTeX
-are relative to the repository root, for example
-`chapters/Ch1-Introduction/figures/example.pdf`. Empty figure folders contain a
-`.gitkeep` file so Git preserves them.
+Keep input data in `data/`, analysis and plotting code in `scripts/`, and figure
+outputs in `figures/` within the relevant chapter. Figure paths in LaTeX are
+relative to the repository root, for example
+`chapters/Ch1-Introduction/figures/example.pdf`. Empty asset folders contain a
+`.gitkeep` file so Git preserves them. The root `scripts/build` remains the
+shared thesis build command.
+
+Chapter 7's data, scripts, and figure assets were copied from
+`/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena-RSC-Comms`. Its
+[asset README](chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/README.md)
+describes the imported layout, plotting commands, and upstream tools that need
+their original scientific environment.
 
 The department and field are Physics. Names, dates, and text remain editable
 sample placeholders. The copyright year follows `degreeyear` automatically.

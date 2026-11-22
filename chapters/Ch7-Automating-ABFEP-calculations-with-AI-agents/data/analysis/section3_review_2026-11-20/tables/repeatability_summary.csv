@@ -1,0 +1,13 @@
+model,configuration,benchmark_version,n_tasks,n_trials,strict_passes,strict_pass_at_1,pass_at_3_tasks,pass_cubed_tasks,tasks_0_of_3,tasks_1_of_3,tasks_2_of_3,tasks_3_of_3
+opus-5.5,Claude Opus-5.5,v1.0,50,150,142,0.9466666666666667,49,46,1,2,1,46
+gpt-6.1-sol,GPT-6.1 Sol,v1.0,50,150,132,0.88,46,43,4,3,0,43
+gpt-6-astra,GPT-6 Astra,v1.0,50,150,132,0.88,46,43,4,3,0,43
+gemini-4-argon,Gemini 4 Argon,v1.0,50,150,115,0.7666666666666667,42,34,8,3,5,34
+glm-5.2,GLM-5.2,v0.2,50,150,95,0.6333333333333333,39,24,11,7,8,24
+gpt-5.6-sol,GPT-5.6 Sol,v0.2,50,150,123,0.82,43,39,7,2,2,39
+opus-5,Claude Opus-5,v0.2,50,150,115,0.7666666666666667,43,33,7,4,6,33
+gemini-3.7-flash,Gemini 3.7 Flash,v0.2,50,150,107,0.7133333333333334,37,34,13,1,2,34
+gpt-5.6-terra,GPT-5.6 Terra,v0.2,50,150,105,0.7,40,28,10,3,9,28
+sonnet-5,Claude Sonnet-5,v0.2,50,150,96,0.64,38,27,12,7,4,27
+deepseek-v4,DeepSeek V4.1 Flash,v1.0,50,150,50,0.3333333333333333,27,9,23,13,5,9
+qwen3-coder-480b,Qwen3 Coder 480B A35B,v0.2,50,150,13,0.08666666666666667,7,2,43,3,2,2

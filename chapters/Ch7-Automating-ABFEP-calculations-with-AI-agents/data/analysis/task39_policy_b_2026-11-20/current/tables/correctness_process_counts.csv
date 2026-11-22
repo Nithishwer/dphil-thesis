@@ -1,0 +1,13 @@
+model,Full correctness and process,Full correctness only,Full process only,Neither full,Execution error
+opus-5.5,142,2,2,4,0
+gpt-6.1-sol,132,0,14,4,0
+gpt-6-astra,132,0,15,3,0
+gemini-4-argon,115,1,5,5,24
+glm-5.2,94,6,11,26,13
+gpt-5.6-sol,120,2,19,7,2
+opus-5,112,4,20,14,0
+gemini-3.7-flash,104,5,10,28,3
+gpt-5.6-terra,102,5,8,33,2
+sonnet-5,93,6,14,37,0
+deepseek-v4,50,19,7,35,39
+qwen3-coder-480b,13,1,9,93,34

@@ -1,0 +1,794 @@
+[
+  {
+    "model": "deepseek-v4",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__5qfQemM",
+    "trial_id": "43bcd692-a7ea-4a8e-9f56-3b2dfbb979e7",
+    "status": "error",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/deepseek-v4/jobs/2026-11-14__00-36-53/39_fep_gmx_d3_abfe__5qfQemM",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/deepseek-v4/39_fep_gmx_d3_abfe__repeat-01/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.3",
+      "process": "0.4"
+    },
+    "approved_export_scores": {
+      "correctness": "0.3",
+      "process": "0.4"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "deepseek-v4",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__C5LghP5",
+    "trial_id": "9c31bd2c-218a-4114-a899-03c40b4ea665",
+    "status": "error",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/deepseek-v4/jobs/2026-11-14__00-36-53/39_fep_gmx_d3_abfe__C5LghP5",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/deepseek-v4/39_fep_gmx_d3_abfe__repeat-02/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.3",
+      "process": "0.4"
+    },
+    "approved_export_scores": {
+      "correctness": "0.3",
+      "process": "0.4"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "deepseek-v4",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__E6fhbwW",
+    "trial_id": "d53d3a79-461b-4bf5-b550-a7f376651984",
+    "status": "error",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/deepseek-v4/jobs/2026-11-14__00-36-53/39_fep_gmx_d3_abfe__E6fhbwW",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/deepseek-v4/39_fep_gmx_d3_abfe__repeat-03/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.2",
+      "process": "0.4"
+    },
+    "approved_export_scores": {
+      "correctness": "0.2",
+      "process": "0.4"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "gemini-3.7-flash",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__CKEGmoX",
+    "trial_id": "c50efe53-23c4-43e8-be4d-c9ce742544c9",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Gemini/3.7-flash/jobs/2026-08-25__02-37-40/39_fep_gmx_d3_abfe__CKEGmoX",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gemini-3.7-flash/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gemini-3.7-flash",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__4HWkD87",
+    "trial_id": "1296634c-4437-4e0d-8a58-371b641b1dfe",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Gemini/3.7-flash/jobs/2026-08-25__02-37-40/39_fep_gmx_d3_abfe__4HWkD87",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gemini-3.7-flash/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gemini-3.7-flash",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__BqJHXzN",
+    "trial_id": "40de7db2-1829-439a-a915-040e30e68729",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Gemini/3.7-flash/jobs/2026-08-25__02-37-40/39_fep_gmx_d3_abfe__BqJHXzN",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gemini-3.7-flash/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gemini-4-argon",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__EZBnKRB",
+    "trial_id": "dce68de7-dca9-4dab-aed1-db9a0916fb3c",
+    "status": "error",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-10-20__23-06-43/39_fep_gmx_d3_abfe__EZBnKRB",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/gemini-4-argon/39_fep_gmx_d3_abfe__repeat-01/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.1",
+      "process": "0.2"
+    },
+    "approved_export_scores": {
+      "correctness": "0.1",
+      "process": "0.2"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "gemini-4-argon",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__fQzeTBN",
+    "trial_id": "cfe63f2a-0c6a-4cd5-b30d-27e7f8ef98d4",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-10-20__23-06-43/39_fep_gmx_d3_abfe__fQzeTBN",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/gemini-4-argon/39_fep_gmx_d3_abfe__repeat-02/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gemini-4-argon",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__DZGSRd6",
+    "trial_id": "54b047a8-ed04-4a21-826a-6b551c0d387d",
+    "status": "error",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gemini-4-argon/jobs/2026-11-13__18-18-04/39_fep_gmx_d3_abfe__DZGSRd6",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/gemini-4-argon/39_fep_gmx_d3_abfe__repeat-03/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.8",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": "0.8",
+      "process": "0.6"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "glm-5.2",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__4YrjZUD",
+    "trial_id": "943151f3-b4e8-4b74-94fc-38d24d406c4d",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep1/2026-08-26__01-09-50/39_fep_gmx_d3_abfe__4YrjZUD",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/glm-5.2/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "glm-5.2",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__3xcJqpi",
+    "trial_id": "665dc367-6d6a-421a-97d0-a11d0ab71be6",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep3/2026-08-26__14-16-29/39_fep_gmx_d3_abfe__3xcJqpi",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/glm-5.2/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "approved_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "glm-5.2",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__ucBvfBE",
+    "trial_id": "ab94bc90-6575-4e3e-bbb1-077e0a1b377b",
+    "status": "error",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/GLM/5.2/jobs_rep2/2026-08-27__14-12-21/39_fep_gmx_d3_abfe__ucBvfBE",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/glm-5.2/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "approved_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "gpt-5.6-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__yrN5FwS",
+    "trial_id": "7b09b08f-ddcc-43cc-bf68-b91fc90d96c6",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__00-04-29/39_fep_gmx_d3_abfe__yrN5FwS",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-sol/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-5.6-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__zfF3nS2",
+    "trial_id": "fa535758-a572-403a-81d3-5ff7297e9fee",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__00-04-29/39_fep_gmx_d3_abfe__zfF3nS2",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-sol/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-5.6-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__vWd96Zu",
+    "trial_id": "5d51332c-bc2a-4233-9ad1-c2c7e5f82040",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__00-04-29/39_fep_gmx_d3_abfe__vWd96Zu",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-sol/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-5.6-terra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__uRvxxD7",
+    "trial_id": "0e8ca4ab-02eb-419b-9f24-19404399b41e",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__23-45-27/39_fep_gmx_d3_abfe__uRvxxD7",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-terra/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-5.6-terra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__D3nGCqN",
+    "trial_id": "d7b9d65f-57dd-47e8-9540-44214d00e7c7",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__23-45-27/39_fep_gmx_d3_abfe__D3nGCqN",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-terra/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-5.6-terra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__7zptP4A",
+    "trial_id": "de0dde71-86e6-4da5-be49-ea5505768040",
+    "status": "completed",
+    "task_checksum": "a122abae093fff647d71ed194dede37a2c95ef5b0ea51d8d1c58cda961709097",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/jobs/2026-08-25__23-45-27/39_fep_gmx_d3_abfe__7zptP4A",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/gpt-5.6-terra/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "gpt-6-astra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__dNuR9eT",
+    "trial_id": "9a824a51-2683-478e-a98e-f446b609b8bf",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-12__22-51-09/39_fep_gmx_d3_abfe__dNuR9eT",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/astra/39_fep_gmx_d3_abfe__repeat-01/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gpt-6-astra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__3VNYreF",
+    "trial_id": "18b4f536-7d15-49a2-a1f7-d54f32bbe4f4",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-12__22-51-09/39_fep_gmx_d3_abfe__3VNYreF",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/astra/39_fep_gmx_d3_abfe__repeat-02/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gpt-6-astra",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__HzsKKnf",
+    "trial_id": "308ab1a9-8130-4115-a615-de5aea58e7cf",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v3_runs/jobs/2026-10-12__22-51-09/39_fep_gmx_d3_abfe__HzsKKnf",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/astra/39_fep_gmx_d3_abfe__repeat-03/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__9k7FGFK",
+    "trial_id": "bb83af2c-d8ba-4eb8-b5de-9acab205009e",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/39_fep_gmx_d3_abfe__9k7FGFK",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/sol-6.1/39_fep_gmx_d3_abfe__repeat-01/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__BhE2jy5",
+    "trial_id": "6a88852f-de7b-4122-a0d8-0224e32df491",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/39_fep_gmx_d3_abfe__BhE2jy5",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/sol-6.1/39_fep_gmx_d3_abfe__repeat-02/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__zF2qkJv",
+    "trial_id": "c1ed55ab-31e3-4036-831f-6cff890d6e26",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/gpt-6.1-sol/jobs/2026-11-07__15-50-15/39_fep_gmx_d3_abfe__zF2qkJv",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/sol-6.1/39_fep_gmx_d3_abfe__repeat-03/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "opus-5.5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__rxUtqz2",
+    "trial_id": "63568bf4-fc09-49a3-97be-369307917e0e",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/39_fep_gmx_d3_abfe__rxUtqz2",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/opus-5.5/39_fep_gmx_d3_abfe__repeat-01/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "opus-5.5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__zKjEprP",
+    "trial_id": "a8ff1526-cf11-4f81-99b2-5ed6c9d525f0",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/39_fep_gmx_d3_abfe__zKjEprP",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/opus-5.5/39_fep_gmx_d3_abfe__repeat-02/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "opus-5.5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__TSnP8vh",
+    "trial_id": "9055128a-474f-4000-8282-66ee26bc6280",
+    "status": "completed",
+    "task_checksum": "b4713779f3eeff7339519c3752a41cb992c5fc0b423193a26a39902daafcda9a",
+    "source_trial_dir": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__15-49-30/39_fep_gmx_d3_abfe__TSnP8vh",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_run_analysis_DD_regraded/opus-5.5/39_fep_gmx_d3_abfe__repeat-03/regraded-reward.json",
+    "cohort": "newer",
+    "prior_export_scores": {
+      "correctness": "0.9",
+      "process": "0.6"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": false
+  },
+  {
+    "model": "opus-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__dXtpePB",
+    "trial_id": "59d8832f-596c-4e09-87ec-ff31253fdefa",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Opus-5/jobs/2026-08-24__20-05-21/39_fep_gmx_d3_abfe__dXtpePB",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/opus-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "opus-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__N2e4GKf",
+    "trial_id": "24d0d1aa-6ea5-4352-8536-e48fad2b88f1",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Opus-5/jobs/2026-08-25__14-52-13/39_fep_gmx_d3_abfe__N2e4GKf",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/opus-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "opus-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__aqbZ7Ng",
+    "trial_id": "c52d0fe0-342b-4d62-ab30-4f409e6f0f11",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Opus-5/jobs/2026-08-25__14-52-13/39_fep_gmx_d3_abfe__aqbZ7Ng",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/opus-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "qwen3-coder-480b",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__BmwdJQZ",
+    "trial_id": "cd2ea972-6650-4ec9-8d53-03d8b722d9ce",
+    "status": "error",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Qwen/Coder-480B/jobs_rep1/2026-08-26__01-18-27/39_fep_gmx_d3_abfe__BmwdJQZ",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/qwen3-coder-480b/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "approved_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "qwen3-coder-480b",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__sGbcFx6",
+    "trial_id": "d3516d7b-aacf-474c-af15-311bcb2b894f",
+    "status": "error",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Qwen/Coder-480B/jobs_rep2/2026-08-26__16-11-51/39_fep_gmx_d3_abfe__sGbcFx6",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/qwen3-coder-480b/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "approved_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "qwen3-coder-480b",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__Wpzfygz",
+    "trial_id": "fb185b06-f270-4a65-bd95-b7ed0a4a42f1",
+    "status": "error",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Qwen/Coder-480B/jobs_rep3/2026-08-26__20-16-55/39_fep_gmx_d3_abfe__Wpzfygz",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/qwen3-coder-480b/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "approved_export_scores": {
+      "correctness": "0.0",
+      "process": "0.0"
+    },
+    "completed_setup": false,
+    "changed": false
+  },
+  {
+    "model": "sonnet-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "1",
+    "trial_name": "39_fep_gmx_d3_abfe__BsQAhC2",
+    "trial_id": "ff50b8e4-97a1-40fb-b0a0-01b28201bb74",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Sonnet-5/jobs/2026-08-25__02-26-47/39_fep_gmx_d3_abfe__BsQAhC2",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/sonnet-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "sonnet-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "2",
+    "trial_name": "39_fep_gmx_d3_abfe__ni6AoQs",
+    "trial_id": "869987d7-8525-4f74-bd8d-6690f8422cf0",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Sonnet-5/jobs/2026-08-25__02-26-47/39_fep_gmx_d3_abfe__ni6AoQs",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/sonnet-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  },
+  {
+    "model": "sonnet-5",
+    "task_id": "39_fep_gmx_d3_abfe",
+    "replicate": "3",
+    "trial_name": "39_fep_gmx_d3_abfe__oJsf7kJ",
+    "trial_id": "2b1cf47b-2028-49a9-9459-79d4a995d9cf",
+    "status": "completed",
+    "task_checksum": "ab804f96233c4129658afed820c7ff73f790f10db4ef784de5441537911c83c2",
+    "source_trial_dir": "/biggin/b231/bioc1870/Documents/Software/GitHub_repos/MDArena_eval/v0.2/Claude/Sonnet-5/jobs/2026-08-25__02-26-47/39_fep_gmx_d3_abfe__oJsf7kJ",
+    "final_score_record": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v2_runs/analysis/analysis_v0.2c_codex_regraded_human_verified/sonnet-5/tables/trials.csv",
+    "cohort": "v0.2",
+    "prior_export_scores": {
+      "correctness": "1.0",
+      "process": "1.0"
+    },
+    "approved_export_scores": {
+      "correctness": 0.9,
+      "process": 0.6
+    },
+    "completed_setup": true,
+    "changed": true
+  }
+]

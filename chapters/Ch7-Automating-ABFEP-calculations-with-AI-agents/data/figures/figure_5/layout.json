@@ -1,0 +1,749 @@
+{
+  "width_mm": 185.9,
+  "height_mm": 73.3,
+  "arrangement": "A left, one continuous 5-row by 50-column heatmap; B/C stacked right",
+  "panels": {
+    "A": "Named task heatmap",
+    "B": "Task 25 binding-pose loss",
+    "C": "Task 29 ligand\u2013lipid clash"
+  },
+  "right_panel_bands_mm": {
+    "B": [
+      36.65,
+      73.3
+    ],
+    "C": [
+      0,
+      36.65
+    ]
+  },
+  "heatmap": {
+    "orientation": "configurations_rows_tasks_columns",
+    "matrix_shape": [
+      5,
+      50
+    ],
+    "single_continuous_matrix": true,
+    "label_rotation_degrees": 90,
+    "task_index_font_weight": "bold",
+    "cell_annotations": 0,
+    "colors": [
+      "#F0E4DC",
+      "#D7AD73",
+      "#7BB5BC",
+      "#418D84"
+    ],
+    "group_labels": {
+      "analysis": "Analysis",
+      "system_preparation": "System\npreparation",
+      "free_energy": "Free energy",
+      "enhanced_sampling": "Enhanced\nsampling",
+      "parameterization": "Parameterization",
+      "diagnostics": "Diagnostics",
+      "quantum_chemistry": "QM"
+    },
+    "difficulty_labels": [
+      "E",
+      "E",
+      "M",
+      "E",
+      "E",
+      "E",
+      "M",
+      "M",
+      "H",
+      "M",
+      "M",
+      "H",
+      "M",
+      "M",
+      "M",
+      "M",
+      "E",
+      "M",
+      "E",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "H",
+      "H",
+      "H",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "E",
+      "H",
+      "H",
+      "H",
+      "E",
+      "E",
+      "M",
+      "M",
+      "H"
+    ],
+    "task_indices_position": "separate aligned row below heatmap",
+    "type_label_rotation_degrees": 0,
+    "cell_size_mm": [
+      2.0610687022900764,
+      2.4
+    ],
+    "task_type_gutter_mm": 0.8244274809160306,
+    "label_spacing": {
+      "minimum_task_label_gap_mm": 0.19840203562339837,
+      "task_type_labels_do_not_overlap": true,
+      "minimum_index_gap_mm": 0.273270850727565,
+      "task_indices_on_one_baseline": true,
+      "task_label_bounds_mm": [
+        [
+          24.099201017811705,
+          17.30883333333334,
+          1.8626666666666667,
+          21.082
+        ],
+        [
+          26.164059325136506,
+          21.203500000000005,
+          1.8550874565972255,
+          17.187333333333335
+        ],
+        [
+          28.22133842239186,
+          17.986166666666673,
+          1.8626666666666667,
+          20.404666666666667
+        ],
+        [
+          30.286734164612486,
+          22.727500000000006,
+          1.8540125868055588,
+          15.663333333333334
+        ],
+        [
+          32.34347582697201,
+          24.42083333333334,
+          1.8626666666666667,
+          13.97
+        ],
+        [
+          34.40454452926209,
+          12.22883333333334,
+          1.8626666666666667,
+          26.162
+        ],
+        [
+          36.46561323155217,
+          17.647500000000008,
+          1.8626666666666667,
+          20.743333333333332
+        ],
+        [
+          38.52668193384224,
+          18.10655208333334,
+          1.8626666666666667,
+          20.28428125
+        ],
+        [
+          40.58775063613232,
+          11.636166666666673,
+          1.8626666666666667,
+          26.754666666666665
+        ],
+        [
+          42.65260894345711,
+          16.03883333333334,
+          1.8550874565972206,
+          22.352
+        ],
+        [
+          44.70988804071248,
+          11.444343750000007,
+          1.8626666666666667,
+          26.946489583333335
+        ],
+        [
+          46.77095674300254,
+          17.96367708333334,
+          1.8626666666666667,
+          20.42715625
+        ],
+        [
+          48.83202544529262,
+          10.95883333333334,
+          1.8626666666666667,
+          27.432000000000002
+        ],
+        [
+          51.71752162849873,
+          13.075500000000007,
+          1.8626666666666667,
+          25.315333333333335
+        ],
+        [
+          53.7785903307888,
+          22.473500000000005,
+          1.8626666666666667,
+          15.917333333333334
+        ],
+        [
+          55.83965903307889,
+          22.13483333333334,
+          1.8626666666666667,
+          16.256
+        ],
+        [
+          57.90072773536895,
+          9.289312500000007,
+          1.8626666666666667,
+          29.101520833333336
+        ],
+        [
+          59.965586042693765,
+          21.711500000000008,
+          1.8550874565972157,
+          16.679333333333332
+        ],
+        [
+          62.022865139949104,
+          13.329500000000007,
+          1.8626666666666667,
+          25.061333333333334
+        ],
+        [
+          64.08772344727392,
+          20.526166666666672,
+          1.8550874565972157,
+          17.86466666666667
+        ],
+        [
+          66.14932958445982,
+          18.240166666666674,
+          1.8540125868055493,
+          20.150666666666666
+        ],
+        [
+          68.20986085185406,
+          21.88083333333334,
+          1.8550874565972157,
+          16.51
+        ],
+        [
+          70.27092955414413,
+          19.933500000000006,
+          1.8550874565972157,
+          18.457333333333334
+        ],
+        [
+          72.33253569133005,
+          19.34083333333334,
+          1.8540125868055493,
+          19.05
+        ],
+        [
+          74.38927735368956,
+          13.583500000000006,
+          1.8626666666666667,
+          24.807333333333332
+        ],
+        [
+          77.27477353689568,
+          17.525791666666674,
+          1.8626666666666667,
+          20.865041666666666
+        ],
+        [
+          79.3363796740816,
+          17.647500000000008,
+          1.861591796875,
+          20.743333333333332
+        ],
+        [
+          81.39744837637167,
+          22.38883333333334,
+          1.861591796875,
+          16.002
+        ],
+        [
+          83.45851707866174,
+          19.59483333333334,
+          1.861591796875,
+          18.796
+        ],
+        [
+          85.51958578095181,
+          22.66664583333334,
+          1.861591796875,
+          15.724187500000001
+        ],
+        [
+          87.58011704834607,
+          19.449312500000005,
+          1.8626666666666667,
+          18.941520833333335
+        ],
+        [
+          89.64172318553197,
+          21.67445833333334,
+          1.861591796875,
+          16.716375
+        ],
+        [
+          91.7022544529262,
+          11.151979166666672,
+          1.8626666666666667,
+          27.238854166666666
+        ],
+        [
+          94.58775063613233,
+          16.485979166666674,
+          1.8626666666666667,
+          21.904854166666667
+        ],
+        [
+          96.64881933842241,
+          14.877312500000006,
+          1.8626666666666667,
+          23.513520833333335
+        ],
+        [
+          98.70988804071249,
+          17.224166666666672,
+          1.8626666666666667,
+          21.166666666666668
+        ],
+        [
+          100.77095674300254,
+          16.462166666666672,
+          1.8626666666666667,
+          21.92866666666667
+        ],
+        [
+          102.83202544529263,
+          8.92683333333334,
+          1.8626666666666667,
+          29.464
+        ],
+        [
+          104.89309414758272,
+          17.974260416666674,
+          1.8626666666666667,
+          20.416572916666667
+        ],
+        [
+          106.9579524549075,
+          15.192166666666672,
+          1.855087456597235,
+          23.198666666666668
+        ],
+        [
+          109.83965903307889,
+          14.853500000000006,
+          1.8626666666666667,
+          23.537333333333333
+        ],
+        [
+          111.90072773536896,
+          8.249500000000006,
+          1.8626666666666667,
+          30.141333333333336
+        ],
+        [
+          113.96179643765906,
+          11.97483333333334,
+          1.8626666666666667,
+          26.416
+        ],
+        [
+          116.02286513994913,
+          12.144166666666672,
+          1.8626666666666667,
+          26.246666666666666
+        ],
+        [
+          118.08393384223919,
+          11.890166666666673,
+          1.8626666666666667,
+          26.500666666666667
+        ],
+        [
+          120.9694300254453,
+          11.128166666666672,
+          1.8626666666666667,
+          27.262666666666668
+        ],
+        [
+          123.03428833277009,
+          26.283500000000007,
+          1.855087456597235,
+          12.107333333333333
+        ],
+        [
+          125.09535703506015,
+          17.224166666666672,
+          1.855087456597235,
+          21.166666666666668
+        ],
+        [
+          127.15263613231554,
+          16.885500000000008,
+          1.8626666666666667,
+          21.505333333333333
+        ],
+        [
+          130.0381323155216,
+          12.482833333333339,
+          1.8626666666666667,
+          25.908
+        ]
+      ]
+    },
+    "models": [
+      "opus-5.5",
+      "gpt-6.1-sol",
+      "gpt-6-astra",
+      "gemini-4-argon",
+      "glm-5.2"
+    ],
+    "task_order": [
+      "03_id_bp_resid",
+      "04_traj_ana_dist",
+      "05_traj_ana_hbonds",
+      "06_traj_ana_rotamers",
+      "10_traj_ana_mg_coord",
+      "14_traj_ana_lig_rmsd",
+      "17_prolif_int",
+      "19_traj_ana_open",
+      "31_traj_ana_na_conductance_6nq0",
+      "40_traj_ana_meng_sam_rmsd",
+      "44_traj_ana_atp8b_rmsd",
+      "45_atp8b_insertion_depth",
+      "50_glycoinsulin_beta_sheet_propensity",
+      "01_similes2sim",
+      "07_tyk2_equil",
+      "09_holo2apo",
+      "11_amb2gmx_em",
+      "12_xtal_waters",
+      "13_altloc_clean",
+      "21_water_transfer_ox2r",
+      "23_a2ar_membrane_equilibration",
+      "25_mglu5_membrane_setup",
+      "26_d3_receptor_membrane_setup",
+      "27_a2ar_6gt3_md_setup",
+      "29_pept2_beta_lactam_membrane_setup",
+      "20_fep_abfe_dhdl_analysis",
+      "32_fep_openfe_rbfe_dhodh",
+      "33_fep_openfe_rbfe_d3",
+      "34_fep_openfe_rbfe_def_ox2_s1",
+      "35_fep_openfe_abfe_d3",
+      "36_fep_openfe_abfe_mglu5r",
+      "37_fep_openfe_abfe_a2ar",
+      "39_fep_gmx_d3_abfe",
+      "22_traj_ana_pept2_pca_cv_suitability",
+      "28_traj_ana_pept2_pca_plumed_setup",
+      "30_cam_umbrella_pore_6nq0",
+      "41_rexee_argon_hydration_setup",
+      "42_expanded_ensemble_mdp",
+      "43_cb7_10_weight_updating_ee",
+      "48_cb7_10_alchemical_metadynamics",
+      "16_gaff_param",
+      "18_scale_charge",
+      "24_ligand_parameterization_smirnoff_openfe",
+      "46_meng_dmk_ff_patch",
+      "47_d2p_residue_parameterization",
+      "02_conc_diff_sys_traj",
+      "08_clash_check",
+      "15_meng_coupling_groups",
+      "49_slco2a1_physical_validation",
+      "38_pept2_qm_cluster_orca"
+    ],
+    "task_names": [
+      "Identify binding-pocket residues",
+      "Trajectory side-chain distance",
+      "Protein\u2013ligand hydrogen bonds",
+      "THR106 rotamer fractions",
+      "Magnesium coordination numbers",
+      "Ligand pose and conformation RMSD",
+      "ICL2 ProLIF interaction ranking",
+      "Most-open TPC2 frame",
+      "Na+ permeation and conductance",
+      "MenG SAM RMSD with periodic imaging",
+      "ATP8B1 helix RMSD with residue mapping",
+      "ATP8B1 membrane insertion depth",
+      "Glycoinsulin beta-sheet propensity",
+      "SMILES to solvated GROMACS ligand",
+      "TYK2 protein equilibration setup",
+      "mGlu5 holo-to-apo conversion",
+      "Glycoinsulin AMBER-to-GROMACS conversion",
+      "ICL1 crystallographic-water transfer",
+      "Oxymyoglobin alternate-location cleanup",
+      "OX2R crystallographic-water transfer",
+      "A2A\u2013ZM241385 POPC membrane preparation",
+      "mGlu5\u201351D POPC membrane preparation",
+      "D3 POPC membrane preparation",
+      "A2A\u2013AZD4635 POPC membrane preparation",
+      "PepT2\u2013ampicillin membrane preparation",
+      "A2A ABFE dhdl analysis with alchemlyb",
+      "DHODH OpenFE RBFE network",
+      "D3 OpenFE RBFE network",
+      "OX2R OpenFE RBFE network",
+      "D3 OpenFE ABFE setup",
+      "mGlu5 OpenFE ABFE setup",
+      "A2A OpenFE ABFE setup",
+      "D3 charged-ligand GROMACS ABFE setup",
+      "Assess PepT2 PCA collective variable",
+      "PepT2 PCA umbrella-sampling setup",
+      "CAM-ion pore umbrella sampling",
+      "Argon-hydration REXEE simulation",
+      "Expanded-ensemble fixed-weight conversion",
+      "CB7\u201310 Wang\u2013Landau simulation",
+      "CB7\u201310 alchemical metadynamics",
+      "GAFF Ala-Phe ligand parameters",
+      "Ion-charge scaling in water\u2013decane",
+      "SMIRNOFF ligand parameters",
+      "CHARMM topology and force-field repair",
+      "Phosphoaspartate residue parameters",
+      "Reject incompatible trajectory concatenation",
+      "TYK2 clash assessment",
+      "MenG thermostat and COM-removal groups",
+      "SLCO2A1 kinetic-energy validation",
+      "PepT2\u2013amoxicillin ORCA QM cluster"
+    ],
+    "display_task_names": [
+      "Binding-pocket residues",
+      "Side-chain distance",
+      "Protein\u2013ligand H bonds",
+      "THR106 rotamers",
+      "Mg coordination",
+      "Ligand pose / conform. RMSD",
+      "ICL2 interaction ranking",
+      "Most-open TPC2 frame",
+      "Na+ permeation / conductance",
+      "MenG\u2013SAM RMSD / PBC",
+      "ATP8B1 helix RMSD / mapping",
+      "ATP8B1 insertion depth",
+      "Glycoinsulin \u03b2-sheet propensity",
+      "Solvated ligand from SMILES",
+      "TYK2 equilibration",
+      "mGlu5 holo-to-apo",
+      "Glycoinsulin AMBER\u2013GROMACS",
+      "ICL1 water transfer",
+      "Oxymyoglobin altloc cleanup",
+      "OX2R water transfer",
+      "A2A\u2013ZM241385 POPC",
+      "mGlu5\u201351D POPC",
+      "D3 POPC membrane",
+      "A2A\u2013AZD4635 POPC",
+      "PepT2\u2013ampicillin membrane",
+      "A2A ABFE dhdl analysis",
+      "DHODH OpenFE RBFE",
+      "D3 OpenFE RBFE",
+      "OX2R OpenFE RBFE",
+      "D3 OpenFE ABFE",
+      "mGlu5 OpenFE ABFE",
+      "A2A OpenFE ABFE",
+      "D3 charged ABFE / GROMACS",
+      "PepT2 PCA CV suitability",
+      "PepT2 PCA umbrella setup",
+      "CAM-ion pore umbrellas",
+      "Argon hydration / REXEE",
+      "Fixed-weight expanded ensemble",
+      "CB7\u201310 Wang\u2013Landau",
+      "CB7\u201310 alchemical MetaD",
+      "Ala\u2013Phe GAFF parameters",
+      "Ion-charge scaling / water\u2013decane",
+      "SMIRNOFF ligand parameters",
+      "CHARMM topology / FF repair",
+      "Phosphoaspartate parameters",
+      "Reject incompatible trajectories",
+      "TYK2 clashes",
+      "MenG thermostat / COM",
+      "SLCO2A1 kinetic energy",
+      "PepT2\u2013amoxicillin QM cluster"
+    ],
+    "source_sha256": "57fccc7ace2626dbe19cf9a30fb022ac41d840d70e7a72d10ed8934b98ec1d84"
+  },
+  "typography": {
+    "panel_letter_size_pt": 8.5,
+    "panel_titles": false,
+    "case_details_position": "two lines beside panel letter, below its top",
+    "state_labels_position": "below protein representations, centered on projected CA bounds",
+    "state_label_centers_x_mm": {
+      "intermediate": 141.4257966809111,
+      "submitted": 166.32480042593673
+    },
+    "font_family": "Liberation Sans",
+    "B_C_task_scores_state_size_pt": 5.5,
+    "replicate_labels": "replicate 2/3",
+    "POPE808_label": "below molecule"
+  },
+  "camera_settings_sha256": "2f605aa3cc9b6c87a49623b707c97e54e50b395e505dae312f513a50ababa805",
+  "placements": [
+    {
+      "source": "renders/task25_intermediate_selected.png",
+      "source_sha256": "656f0947bc892c50da03070ece1aef45de5141102962ed7c0d1c6866a7ebcffb",
+      "source_pixels": [
+        1404,
+        1800
+      ],
+      "crop_pixels": [
+        56,
+        90,
+        1348,
+        1719
+      ],
+      "cropped_pixels": [
+        1292,
+        1629
+      ],
+      "original_fraction_extent": [
+        0.039886039886039885,
+        0.9601139601139601,
+        0.04500000000000004,
+        0.95
+      ],
+      "placement_mm": [
+        135.5,
+        37.0,
+        23.4,
+        29.503560371517025
+      ],
+      "effective_dpi": 1402.4273504273503
+    },
+    {
+      "source": "renders/task25_submitted_selected.png",
+      "source_sha256": "3083a02a4b8f063b1ab38eaffdbd182684319f032198c59873a5d7f5020ebe92",
+      "source_pixels": [
+        1404,
+        1800
+      ],
+      "crop_pixels": [
+        56,
+        90,
+        1348,
+        1719
+      ],
+      "cropped_pixels": [
+        1292,
+        1629
+      ],
+      "original_fraction_extent": [
+        0.039886039886039885,
+        0.9601139601139601,
+        0.04500000000000004,
+        0.95
+      ],
+      "placement_mm": [
+        160.4,
+        37.0,
+        23.4,
+        29.503560371517025
+      ],
+      "effective_dpi": 1402.4273504273503
+    },
+    {
+      "source": "renders/task25_pocket_selected.png",
+      "source_sha256": "ce8ae26e3b3e3dc81cbfcc7acfcb1c0255cd889142101db5d8edb25c827124de",
+      "source_pixels": [
+        1250,
+        1000
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1250,
+        1000
+      ],
+      "cropped_pixels": [
+        1250,
+        1000
+      ],
+      "original_fraction_extent": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "placement_mm": [
+        148.0,
+        52.9,
+        12.0,
+        9.6
+      ],
+      "effective_dpi": 2645.833333333333
+    },
+    {
+      "source": "renders/task29_submitted_selected.png",
+      "source_sha256": "d82dd5081e9defb9e905dde801c7417032a6901c9200f8a24ab471a3ce0090aa",
+      "source_pixels": [
+        1800,
+        1800
+      ],
+      "crop_pixels": [
+        99,
+        180,
+        1719,
+        1701
+      ],
+      "cropped_pixels": [
+        1620,
+        1521
+      ],
+      "original_fraction_extent": [
+        0.055,
+        0.955,
+        0.05500000000000005,
+        0.9
+      ],
+      "placement_mm": [
+        137,
+        3.0,
+        28.0,
+        26.288888888888888
+      ],
+      "effective_dpi": 1469.5714285714284
+    },
+    {
+      "source": "renders/task29_contact_selected.png",
+      "source_sha256": "1b1d3002323c926367ffc9c75c8b03d9caf324f45f24f417d1c6ec0815b8bac7",
+      "source_pixels": [
+        1650,
+        1100
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1650,
+        1100
+      ],
+      "cropped_pixels": [
+        1650,
+        1100
+      ],
+      "original_fraction_extent": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "placement_mm": [
+        160.8,
+        4.55,
+        23.0,
+        15.333333333333334
+      ],
+      "effective_dpi": 1822.1739130434783
+    }
+  ]
+}

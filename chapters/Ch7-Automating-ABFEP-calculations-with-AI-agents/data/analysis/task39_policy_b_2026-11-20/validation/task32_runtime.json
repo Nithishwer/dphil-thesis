@@ -1,0 +1,17 @@
+{
+  "trial_id": "21bec0b4-f657-42cf-a95b-98702ddaec1e",
+  "source": "/biggin/b211/reub0138/Projects/LLMsxFEP/MDArena_v4_runs/opus/jobs/2026-11-08__02-25-59/32_fep_openfe_rbfe_dhodh__Y9ZuSSz",
+  "agent_execution": {
+    "started_at": "2026-11-08T03:36:53.296922Z",
+    "finished_at": "2026-11-08T03:41:06.906038Z"
+  },
+  "verifier": {
+    "started_at": "2026-11-08T03:41:07.586248Z",
+    "finished_at": "2026-11-08T03:43:25.824551Z"
+  },
+  "exception_info": null,
+  "scores": {
+    "correctness": 0.0,
+    "process": 1.0
+  }
+}

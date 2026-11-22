@@ -1,0 +1,51 @@
+task_id,number,category,difficulty,short_description,row_order,opus-5.5,gpt-6.1-sol,gpt-6-astra,gemini-4-argon,glm-5.2,shared_top_three
+03_id_bp_resid,3,analysis,easy,Identify binding-pocket residues,1,3,3,3,3,3,True
+04_traj_ana_dist,4,analysis,easy,Trajectory side-chain distance,2,3,3,3,3,3,True
+05_traj_ana_hbonds,5,analysis,medium,Protein–ligand hydrogen bonds,3,3,3,3,3,2,True
+06_traj_ana_rotamers,6,analysis,easy,THR106 rotamer fractions,4,3,3,3,3,3,True
+10_traj_ana_mg_coord,10,analysis,easy,Magnesium coordination numbers,5,3,3,3,3,3,True
+14_traj_ana_lig_rmsd,14,analysis,easy,Ligand pose and conformation RMSD,6,3,3,3,3,3,True
+17_prolif_int,17,analysis,medium,ICL2 ProLIF interaction ranking,7,3,3,3,1,3,True
+19_traj_ana_open,19,analysis,medium,Most-open TPC2 frame,8,3,3,3,3,1,True
+31_traj_ana_na_conductance_6nq0,31,analysis,hard,Na+ permeation and conductance,9,3,3,3,3,3,True
+40_traj_ana_meng_sam_rmsd,40,analysis,medium,MenG SAM RMSD with periodic imaging,10,3,3,3,3,3,True
+44_traj_ana_atp8b_rmsd,44,analysis,medium,ATP8B1 helix RMSD with residue mapping,11,3,3,3,3,3,True
+45_atp8b_insertion_depth,45,analysis,hard,ATP8B1 membrane insertion depth,12,3,3,3,3,0,True
+50_glycoinsulin_beta_sheet_propensity,50,analysis,medium,Glycoinsulin beta-sheet propensity,13,3,3,3,3,3,True
+01_similes2sim,1,system_preparation,medium,SMILES to solvated GROMACS ligand,14,3,3,3,3,3,True
+07_tyk2_equil,7,system_preparation,medium,TYK2 protein equilibration setup,15,3,3,3,2,2,True
+09_holo2apo,9,system_preparation,medium,mGlu5 holo-to-apo conversion,16,3,3,3,0,0,True
+11_amb2gmx_em,11,system_preparation,easy,Glycoinsulin AMBER-to-GROMACS conversion,17,3,0,0,1,2,False
+12_xtal_waters,12,system_preparation,medium,ICL1 crystallographic-water transfer,18,3,3,3,2,3,True
+13_altloc_clean,13,system_preparation,easy,Oxymyoglobin alternate-location cleanup,19,3,3,3,3,3,True
+21_water_transfer_ox2r,21,system_preparation,hard,OX2R crystallographic-water transfer,20,3,3,3,0,2,True
+23_a2ar_membrane_equilibration,23,system_preparation,hard,A2A–ZM241385 POPC membrane preparation,21,3,0,0,3,0,False
+25_mglu5_membrane_setup,25,system_preparation,hard,mGlu5–51D POPC membrane preparation,22,1,1,0,3,0,False
+26_d3_receptor_membrane_setup,26,system_preparation,hard,D3 POPC membrane preparation,23,3,3,3,3,0,True
+27_a2ar_6gt3_md_setup,27,system_preparation,hard,A2A–AZD4635 POPC membrane preparation,24,3,0,1,3,0,False
+29_pept2_beta_lactam_membrane_setup,29,system_preparation,hard,PepT2–ampicillin membrane preparation,25,1,1,1,0,0,False
+20_fep_abfe_dhdl_analysis,20,free_energy,hard,A2A ABFE dhdl analysis with alchemlyb,26,3,3,3,3,3,True
+32_fep_openfe_rbfe_dhodh,32,free_energy,medium,DHODH OpenFE RBFE network,27,2,3,3,3,3,False
+33_fep_openfe_rbfe_d3,33,free_energy,medium,D3 OpenFE RBFE network,28,3,3,3,2,2,True
+34_fep_openfe_rbfe_def_ox2_s1,34,free_energy,medium,OX2R OpenFE RBFE network,29,3,3,3,0,3,True
+35_fep_openfe_abfe_d3,35,free_energy,medium,D3 OpenFE ABFE setup,30,3,3,3,1,3,True
+36_fep_openfe_abfe_mglu5r,36,free_energy,medium,mGlu5 OpenFE ABFE setup,31,3,3,3,3,0,True
+37_fep_openfe_abfe_a2ar,37,free_energy,medium,A2A OpenFE ABFE setup,32,3,3,3,3,0,True
+39_fep_gmx_d3_abfe,39,free_energy,medium,D3 charged-ligand GROMACS ABFE setup,33,0,0,0,0,0,False
+22_traj_ana_pept2_pca_cv_suitability,22,enhanced_sampling,hard,Assess PepT2 PCA collective variable,34,3,3,3,3,3,True
+28_traj_ana_pept2_pca_plumed_setup,28,enhanced_sampling,hard,PepT2 PCA umbrella-sampling setup,35,3,3,3,3,0,True
+30_cam_umbrella_pore_6nq0,30,enhanced_sampling,hard,CAM-ion pore umbrella sampling,36,3,3,3,0,2,True
+41_rexee_argon_hydration_setup,41,enhanced_sampling,medium,Argon-hydration REXEE simulation,37,3,3,3,3,1,True
+42_expanded_ensemble_mdp,42,enhanced_sampling,medium,Expanded-ensemble fixed-weight conversion,38,3,3,3,0,0,True
+43_cb7_10_weight_updating_ee,43,enhanced_sampling,medium,CB7–10 Wang–Landau simulation,39,3,3,3,2,1,True
+48_cb7_10_alchemical_metadynamics,48,enhanced_sampling,medium,CB7–10 alchemical metadynamics,40,3,3,3,3,3,True
+16_gaff_param,16,parameterization,medium,GAFF Ala-Phe ligand parameters,41,3,3,3,3,3,True
+18_scale_charge,18,parameterization,easy,Ion-charge scaling in water–decane,42,3,1,1,0,2,False
+24_ligand_parameterization_smirnoff_openfe,24,parameterization,hard,SMIRNOFF ligand parameters,43,3,3,3,3,1,True
+46_meng_dmk_ff_patch,46,parameterization,hard,CHARMM topology and force-field repair,44,3,3,3,3,1,True
+47_d2p_residue_parameterization,47,parameterization,hard,Phosphoaspartate residue parameters,45,3,3,3,3,2,True
+02_conc_diff_sys_traj,2,diagnostics,easy,Reject incompatible trajectory concatenation,46,3,3,3,3,3,True
+08_clash_check,8,diagnostics,easy,TYK2 clash assessment,47,3,3,3,3,3,True
+15_meng_coupling_groups,15,diagnostics,medium,MenG thermostat and COM-removal groups,48,3,3,3,2,3,True
+49_slco2a1_physical_validation,49,diagnostics,medium,SLCO2A1 kinetic-energy validation,49,3,3,3,3,3,True
+38_pept2_qm_cluster_orca,38,quantum_chemistry,hard,PepT2–amoxicillin ORCA QM cluster,50,3,3,3,3,1,True
