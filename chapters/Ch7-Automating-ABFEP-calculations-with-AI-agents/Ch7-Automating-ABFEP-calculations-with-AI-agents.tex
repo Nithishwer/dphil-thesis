@@ -174,7 +174,28 @@ Failures in medium and hard tasks mostly belonged to membrane protein setup or f
 
 Membrane-protein preparation remained particularly challenging. Across five hard membrane-preparation tasks, GPT-6.1 Sol and Astra each passed 33.3\% of attempts (5/15), compared with 73.3\% (11/15) for Opus-5.5 and 80\% (12/15) for Gemini 4 Argon. Insufficient lipid packing dominated the failures in membrane protein preparation tasks: most agents removed whole overlapping lipids, which often left underfilled exterior regions without subsequent repacking. However, although Opus-5.5 passed the lipid-packing checks in 14/15 trials for membrane tasks, it exhibited other failures resulting from incorrect final assembly despite valid intermediate work. In two of three mGlu5R system setup (task 25) trials, Opus-5.5 preserved the ligand’s binding pose in an intermediate structure, then shifted the receptor and ligand by different amounts during final assembly. The ligand ended up 30.2 and 37.8 Å from the nearest protein atom, failing the correctness checks for binding pocket geometry. Another assembly failure occurred in PepT2 system preparation (task 29), where the final structure still contained severe clashes. One ligand carbon and one lipid carbon were only 1.37 Å apart, far too close for two nonbonded carbon atoms, causing an infinite force during minimization and therefore failing the checks.
 
-Add heatmap on where agents fail
+\begin{figure}[htbp]
+\centering
+  % Isolate the imported Figure 5 heatmap, retaining all task labels and its key.
+  \includegraphics[width=\textwidth,trim=10bp 0bp 149bp 0bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/task_success_examples_source.pdf}
+  \caption[Task-level strict-pass counts on MDArena.]{Strict passes across three attempts per task for five coding-agent configurations on all 50 MDArena tasks, grouped by task type. Colours indicate zero to three strict passes. A strict pass requires completion and full correctness and process scores. The upper strip marks tasks passed in all three attempts by each of Claude Opus-5.5, GPT-6.1 Sol, and GPT-6 Astra. E/M/H indicate easy, medium, and hard tasks; QM denotes quantum chemistry.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+  % Place the two assembly examples side by side, relabelling original B/C as A/B.
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{A}}\par
+    \includegraphics[width=\linewidth,trim=381bp 105bp 0bp 20bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/task_success_examples_source.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{B}}\par
+    \includegraphics[width=\linewidth,trim=381bp 0bp 0bp 124bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/task_success_examples_source.pdf}
+  \end{minipage}
+  \caption[Examples of molecular-system assembly failures.]{Two assembly failures from Claude Opus-5.5. (A) Task~25, replicate~3: the intermediate mGlu5--51D structure retains the binding pose, whereas the submitted assembly has a nearest ligand--protein atom separation of 37.8~\AA{}, accounting for periodic boundaries. The receptor views have matched orientation and scale; the inset enlarges the intermediate pocket. Correctness and process scores were 1.000 and 0.875, respectively. (B) Task~29, replicate~2: ligand AMP702 C6 and lipid POPE808 C316 are separated by a 1.37~\AA{} nonbonded contact. The inset enlarges the contact with transparent carbon van der Waals spheres. Correctness and process scores were 1.000 and 0.9375, respectively. This contact is not established as the unique cause of the non-finite force reported during minimization.}
+\end{figure}
 
 \subsection{Cost effectiveness of different models}
 

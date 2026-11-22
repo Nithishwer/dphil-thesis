@@ -31,10 +31,13 @@ The thesis draft still uses the original `figures/figure_1.pdf`,
 live under directories such as `figures/figure_3/`; regenerating them does not
 replace the draft's existing PDFs or change its captions.
 
-An additional PDF was imported from the same source project on 2026-11-22:
-`figures/representative_tasks_source.pdf` is its `figures/figure_2/figure_2.pdf`.
-The chapter arranges its four representative tasks in a 2x2 grid. Cropping and
-layout are defined in the chapter's LaTeX source; the imported PDF is unchanged.
+Two additional PDFs were imported from the same source project on 2026-11-22:
+`figures/representative_tasks_source.pdf` is its `figures/figure_2/figure_2.pdf`,
+and `figures/task_success_examples_source.pdf` is its
+`figures/figure_5/figure_5.pdf`. The chapter arranges the representative tasks
+in a 2x2 grid and splits the task-success heatmap from the two assembly
+examples, which appear side by side. Cropping and layout are defined in the
+chapter's LaTeX source; the imported PDFs are unchanged.
 
 ## Plotting
 
