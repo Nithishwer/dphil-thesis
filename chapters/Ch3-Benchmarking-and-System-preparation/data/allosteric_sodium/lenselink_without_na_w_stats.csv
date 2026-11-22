@@ -1,0 +1,8 @@
+Lig_Name,Experimental_G,Predicted_G,Predicted_Error,Experimental_Error,Dataset
+cmp_1,-10.87,-10.271230189013023,1.0027591973135124,1.0,lenselink_without_na
+cmp_11,-10.4,-12.908013250518973,1.415508240322569,1.0,lenselink_without_na
+cmp_13,-8.31,-9.073710253628784,0.859985359536737,1.0,lenselink_without_na
+cmp_17,-9.12,-11.059311577459368,0.9497788230036913,1.0,lenselink_without_na
+cmp_2,-8.24,-9.846873816290563,0.5015499046498068,1.0,lenselink_without_na
+cmp_3,-10.64,-11.542453665857046,0.6434523665143606,1.0,lenselink_without_na
+cmp_8,-12.16,-12.391742379054408,1.2818711396621219,1.0,lenselink_without_na
