@@ -1,0 +1,95 @@
+# Chapter 3 figure assets
+
+## Figure 3.1: Sampling comparison
+
+Figure 3.1 was imported from
+`/biggin/b211/reub0138/Projects/orexin/figures/fig1`.
+
+- `figures/combined_square_v3.svg` is an unchanged copy of the supplied figure,
+  assembled in Inkscape. The thesis includes its vector PDF export,
+  `figures/combined_square_v3.pdf`.
+- `data/figure_3_1/` contains the four original per-repeat CSV datasets for no
+  HREX, HREX, apo windows, and epsilon-HREX.
+- `scripts/intermediates/figure_3_1/` contains the four original `_w_stats.csv`
+  tables used to plot the per-ligand means and standard deviations.
+- `scripts/s0_make_exp_v_abfe_df_w_stats.py` and
+  `scripts/s1_plot_exp_v_abfe_v3_label.py` are the original preparation and
+  plotting scripts, adapted to the chapter paths and noninteractive execution.
+  MUE and RMSE use equivalent NumPy expressions in place of scikit-learn;
+  plotting parameters and the TI-based aggregation are retained.
+
+Run from the repository root in the thesis plotting environment:
+
+```sh
+chapter=chapters/Ch3-Benchmarking-and-System-preparation
+uv run --locked python "$chapter/scripts/s0_make_exp_v_abfe_df_w_stats.py"
+uv run --locked python "$chapter/scripts/s1_plot_exp_v_abfe_v3_label.py"
+```
+
+The preparation script regenerates the intermediate tables. The plotting script
+writes four panel SVGs into `figures/`; the combined layout and panel letters
+remain in the supplied Inkscape SVG. Its panel order is (a) no HREX, (b) HREX,
+(c) apo windows, and (d) epsilon-HREX. Export that layout for pdfLaTeX with:
+
+```sh
+inkscape "$chapter/figures/combined_square_v3.svg" \
+  --export-type=pdf --export-filename="$chapter/figures/combined_square_v3.pdf"
+```
+
+## Figure 3.2: Allosteric sodium
+
+The figure is included in Chapter 3 as Figure 3.2. Source assets were copied from
+`/biggin/b211/reub0138/Projects/orexin/figures/fig5`.
+
+- `figures/allosteric_sodium/combined_v4_converged.svg` is the unchanged source
+  figure, assembled in Inkscape from six plot panels.
+- `figures/allosteric_sodium/combined_v4_converged.pdf` is its vector PDF export
+  used by pdfLaTeX.
+- `data/allosteric_sodium/` contains six repeat-level CSV files and the six
+  `*_w_stats.csv` tables used to plot the figure. The tables reproduce the MUE
+  and RMSE values displayed in all six panels.
+- `scripts/s0_make_exp_v_abfe_df_w_stats_*.py` are the original data-preparation
+  scripts. They group TI estimates by ligand, calculate means and sample standard
+  deviations, and assign an experimental error of 1 kcal/mol.
+- `scripts/s1_plot_exp_v_abfe_v3*.py` are the original panel plotting scripts.
+  The later `v3a` scripts in the source directory postdate the supplied figure and
+  were not imported.
+
+The copied scripts retain their calculations and plotting settings. Paths were
+adapted to the chapter folders, and the Python files were formatted with Ruff.
+Regenerated tables and statistics go to
+`scripts/intermediates/allosteric_sodium/`; panel SVGs go to
+`figures/allosteric_sodium/`. Plotting uses the archived input tables in `data/`.
+The combined figure's Inkscape layout is preserved in the supplied SVG; the panel
+scripts do not assemble that layout.
+
+From the repository root, regenerate all six panels using the thesis plotting
+environment plus the original scripts' scikit-learn dependency:
+
+```sh
+chapter=chapters/Ch3-Benchmarking-and-System-preparation
+for script in \
+    s1_plot_exp_v_abfe_v3_deflorian_label.py \
+    s1_plot_exp_v_abfe_v3_label_lenselink.py \
+    s1_plot_exp_v_abfe_v3_label_minetti.py; do
+    MPLBACKEND=Agg uv run --locked --with scikit-learn python "$chapter/scripts/$script"
+done
+```
+
+To regenerate the grouped tables separately:
+
+```sh
+for script in "$chapter"/scripts/s0_make_exp_v_abfe_df_w_stats_*.py; do
+    uv run --locked python "$script"
+done
+```
+
+Re-export the supplied composite after editing it in Inkscape:
+
+```sh
+inkscape "$chapter/figures/allosteric_sodium/combined_v4_converged.svg" \
+    --export-area-page --export-text-to-path \
+    --export-filename="$chapter/figures/allosteric_sodium/combined_v4_converged.pdf"
+```
+
+Build the thesis with `sh scripts/build`.
