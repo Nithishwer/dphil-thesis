@@ -31,6 +31,11 @@ The thesis draft still uses the original `figures/figure_1.pdf`,
 live under directories such as `figures/figure_3/`; regenerating them does not
 replace the draft's existing PDFs or change its captions.
 
+An additional PDF was imported from the same source project on 2026-11-22:
+`figures/representative_tasks_source.pdf` is its `figures/figure_2/figure_2.pdf`.
+The chapter arranges its four representative tasks in a 2x2 grid. Cropping and
+layout are defined in the chapter's LaTeX source; the imported PDF is unchanged.
+
 ## Plotting
 
 From the thesis repository root:

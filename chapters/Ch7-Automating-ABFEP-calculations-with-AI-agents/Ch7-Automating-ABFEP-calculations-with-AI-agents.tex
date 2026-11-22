@@ -54,6 +54,37 @@ MDArena was constructed from more than 100 candidate tasks contributed by domain
 \subsection{Implementation}
 
  MDArena is implemented using the Harbor\cite{Harbor_Framework} evaluation framework, allowing researchers to readily evaluate their own agents and extend MDArena with new self-contained tasks. Each task runs in a dedicated Docker container \cite{moreau2023containers} and includes an executable reference solution that passes all correctness and process checks, confirming task solvability and validating that the verifier functions as intended. Command-line interfaces are provided for analyzing evaluation runs and collecting portable run records. To facilitate reproducibility and robustness, MDArena implements several safeguards. Task-content digests and run-metadata validation support checks of dataset integrity and evaluation configuration. Canary strings are embedded in task instructions, configuration files, verifiers, and reference-solution scripts to identify benchmark material and support the exclusion of our benchmark from future model-training corpora. Lastly, we implement continuous integration to run unit and regression tests for evaluation tools and task-specific verifiers, validate task structure, and check verifier dependencies in a containerized environment.
+
+\begin{figure}[htbp]
+\centering
+  % Rearrange the four panels of the imported Figure 2 into a two-by-two grid.
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{A}}\par
+    \centering
+    \includegraphics[width=\linewidth,height=0.72\linewidth,keepaspectratio,trim=8bp 8bp 683bp 34bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/representative_tasks_source.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{B}}\par
+    \centering
+    \includegraphics[width=\linewidth,height=0.72\linewidth,keepaspectratio,trim=344bp 8bp 398bp 34bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/representative_tasks_source.pdf}
+  \end{minipage}\par
+  \medskip
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{C}}\par
+    \centering
+    \includegraphics[width=\linewidth,height=0.72\linewidth,keepaspectratio,trim=629bp 8bp 226bp 34bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/representative_tasks_source.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textsf{\textbf{D}}\par
+    \centering
+    \includegraphics[width=\linewidth,height=0.72\linewidth,keepaspectratio,trim=801bp 8bp 8bp 34bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/representative_tasks_source.pdf}
+  \end{minipage}
+  \caption[Representative tasks and systems in MDArena.]{Representative tasks and systems in MDArena. (A) Planning a relative binding free-energy network for GPCR ligands using OpenFE (Task~33). (B) Constructing a PepT2--amoxicillin QM cluster for a proton-transfer scan in ORCA (Task~38). (C) Extending CHARMM36 to parameterize a pAsp-containing peptide (Task~47). (D) Performing alchemical metadynamics to estimate the absolute binding free energy of a host--guest complex (Task~48).}
+\end{figure}
  
 \subsection{Verification}
 
