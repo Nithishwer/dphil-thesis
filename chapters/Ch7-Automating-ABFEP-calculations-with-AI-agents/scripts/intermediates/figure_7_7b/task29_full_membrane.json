@@ -1,0 +1,82 @@
+{
+  "source": "data/figures/figure_7_7b/system.gro",
+  "source_sha256": "4cc07f55ad5c4e6a8c848cbe6eb8931a35a98ce353b21a36186b72e5d686d2bd",
+  "topology_sha256": {
+    "protein.itp": "3395d148e496c6c5f094458febac5d01b3d707983ab03cc883d9b7ee84248a59",
+    "AMP.itp": "4ceaa95f2a4773cf4faf48b16928727a1384ae2c5a274641a6e65ec07c87dee7",
+    "POPE.itp": "388268023da2aad9ab74dd8b6ff6e570c82b8ca8f02b9d32dcea1e8199c22f71",
+    "POPG.itp": "81180e89a9423d27a41d19aed9ba4db08194b6c50e2f1e9ea6847845e4b56f4f"
+  },
+  "box_A": [
+    110.0,
+    110.0,
+    100.0
+  ],
+  "protein_atoms": 7555,
+  "protein_alpha_carbons": 472,
+  "lipid_counts": {
+    "POPE": 237,
+    "POPG": 79
+  },
+  "total_atoms_excluding_contact_copies": 47256,
+  "highlighted_lipid": "POPE808",
+  "contact_distance_A": 1.3686124086380005,
+  "global_translation_A": [
+    -52.73500000000001,
+    -72.625,
+    -52.465
+  ],
+  "global_rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "coordinates": "One shared rigid transform; no imaging or geometry changes.",
+  "camera": {
+    "view": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      -268.8612976074219,
+      2.5249996185302734,
+      -2.770000457763672,
+      17.950000762939453,
+      138.86129760742188,
+      398.8612976074219,
+      20.0
+    ],
+    "center_A": [
+      2.5249996185302734,
+      -2.770000457763672,
+      17.950000762939453
+    ],
+    "height_A": 94.81500244140625,
+    "width_A": 126.42000579833984,
+    "orthoscopic": true,
+    "field_of_view_degrees": 20
+  },
+  "session": "scripts/intermediates/figure_7_7b/renders/task29_full_membrane.pse",
+  "session_sha256": "f6ddaf5153f99408322b37b0675c53beb80318cf0590aa0f147a6b28b0b75a37",
+  "preview": "figures/figure_7_7b/full_membrane.png",
+  "session_reopened_and_verified": true
+}
