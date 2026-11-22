@@ -425,37 +425,56 @@ def label_spacing(fig, labels):
     }
 
 
-def structures(fig, cameras, placements):
-    camera = cameras["task25"]
-    panel_label(
-        fig,
-        135,
-        70.3,
-        "B",
-        (
-            "Task 25 · Claude Opus-5.5 · replicate 3",
-            "Correctness: 1.000; Process: 0.875",
-        ),
-    )
+def binding_pose_panel(fig, camera, placements, *, thesis=False):
+    if not thesis:
+        panel_label(
+            fig,
+            135,
+            70.3,
+            "B",
+            (
+                "Task 25 · Claude Opus-5.5 · replicate 3",
+                "Correctness: 1.000; Process: 0.875",
+            ),
+        )
     before = add_image(
         fig, "task25_intermediate_selected", 135.5, 37.0, 23.4, placements, TASK25_CROP
     )
     after = add_image(
         fig, "task25_submitted_selected", 160.4, 37.0, 23.4, placements, TASK25_CROP
     )
+    divider_x_mm = 159.75
     state_centers = {}
     for stage, title, placement in zip(
         ["intermediate", "submitted"], ["Intermediate", "Submitted"], placements[:2]
     ):
-        x = protein_center_x(stage, camera, placement)
+        if thesis:
+            left_mm, right_mm = (
+                (135, divider_x_mm)
+                if stage == "intermediate"
+                else (divider_x_mm, WIDTH_MM)
+            )
+            x = (left_mm + right_mm) / 2
+        else:
+            x = protein_center_x(stage, camera, placement)
         state_centers[stage] = x
         fig.text(
             x / WIDTH_MM,
-            43.6 / HEIGHT_MM,
+            (67.2 if thesis else 43.6) / HEIGHT_MM,
             title,
             fontsize=DETAIL_FONT_SIZE,
             ha="center",
-            va="top",
+            va="bottom" if thesis else "top",
+        )
+    if thesis:
+        fig.add_artist(
+            plt.Line2D(
+                [divider_x_mm / WIDTH_MM] * 2,
+                [35.1 / HEIGHT_MM, 69.4 / HEIGHT_MM],
+                transform=fig.transFigure,
+                color="#BBBBBB",
+                lw=0.45,
+            )
         )
     distance_marker(
         after, camera["contact_endpoints_fraction"], "37.8 Å", offset=(0.02, 0.05)
@@ -463,26 +482,35 @@ def structures(fig, cameras, placements):
     after.texts[-1].set_fontsize(6.4)
     chlorine, hydrogen = camera["contact_endpoints_fraction"]
     after.annotate(
-        "Cl",
+        "Ligand" if thesis else "Cl",
         chlorine,
-        xytext=(4, 3),
+        xytext=(0, -6) if thesis else (4, 3),
         textcoords="offset points",
+        ha="center" if thesis else "left",
+        va="top" if thesis else "baseline",
         fontsize=DETAIL_FONT_SIZE,
-        color="#436832",
+        color="#217F9D" if thesis else "#436832",
     )
-    after.annotate(
-        "Lys117 HZ2",
-        hydrogen,
-        xytext=(-24, 8),
-        ha="right",
-        va="bottom",
-        arrowprops={"arrowstyle": "-", "lw": 0.4},
-        textcoords="offset points",
-        fontsize=DETAIL_FONT_SIZE,
-        bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.4},
-    )
+    if not thesis:
+        after.annotate(
+            "Lys117 HZ2",
+            hydrogen,
+            xytext=(-24, 8),
+            ha="right",
+            va="bottom",
+            arrowprops={"arrowstyle": "-", "lw": 0.4},
+            textcoords="offset points",
+            fontsize=DETAIL_FONT_SIZE,
+            bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.4},
+        )
     pocket = add_image(
-        fig, "task25_pocket_selected", 148.0, 52.9, 12.0, placements, frame=True
+        fig,
+        "task25_pocket_selected",
+        147.0 if thesis else 148.0,
+        52.9,
+        12.0,
+        placements,
+        frame=True,
     )
     pocket.text(
         0.5,
@@ -518,6 +546,11 @@ def structures(fig, cameras, placements):
         )
     )
 
+    return state_centers
+
+
+def structures(fig, cameras, placements):
+    state_centers = binding_pose_panel(fig, cameras["task25"], placements)
     # A quiet separator makes the two equally sized case panels distinct.
     fig.add_artist(
         plt.Line2D(
