@@ -22,62 +22,8 @@ We therefore introduce MDArena, an executable benchmark of 50 expert-curated, co
 
 We track the performance of agents released between July 2025 and November 2026 and show that frontier agents can autonomously perform MD tasks, ranging from simple analysis to complex membrane-protein FEP system preparation. The best models succeed across a broad range of tasks, although some failures persist across repeated attempts. Claude Opus-5.5 achieved the highest strict pass rate at 94.7\% (142 of 150 trials), while GPT-6.1 Sol was the most cost-effective configuration, with an 88.0\% strict pass rate (132 of 150 trials) and a cost of \$0.53 per strict pass, compared with \$0.91 for Opus-5.5. Both are closely followed by Gemini-4 Argon and open-source models such as GLM. Together, these results characterize the state of the art in agentic assistance for MD. The strongest agents evaluated are ready for adoption in production workflows, provided that edge cases are documented and requirements are stated explicitly.
 
+
 \subsection{Related Works}
-
-The growing ubiquity of AI agents in scientific computing has driven a parallel effort to benchmark them on realistic scientific workflows, and MD is no exception. Yet most existing benchmarks remain narrow in scope and fail to capture the breadth of high-level tasks relevant to MD workflows. Broader scientific benchmarks such as SciCode and ScienceAgentBench evaluate research-oriented programming and data analysis, while Corral combines executable scientific tasks, including molecular simulation, with analysis of agents' scientific reasoning. MDCrow\cite{campbell2026mdcrow} was the first to evaluate LLM agents with 40+ tools on 25 MD tasks, but its scope is limited and modern coding agents now nearly saturate the suite. NAMD-Agent\cite{chandrasekhar2025namdagent} followed, automating the CHARMM-GUI interface\cite{jo2008charmm} via Gemini\cite{team2023gemini} and Selenium, but it serves primarily as a system demonstration and introduces no accompanying benchmark. ChemGraph\cite{pham2026chemgraph} applies multi-agent orchestration to computational chemistry workflows, including geometry optimization, reaction enthalpy, and Gibbs free energy. It reports 100\% accuracy on all tasks tested, although the task suite is small and focuses on textbook-scale problems. DynaMate\cite{guilbert2025dynamate} was the first to target biomolecular MD with realistic tasks, evaluating a 12-system benchmark and automating the industry-relevant MM/GBSA binding-affinity estimation, though it remains a system demonstration rather than a generalizable agent benchmark. MDForge\cite{wang2026mdforge} introduces an LLM agent that uses multi-agent debate to design free energy pipelines. Ma et al.'s MDAgent and PRAXIS-MD integrate research planning, simulation, and interpretation through reusable skills and memory, including membrane-protein applications. Despite covering a wide range of workflows, PRAXIS-MD includes only 9 cases and is used predominantly to benchmark its own workflow rather than frontier coding agents. MDAgent2\cite{shi2026mdagent2} contributes MD-EvalBench, the first dedicated MD benchmark suite, alongside a domain-adapted Qwen3-8B model\cite{yang2025qwen3} trained via continued pretraining, supervised fine-tuning, and reinforcement learning with execution as the reward signal. Its scope, however, is restricted to LAMMPS\cite{thompson2022lammps} code generation, with no biomolecular tasks. Similarly, LAMMPS-Agents\cite{vriza2026multiagentic} enables end-to-end LAMMPS workflows for inorganic materials, and PolyJarvis\cite{zhao2026polyjarvis} extends this direction to polymer MD by orchestrating polymer MD toolkits via Model Context Protocol (MCP) servers. MDGym\cite{kumar2026mdgym} is a dedicated benchmark in this line, evaluating agents on GROMACS\cite{abraham2015gromacs} and LAMMPS\cite{thompson2022lammps} workflows rather than merely demonstrating agent capability. It provides an important foundation, while leaving several opportunities for broader evaluation. Its biomolecular tasks score agents against simulation output directly, which can conflate protocol correctness with sampling noise. The suite focuses on simulation execution given pre-built structures and topologies, leaving system preparation and parameterization for future extension, and it concentrates on well-known soluble protein systems. Additionally, tasks are framed as property-prediction problems with fixed accuracy thresholds (e.g., 5\% deviation), an approach that could be complemented by grading strategies better suited to settings without a well-defined ground truth. Finally, the reported failure-mode taxonomy is a useful starting point that could be complemented by more fine-grained, case-level analysis.
-
-
-
-MDArena departs from these works along four axes:
-\begin{enumerate}
-    \item Provenance: Tasks are drawn from active research projects in a working MD group rather than authored as benchmark artifacts.
-    \item Extensibility: Tasks are implemented in the harbor evaluation framework, allowing continual addition of novel research workflows as they arise. 
-    \item Scope: coverage extends beyond prior work into alchemical free-energy perturbation (FEP)\cite{mey2020best} workflows, membrane-protein systems, protein-ligand complexes, and enhanced-sampling methods such as replica exchange of expanded ensembles (REXEE)\cite{hsu2024replica} and alchemical metadynamics \cite{hsu2023alchemical}.
-    \item Evaluation: agent outputs and execution trajectories are graded with a dual-pronged scheme that combines human-authored, criterion-anchored rubrics with deterministic correctness checks designed to catch subtle but common agent errors that rubric grading alone can miss
-\end{enumerate}
-Together, these yield a more robust and diagnostically informative evaluation than execution- or output-matching alone.
-
-\begin{table}[!htbp]
-  \centering
-  \caption[Positioning of MDArena relative to representative systems.]{Positioning of MDArena relative to representative agentic molecular-simulation and computational-chemistry systems. $\checkmark$, $\circ$, and $\times$ denote yes, partial or limited coverage, and no, respectively.}
-  \label{tab:mdarena-positioning}
-  \small
-  \renewcommand{\arraystretch}{1.15}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
-    \hline
-    System or benchmark & \shortstack{Biomol.\\MD} & \shortstack{Exec.\\workflows} & Multipackage & \shortstack{Research\\provenance} \\
-    \hline
-    MDCrow~\cite{campbell2026mdcrow} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
-    NAMD-Agent~\cite{chandrasekhar2025namdagent} & $\checkmark$ & $\checkmark$ & $\times$ & $\circ$ \\
-    DynaMate~\cite{guilbert2025dynamate} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
-    PolyJarvis~\cite{zhao2026polyjarvis} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
-    LAMMPS-Agents~\cite{vriza2026multiagentic} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
-    ChemGraph~\cite{pham2026chemgraph} & $\circ$ & $\circ$ & $\checkmark$ & $\circ$ \\
-    MD-EvalBench~\cite{shi2026mdagent2} & $\times$ & $\circ$ & $\times$ & $\circ$ \\
-    MDGym~\cite{kumar2026mdgym} & $\circ$ & $\checkmark$ & $\circ$ & $\circ$ \\
-    MDArena & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
-    \hline
-  \end{tabular*}
-\end{table}
-
-\section{Methods}
-
-\subsection{Task selection and curation}
-
-MDArena was constructed from more than 100 candidate tasks contributed by domain experts from the Biggin Group to reflect the diversity and difficulty of problems encountered in research projects and drug discovery efforts. We screened the candidates for scientific relevance, technical substance, and complementarity, yielding an initial release of 50 tasks. The collection deliberately includes long-horizon workflows, underspecified problems requiring scientific judgements, and negative examples where the requested action is impossible or scientifically inappropriate. Its aggregate composition is shown in Figure~\ref{fgr:task-types}. Each task was assigned an easy, medium, or hard difficulty label by the task author and subsequently reviewed based on the workflow length, required domain knowledge, and technical complexity. The current benchmark comprises 10 easy, 24 medium and 16 hard tasks.
-
-
-\begin{figure}[htbp]
-\centering
-  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_1.pdf}
-  \caption[MDArena dataset composition.]{Composition of the 50 MDArena tasks by (A) task type, (B) molecular system type, and (C) software package. Each task contributes once to panels A and B. The ``No molecular system'' category denotes a task operating only on a \mbox{GROMACS} MDP file. Tasks may use multiple packages, giving 111 task--package assignments across 18 packages in (C). Panel (C) shows the 11 packages used in at least two tasks; seven packages used in one task each are omitted for legibility.}
-  \label{fgr:task-types}
-\end{figure}
-
-
-\subsection{Implementation}
-
- MDArena is implemented using the Harbor\cite{Harbor_Framework} evaluation framework, allowing researchers to readily evaluate their own agents and extend MDArena with new self-contained tasks. Each task runs in a dedicated Docker container \cite{moreau2023containers} and includes an executable reference solution that passes all correctness and process checks, confirming task solvability and validating that the verifier functions as intended. Command-line interfaces are provided for analyzing evaluation runs and collecting portable run records. To facilitate reproducibility and robustness, MDArena implements several safeguards. Task-content digests and run-metadata validation support checks of dataset integrity and evaluation configuration. Canary strings are embedded in task instructions, configuration files, verifiers, and reference-solution scripts to identify benchmark material and support the exclusion of our benchmark from future model-training corpora. Lastly, we implement continuous integration to run unit and regression tests for evaluation tools and task-specific verifiers, validate task structure, and check verifier dependencies in a containerized environment.
 
 \begin{figure}[htbp]
 \centering
@@ -113,7 +59,65 @@ MDArena was constructed from more than 100 candidate tasks contributed by domain
   \end{minipage}
   \caption[Representative tasks and systems in MDArena.]{Representative tasks and systems in MDArena. (A) Planning a relative binding free-energy network for GPCR ligands using OpenFE (Task~33). (B) Constructing a PepT2--amoxicillin QM cluster for a proton-transfer scan in ORCA (Task~38). (C) Extending CHARMM36 to parameterize a pAsp-containing peptide (Task~47). (D) Performing alchemical metadynamics to estimate the absolute binding free energy of a host--guest complex (Task~48).}
 \end{figure}
- 
+The growing ubiquity of AI agents in scientific computing has driven a parallel effort to benchmark them on realistic scientific workflows, and MD is no exception. Yet most existing benchmarks remain narrow in scope and fail to capture the breadth of high-level tasks relevant to MD workflows.
+
+\paragraph{General scientific benchmarks.} Several benchmarks evaluate agents on executable scientific tasks. SciCode\cite{tian2024scicode} and ScienceAgentBench\cite{chen2025scienceagentbench} assess research-oriented programming and data analysis, while Corral\cite{corral} combines executable scientific tasks, including molecular simulation, with analysis of agents' scientific reasoning. Terminal-Bench-Science\cite{dillmann2026tbscience} extends this to expert-contributed research workflows across the natural sciences, run in realistic terminal environments. These benchmarks span many domains, but none targets the sequentially coupled stages of MD workflows.
+
+\paragraph{Agent systems for computational chemistry and MD.} Beyond general benchmarks, a number of agent systems have been built for computational chemistry and biomolecular simulation. ChemGraph\cite{pham2026chemgraph} applies multi-agent orchestration to computational chemistry workflows, including geometry optimization, reaction enthalpy, and Gibbs free energy. It reports 100\% accuracy on all tasks tested, although the task suite is small and focuses on toy problems. NAMD-Agent\cite{chandrasekhar2025namdagent} automates the CHARMM-GUI interface\cite{jo2008charmm} via Gemini\cite{team2023gemini} and Selenium, but it serves primarily as a system demonstration and introduces no accompanying benchmark. DynaMate\cite{guilbert2025dynamate} was the first to target biomolecular MD with realistic tasks, evaluating a 12-system benchmark and automating the industry-relevant MM/GBSA binding-affinity estimation, though it remains a system demonstration rather than a generalizable agent benchmark. MDForge\cite{wang2026mdforge} introduces an LLM agent that uses multi-agent debate to design free energy pipelines. Ma et al.'s MDAgent and PRAXIS-MD\cite{ma2026praxismd} integrate research planning, simulation, and interpretation through reusable skills and memory, including membrane-protein applications. Despite covering a wide range of workflows, PRAXIS-MD includes only 9 cases and is used predominantly to benchmark its own workflow rather than frontier coding agents.
+
+\paragraph{Agent systems for materials and polymers.} A parallel line of work targets non-biomolecular systems. LAMMPS-Agents\cite{vriza2026multiagentic} enables end-to-end LAMMPS\cite{thompson2022lammps} workflows for inorganic materials, and PolyJarvis\cite{zhao2026polyjarvis} extends this direction to polymer MD by orchestrating polymer MD toolkits via Model Context Protocol (MCP) servers.
+
+\paragraph{Dedicated MD benchmarks.} Finally, a small number of works provide benchmarks for MD agents. MDCrow\cite{campbell2026mdcrow} was the first to evaluate LLM agents with 40+ tools on 25 MD tasks, but its scope is limited and modern coding agents now fully saturate the suite. MDAgent2\cite{shi2026mdagent2} contributes MD-EvalBench, the first dedicated MD benchmark suite, alongside a domain-adapted Qwen3-8B model\cite{yang2025qwen3} trained via continued pretraining, supervised fine-tuning, and reinforcement learning with execution as the reward signal. Its scope, however, is restricted to LAMMPS code generation, with no biomolecular tasks. MDGym\cite{kumar2026mdgym} is the closest work, evaluating agents on GROMACS\cite{abraham2015gromacs} and LAMMPS workflows rather than merely demonstrating agent capability. It provides an important foundation, while leaving several opportunities for broader evaluation. Its biomolecular tasks score agents against simulation output directly, which can conflate protocol correctness with sampling noise. The suite focuses on simulation execution given pre-built structures and topologies, leaving system preparation and parameterization for future extension, and it concentrates on well-known soluble protein systems. Additionally, tasks are framed as property-prediction problems with fixed accuracy thresholds (e.g., 5\% deviation), an approach that could be complemented by grading strategies better suited to cases without a well-defined ground truth. 
+
+MDArena departs from these works along four axes:
+\begin{enumerate}
+    \item \textbf{Provenance}: Tasks are drawn from active research projects in a working MD group rather than authored as benchmark artifacts.
+    \item \textbf{Extensibility}: Tasks are implemented in the harbor evaluation framework, allowing continual addition of novel research workflows as they arise. 
+    \item \textbf{Scope}: coverage extends beyond prior work into alchemical free-energy perturbation (FEP)\cite{mey2020best} workflows, membrane-protein systems, protein-ligand complexes, and enhanced-sampling methods such as replica exchange of expanded ensembles (REXEE)\cite{hsu2024replica} and alchemical metadynamics \cite{hsu2023alchemical}.
+    \item \textbf{Evaluation}: agent outputs and execution trajectories are graded with a dual-pronged scheme that combines human-authored, criterion-anchored rubrics with deterministic correctness checks designed to catch subtle but common agent errors that rubric grading alone can miss
+\end{enumerate}
+Together, these yield a more robust and diagnostically informative evaluation than execution- or output-matching alone.
+
+
+
+
+
+\begin{table}[!htbp]
+  \centering
+  \caption[Positioning of MDArena relative to representative systems.]{Positioning of MDArena relative to representative agentic molecular-simulation and computational-chemistry systems. $\checkmark$, $\circ$, and $\times$ denote yes, partial or limited coverage, and no, respectively.}
+  \label{tab:mdarena-positioning}
+  \small
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+    \hline
+    System or benchmark & \shortstack{Biomol.\\MD} & \shortstack{Exec.\\workflows} & Multipackage & \shortstack{Research\\provenance} \\
+    \hline
+    MDCrow~\cite{campbell2026mdcrow} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    NAMD-Agent~\cite{chandrasekhar2025namdagent} & $\checkmark$ & $\checkmark$ & $\times$ & $\circ$ \\
+    DynaMate~\cite{guilbert2025dynamate} & $\checkmark$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    PolyJarvis~\cite{zhao2026polyjarvis} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
+    LAMMPS-Agents~\cite{vriza2026multiagentic} & $\times$ & $\checkmark$ & $\times$ & $\circ$ \\
+    ChemGraph~\cite{pham2026chemgraph} & $\circ$ & $\circ$ & $\checkmark$ & $\circ$ \\
+    MD-EvalBench~\cite{shi2026mdagent2} & $\times$ & $\circ$ & $\times$ & $\circ$ \\
+    MDGym~\cite{kumar2026mdgym} & $\circ$ & $\checkmark$ & $\circ$ & $\circ$ \\
+    MDArena & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+    \hline
+  \end{tabular*}
+\end{table}
+
+\section{Methods}
+
+\subsection{Task selection and curation}
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_1.pdf}
+\caption[MDArena dataset composition.]{Composition of the 50 MDArena tasks by (A) task type, (B) molecular system type, and (C) software package. Panels A and B count each task once, and ``No molecular system'' denotes tasks operating only on a \mbox{GROMACS} MDP file. Because tasks may use several packages, panel C reflects 111 task--package assignments across 18 packages and shows the 11 used in at least two tasks.}
+  \label{fgr:task-types}
+\end{figure}
+MDArena was constructed from more than 100 candidate tasks contributed by domain experts from the Biggin Group to reflect the diversity and difficulty of problems encountered in research projects and drug discovery efforts. We screened the candidates for scientific relevance, technical depth, and diversity, yielding an initial release of 50 tasks. The collection deliberately includes long-horizon workflows, underspecified problems requiring scientific judgements, and negative examples where the requested action is impossible or scientifically inappropriate. Its aggregate composition is shown in Figure~\ref{fgr:task-types}. Each task was assigned an easy, medium, or hard difficulty label by the task author and subsequently reviewed based on the workflow length, required domain knowledge, and technical complexity. The current benchmark comprises 10 easy, 24 medium and 16 hard tasks.
+
+
+
 \subsection{Verification}
 
 As molecular simulations are inherently stochastic and often lack a unique ground truth, \cite{wan2021uncertainty,communicationsbiology2023checklist} MDArena focuses primarily on stages such as system preparation, simulation configuration, and post-simulation analysis, where in fact much of the technical difficulty of an MD workflow lies and where outputs can often be evaluated deterministically. Each executed task is evaluated by a two-part verifier with Deterministic and Process checks. 
@@ -121,6 +125,76 @@ As molecular simulations are inherently stochastic and often lack a unique groun
 \textbf{Correctness checks} are deterministic examinations of whether the resulting artifacts satisfy task-specific numerical, structural, and software-level requirements. They include scored checks that assess artifact content and sanity checks that carry no correctness weight, such as file-existence checks. Where appropriate, verification independently reconstructs preparation steps or inspects compiled simulation inputs and accommodates scientifically valid alternatives without requiring exact reproduction of the reference solution. All correctness checks have been validated through Oracle sweeps, which execute the reference solutions and check for full correctness scores, as well as Nop sweeps, which check that performing no operation receives zero correctness credit. These sweeps are complemented by targeted regression tests using valid and invalid artifacts. 
 
 \textbf{Process checks}, on the other hand, complement deterministic checks and use an LLM judge to assess the agent’s execution trajectory against predefined criteria covering the scientific decisions and interpretations necessary for a valid solution. The corresponding correctness and process scores are computed as the weighted fractions of criteria satisfied. Together, these two scores distinguish valid solutions from superficially convincing workflows and reveal cases in which a sound process nevertheless produces an incorrect result
+
+\subsection{Implementation}
+
+
+MDArena is implemented using the Harbor\cite{Harbor_Framework} evaluation framework, allowing researchers to readily evaluate their own agents and extend MDArena with new self-contained tasks.
+
+\paragraph{Task structure.}
+A Harbor task comprises an instruction, an environment, and a verifier, and is defined as a self-contained directory with the following structure:
+
+\begin{verbatim}
+my-task/
+|-- instruction.md
+|-- task.toml
+|-- environment/
+|   |-- Dockerfile   # or other environment specification
+|   `-- ...
+|-- solution/
+|   |-- solve.sh
+|   `-- ...
+`-- tests/
+    |-- test.sh
+    `-- ...
+\end{verbatim}
+
+\noindent The file \texttt{instruction.md} contains the natural-language prompt given to the agent. The \texttt{environment/} directory holds a Dockerfile (or equivalent specification) and any input files, such as a structures or MD trajectories. The verifier, \texttt{tests/test.sh}, inspects the final state of the container after the agent finishes, typically through \texttt{pytest} or shell assertions, and \texttt{task.toml} specifies configuration metadata such as resource limits (CPU and memory) and execution timeouts. Finally, \texttt{solution/solve.sh} is an oracle script containing a known-good solution. Although optional in Harbor, every MDArena task includes one that passes all correctness and process checks. Running the oracle before any agent evaluation confirms that each task is solvable and that the verifier functions as intended.
+
+\paragraph{Evaluation lifecycle.}
+Executing a \texttt{harbor run} command launches a job composed of individual trials, each of which is one agent's attempt at one task. Each trial proceeds in four stages. (1)~\emph{Sandbox provisioning:} Harbor starts a fresh, isolated container \cite{moreau2023containers} for the trial through an environment provider, either locally via Docker or at scale on cloud providers. (2)~\emph{Agent execution:} an agent adapter installs and launches the chosen agent inside the sandbox and passes it \texttt{instruction.md}. The agent runs shell commands, edits files, and calls tools until it finishes or reaches the timeout. (3)~\emph{Verification:} once the agent stops, Harbor runs the task's verifier inside the modified container, as described below. (4)~\emph{Teardown and trajectory logging:} Harbor destroys the disposable sandbox and saves the results. Every prompt, tool call, command, and output is recorded in the Agent Trajectory Interchange Format (ATIF), a standardized JSON trace that can be inspected locally with \texttt{harbor view} or synced to platforms such as Braintrust or Arize Phoenix. MDArena additionally provides command-line interfaces for analyzing evaluation runs and collecting portable run records.
+
+\paragraph{Verification.}
+In MDArena, \texttt{tests/test.sh} stages the agent's trajectory and runs Reward Kit, Harbor's
+verifier library, on the task's tests directory. Reward Kit scores each trial along two dimensions. The
+\emph{correctness} score is computed by Python checks that inspect output
+contents, numerical results, and other testable requirements. The \emph{process} score is assigned by an LLM judge, which assesses the agent's workflow and scientific reasoning against a task-specific rubric. In the default configuration, the judge is Claude Code running \texttt{claude-opus-5}. Reward Kit launches it as a separate session in \texttt{/app}, supplies the rubric and the path to the staged trajectory, and requests structured scores with accompanying explanations. The judge is therefore an agent judge: in addition to reading the trajectory, it can inspect workspace files itself to verify the agent's claims. 
+\paragraph{Safeguards}
+Canary strings are embedded in task instructions, configuration
+files, verifiers, and reference-solution scripts to identify benchmark material
+and support its exclusion from future model-training corpora. 
+
+ 
+
+
+\subsection{Experimental setup}
+
+We tracked the performance of frontier models from May 2026 onwards, covering both open-source and proprietary models from OpenAI (GPT-5.5 Medium and XHigh, GPT-5.6 Sol and Terra, GPT-6.1 Sol, and GPT Astra), Anthropic (Claude Opus-5 and Sonnet-5), Google (Gemini 3.5 Flash, 3.1 Pro, 3.7 Flash, and 4 Argon), DeepSeek (V3.2), Alibaba (Qwen3-235B and Qwen3 Coder 480B A35B), and Z.ai (GLM-5.2). These 18 model evaluations were performed in three batches, using versions v0.1, v0.2 and v1.0 of MDArena.
+
+The first batch was a preliminary run with GPT-5.5 Medium and XHigh, Gemini 3.5 Flash, Gemini 3.1 Pro Preview, DeepSeek V3.2, and Qwen3 Instruct 235B A22B, with one replicate per task per model. We found that the failures were genuine and that the verifiers accurately identified them. However, when we tested newer models (GPT-5.6 Terra, GPT-5.6 Sol, Claude Sonnet-5, Claude Opus-5, Gemini 3.7 Flash, GLM-5.2, and Qwen3 Coder 480B A35B), we found that they accomplished the tasks in novel ways, and the verifier rubrics sometimes failed to discriminate success from failure accurately. We therefore revised the verifiers, and the updated benchmark constituted v0.2. This batch was run with three repeats per task per model.
+
+For models released after August 2026, the leap in capability led some agents to succeed at tasks in novel ways that the verifiers were again unable to handle. We therefore manually reviewed the failures and fixed the verifiers as required, producing v1.0. To ensure consistent scoring across these batches, we regraded the tasks from the earlier evaluations according to the task definitions and verification criteria in v1.0. The reported results incorporate these corrections, making the batches directly comparable.
+
+Claude Opus-5 was used as the process judge for all three-replicate evaluations, whereas the historical v0.1 evaluations used Claude Opus 4.8. In total, this yielded 2100 trials costing approximately \$2500: 300 trials (\$313.70) from v0.1, 1050 trials (\$1,185.02) from v0.2, and 750 trials (\$984.67) from v1.0. Tasks were executed in Docker containers with internet access, but GitHub and repository mirrors were blocked to prevent task lookup. Each task had access to 2--4 CPUs, 8 GB RAM, 10 GB storage, no GPUs, and a task-specific wall-clock limit ranging from 10 minutes to 2.5 hours given its computational requirements.
+
+\subsection{Evaluation metrics and statistical analysis}
+
+For each configuration, the reported \textbf{strict-pass@1} rate was calculated as the fraction of individual trials that pass all scored correctness and process checks:
+\begin{equation}
+  \text{Strict-Pass@1} = \frac{1}{NR} \sum_{i=1}^{N} \sum_{r=1}^{R} s_{ir},
+\end{equation}
+where $N$ is the number of tasks, $R$ is the number of replicates per task, and $s_{ir}$ equals one if replicate $r$ on task $i$ achieves a strict pass and zero otherwise. 
+
+Mean correctness and process scores were calculated by averaging the corresponding scores across all trials. For configurations evaluated with three replicates per task, \textbf{Pass@3} denotes the fraction of tasks with at least one strict pass, while \textbf{Pass$^3$}, as a repeatability measure, denotes the fraction with strict passes in all three replicates.
+
+Timeouts and other runtime failures were retained as failed deliveries and assigned zero correctness and process scores in the adjusted metrics. Confidence intervals were computed as 95\% percentile bootstrap intervals from 2,000 resamples, sampling tasks rather than trials so that repeated attempts at one task were not treated as independent.
+
+\section{Results and Discussion}
+
+\subsection[Reliable execution of complex MD workflows]{Frontier coding agents can reliably execute complex molecular dynamics workflows}
+
+Frontier LLMs have made a leap in capabilities over the past few months, and this is reflected in their MDArena scores (Figure~\ref{fig:model_performance}). In the initial v0.1.0 evaluation, Gemini 3.1 Pro Preview and GPT-5.5 (extra-high effort) achieved strict pass rates of 34\% and 48\%. The latest frontier models, however, perform substantially better: Gemini 4 Argon achieved 76.7\%, GPT-6.1 Sol achieved 88\%, while Claude Opus 5.5 was the overall best model, reaching 94.7\% and passing 49 of 50 tasks at least once across three attempts. These observations are consistent with documented improvements in reasoning efficiency and in persistent reasoning across extended interactions, which together enable more reliable execution of complex, long-horizon tasks such as those in MDArena. These results indicate that coding agents have now matured enough to be integrated into bounded MD research workflows. However, their performance on harder tasks remains fragile, requiring explicit scientific instructions and independent validation of outputs.
+
 
 \begin{figure}[htbp]
 \centering
@@ -148,30 +222,6 @@ As molecular simulations are inherently stochastic and often lack a unique groun
   \label{fig:model_scores}
 \end{figure}
 
-\subsection{Experimental setup}
-
-
- We tracked the performance of frontier models from May 2026 onwards, covering both open-source and proprietary models from OpenAI (GPT-5.5 Medium and XHigh, GPT-5.6 Sol and Terra, GPT-6.1 Sol, and GPT Astra), Anthropic (Claude Opus-5 and Sonnet-5), Google (Gemini Flash 3.5, Pro 3.1, 3.7 Flash, and 4 Argon), DeepSeek (V3.2), Alibaba (Qwen3-235B and Qwen3 Coder 480B A35B), and Z.ai (GLM-5.2). In the main v1 evaluation, each configuration was evaluated in three independent trials on all 50 tasks. Claude Opus-5 was used as the process judge across all trials to ensure consistent grading. Tasks were executed in Docker containers with internet access, but GitHub and repository mirrors were blocked to prevent task lookup. Each task had access to 2–4 CPUs, 8 GB RAM, 10 GB storage, no GPUs, and a task-specific wall-clock limit ranging from 10 minutes to 2.5 hours given its computational requirements.
-
-Check the difference between this and the original thing
-
-\subsection{Evaluation metrics and statistical analysis}
-
-For each configuration, the reported strict-pass@1 rate was calculated as the fraction of individual trials that pass all scored correctness and process checks:
-\begin{equation}
-  \text{Strict-Pass@1} = \frac{1}{NR} \sum_{i=1}^{N} \sum_{r=1}^{R} s_{ir},
-\end{equation}
-where $N$ is the number of tasks, $R$ is the number of replicates per task, and $s_{ir}$ equals one if replicate $r$ on task $i$ achieves a strict pass and zero otherwise. Mean correctness and process scores were calculated by averaging the corresponding scores across all trials. For configurations evaluated with three replicates per task, Pass@3 denotes the fraction of tasks with at least one strict pass, while Pass$^3$, as a repeatability measure, denotes the fraction with strict passes in all three replicates.
-
-Timeouts and other runtime failures were retained as failed deliveries and assigned zero correctness and process scores in the adjusted metrics. Confidence intervals were computed as 95\% percentile bootstrap intervals from 2,000 resamples, sampling tasks rather than trials so that repeated attempts at one task were not treated as independent.
-
-\section{Results and Discussion}
-
-\subsection[Reliable execution of complex MD workflows]{Frontier coding agents can reliably execute complex molecular dynamics workflows}
-
-Frontier LLMs have made a leap in capabilities over the past few months, and this is reflected in their MDArena scores (Figure~\ref{fig:model_performance}). In the initial v0.1.0 evaluation, Gemini 3.1 Pro Preview and GPT-5.5 (extra-high effort) achieved strict pass rates of 34\% and 48\%. The latest frontier models, however, perform substantially better: Gemini 4 Argon achieved 76.7\%, GPT-6.1 Sol achieved 88\%, while Claude Opus 5.5 was the overall best model, reaching 94.7\% and passing 49 of 50 tasks at least once across three attempts. These observations are consistent with documented improvements in reasoning efficiency and in persistent reasoning across extended interactions, which together enable more reliable execution of complex, long-horizon tasks such as those in MDArena. These results indicate that coding agents have now matured enough to be integrated into bounded MD research workflows. However, their performance on harder tasks remains fragile, requiring explicit scientific instructions and independent validation of outputs.
-
-
 \subsection[Partial credit and strict task success]{High Partial-Credit Rewards Do Not Guarantee Strict Task Success}
 
 Most frontier agents achieved consistently high partial-credit rewards, even on failed tasks, suggesting that most failures arise from minor errors rather than fundamental flaws in the workflow (Figure~\ref{fig:model_scores}). The latest closed frontier agents attained mean correctness and process rewards above 0.98, with Claude Opus 5.5 achieving the highest correctness (0.990) and GPT-6 Astra the highest process reward (0.992). These rewards substantially exceeded the corresponding Strict-Pass@1 rates, indicating that high partial credit does not necessarily translate into complete task success. Gemini 4 Argon and GLM 5.2 were notable exceptions, with lower mean rewards. This was largely attributable to trials that exceeded the time limit and terminated before completion, which were assigned a score of zero on both correctness and process checks. When the analysis was restricted to trials with a successful exit status, Gemini 4 Argon improved from 82.47\% to 97.69\% in correctness and from 82.99\% to 98.03\% in process, while GLM 5.2 improved from 82.37\% to 87.90\% in correctness and from 84.15\% to 90.04\% in process. The low correctness and process scores are therefore likely an artefact of the implementation and the OpenCode agent harness rather than of the models themselves.
@@ -189,34 +239,27 @@ Most models were run with three repeats to test repeatability. Claude Opus 5.5 p
   \label{fig:cost-by-difficulty}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-  % Isolate panel C without its panel label and repeat the model legend.
-  \includegraphics[width=0.8\textwidth,trim=650bp 50bp 0bp 26bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}\par
-  \medskip
-  \includegraphics[width=\textwidth,trim=157bp 0bp 151bp 272bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
-  \caption[Overall coding-agent performance against cost on MDArena.]{Overall mean Strict-Pass@1 against mean cost per trial for nine coding-agent configurations on MDArena. A strict pass requires correctness and process scores of one. GLM-5.2 costs are estimated using its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash costs are estimated from exported token counts using Vertex AI list prices.}
-  \label{fig:overall_cost_performance}
-\end{figure}
+
 
 \subsection[Performance on hard tasks]{Frontier models tested solve previously intractable hard tasks}
 
 The latest generation of frontier LLMs tested (Gemini 4 Argon, Opus-5.5, GPT-6.1 Sol and GPT-6 Astra) showed substantial gains over their predecessors, particularly on hard tasks. Strict-Pass@1 on hard tasks rose from 45.8\% for Gemini 3.7 Flash to 81.3\% for Gemini 4 Argon (22/48 to 39/48 attempts), from 50.0\% for GPT-5.6 Sol to 79.2\% for GPT-6.1 Sol (24/48 to 38/48), and from 52.1\% for Opus-5 to 91.7\% for Opus-5.5 (25/48 to 44/48). GPT-6 Astra likewise achieved 79.2\% (38/48). Opus-5.5, GPT-6.1 Sol and GPT-6 Astra passed a shared set of 12 hard tasks in all three attempts. Opus-5.5 passed 14 hard tasks consistently and all 16 at least once, while Sol and Astra each passed 14/16 at least once. Shared successes go beyond typical analysis tasks and included enhanced-sampling preparation (Tasks 28 and 30), ligand and residue parameterization (Tasks 24 and 47), and force-field repair (Task 46). They also included scientific assessment: evaluating the suitability of a PCA-derived collective variable (Task 22) and assessing protein placement relative to the lipid bilayer (Task 45).
 
 
+
 \subsection{Failures persist despite improved hard-task performance}
 
 Despite improvements on hard tasks, failures persisted even on simpler tasks. Gemini 4, GPT-6.1 Sol and GPT-6 Astra each passed only 25 of 30 easy trials, while most other frontier models passed all 30. All three models failed every attempt at converting a glycosylated insulin system from AMBER to GROMACS (Task 11): the delivered files lacked the periodic box vectors GROMACS needs to process the system for energy minimization. Each also failed two of three attempts to scale ion charges in a water-decane system (Task 18). Although they correctly scaled the ions used by the system, they also modified unused parameters. Astra and Gemini 4 Argon changed an unused alternative sodium type, \texttt{opls\_405}; Sol additionally changed \texttt{opls\_709}, a chloride site belonging to a reaction transition-state model. These changes violated a correctness check requiring the parameters of all other non-target moieties to remain unchanged. In addition, Gemini 4 Argon timed out in the Harbor environment more often than any other model (24 of 150 trials, compared with 6 of 150 for the next highest, GLM), as it spent extended periods troubleshooting and investigating errors.
-
-Failures in medium and hard tasks mostly belonged to membrane protein setup or free energy perturbation. The failures came from Tasks~39 and~32. In Task~39, the agent was tasked with setting up GROMACS ABFE calculations for a set of charged ligands binding to the dopamine D3 receptor. All three attempts by every frontier model lacked a completed charge-treatment strategy. As the ligand's charge changed from $+1$ to $0$, the system's total charge changed by $-1e$. The agents acknowledged the resulting electrostatic concern but deferred its treatment, so they were penalized for leaving a charged system that might introduce artifacts. This case therefore highlights the importance of specifying scientific edge cases in complex workflows. The second was the DHODH OpenFE network, where Opus-5.5 failed one of three attempts: it took longer than expected to align the 15 ligands, leading to a timeout that left the final network and transformation files undelivered.
-
-Membrane-protein preparation remained particularly challenging. Across five hard membrane-preparation tasks, GPT-6.1 Sol and Astra each passed 33.3\% of attempts (5/15), compared with 73.3\% (11/15) for Opus-5.5 and 80\% (12/15) for Gemini 4 Argon. Insufficient lipid packing dominated the failures in membrane protein preparation tasks: most agents removed whole overlapping lipids, which often left underfilled exterior regions without subsequent repacking. However, although Opus-5.5 passed the lipid-packing checks in 14/15 trials for membrane tasks, it exhibited other failures resulting from incorrect final assembly despite valid intermediate work. In two of three mGlu5R system setup (task 25) trials, Opus-5.5 preserved the ligand’s binding pose in an intermediate structure, then shifted the receptor and ligand by different amounts during final assembly. The ligand ended up 30.2 and 37.8 Å from the nearest protein atom, failing the correctness checks for binding pocket geometry. Another assembly failure occurred in PepT2 system preparation (task 29), where the final structure still contained severe clashes. One ligand carbon and one lipid carbon were only 1.37 Å apart, far too close for two nonbonded carbon atoms, causing an infinite force during minimization and therefore failing the checks.
-
 \begin{figure}[htbp]
 \centering
   \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_5/variants/task_success_angled.pdf}
   \caption[Task-level strict-pass counts on MDArena.]{Strict passes across three attempts per task for five coding-agent configurations on all 50 MDArena tasks, grouped by task type. Colours indicate zero to three strict passes. A strict pass requires completion and full correctness and process scores. E/M/H indicate easy, medium, and hard tasks; QM denotes quantum chemistry.}
 \end{figure}
+Failures in medium and hard tasks mostly belonged to membrane protein setup or free energy perturbation. The failures came from Tasks~39 and~32. In Task~39, the agent was tasked with setting up GROMACS ABFE calculations for a set of charged ligands binding to the dopamine D3 receptor. All three attempts by every frontier model lacked a completed charge-treatment strategy. As the ligand's charge changed from $+1$ to $0$, the system's total charge changed by $-1e$. The agents acknowledged the resulting electrostatic concern but deferred its treatment, so they were penalized for leaving a charged system that might introduce artifacts. This case therefore highlights the importance of specifying scientific edge cases in complex workflows. The second was the DHODH OpenFE network, where Opus-5.5 failed one of three attempts: it took longer than expected to align the 15 ligands, leading to a timeout that left the final network and transformation files undelivered.
+
+Membrane-protein preparation remained particularly challenging. Across five hard membrane-preparation tasks, GPT-6.1 Sol and Astra each passed 33.3\% of attempts (5/15), compared with 73.3\% (11/15) for Opus-5.5 and 80\% (12/15) for Gemini 4 Argon. Insufficient lipid packing dominated the failures in membrane protein preparation tasks: most agents removed whole overlapping lipids, which often left underfilled exterior regions without subsequent repacking. However, although Opus-5.5 passed the lipid-packing checks in 14/15 trials for membrane tasks, it exhibited other failures resulting from incorrect final assembly despite valid intermediate work. In two of three mGlu5R system setup (task 25) trials, Opus-5.5 preserved the ligand’s binding pose in an intermediate structure, then shifted the receptor and ligand by different amounts during final assembly. The ligand ended up 30.2 and 37.8 Å from the nearest protein atom, failing the correctness checks for binding pocket geometry. Another assembly failure occurred in PepT2 system preparation (task 29), where the final structure still contained severe clashes. One ligand carbon and one lipid carbon were only 1.37 Å apart, far too close for two nonbonded carbon atoms, causing an infinite force during minimization and therefore failing the checks.
+
+
 
 \begin{figure}[htbp]
 \centering
@@ -238,7 +281,15 @@ Membrane-protein preparation remained particularly challenging. Across five hard
 
 Cost per successful trial is a key consideration for industrial adoption. Mean cost rose with task difficulty (Fig.~\ref{fig:difficulty_cost}B), reflecting longer agent runtimes and greater token usage. The latest generation of models substantially reduced cost while improving success (Fig.~\ref{fig:difficulty_cost}B). Mean cost per trial fell by 49.8\% for Claude Opus-5.5 relative to Opus-5 (\$1.71 to \$0.86) and by 68.8\% for GPT-6.1 Sol relative to GPT-5.6 Sol (\$1.51 to \$0.47). Gemini 4 Argon was an exception, nearly doubling the cost of Gemini 3.7 Flash (\$1.86 versus \$0.94) by processing 31\% more input tokens despite fewer tool calls (59 versus 65), though its strict pass rate also rose (71.3\% to 76.7\%), with an exceptional improvement on hard tasks (45.8\% to 81.3\%). We also see that higher cost did not guarantee better performance (Fig.~\ref{fig:overall_cost_performance}): the flagship GPT-6 Astra cost \$2.68 per trial, 5.7 times that of GPT-6.1 Sol, yet only matched its 88.0\% strict pass rate. Overall, GPT-6.1 Sol had the lowest cost per strict pass (\$0.53), while Claude Opus-5.5 achieved the highest strict pass rate for an additional \$0.39 per trial.
 
-
+\begin{figure}[htbp]
+\centering
+  % Isolate panel C without its panel label and repeat the model legend.
+  \includegraphics[width=0.8\textwidth,trim=650bp 50bp 0bp 26bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}\par
+  \medskip
+  \includegraphics[width=\textwidth,trim=157bp 0bp 151bp 272bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
+  \caption[Overall coding-agent performance against cost on MDArena.]{Overall mean Strict-Pass@1 against mean cost per trial for nine coding-agent configurations on MDArena. A strict pass requires correctness and process scores of one. GLM-5.2 costs are estimated using its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash costs are estimated from exported token counts using Vertex AI list prices.}
+  \label{fig:overall_cost_performance}
+\end{figure}
 
 \subsection{Behavioural differences between model families}
 
