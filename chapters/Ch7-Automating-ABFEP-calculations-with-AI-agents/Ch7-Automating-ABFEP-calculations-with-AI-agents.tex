@@ -111,13 +111,24 @@ Most models were run with three repeats to test repeatability. Claude Opus 5.5 p
 
 \begin{figure}[htbp]
 \centering
-  \includegraphics[width=\textwidth]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
-  \caption[Coding-agent performance and cost on MDArena.]{Performance and cost of nine coding-agent configurations on MDArena. Left: mean Strict-Pass@1 by task difficulty. Middle: mean cost per trial by difficulty. Right: overall Strict-Pass@1 against mean cost per trial. A strict pass requires correctness and process scores of one. Error bars show 95\% task-bootstrap confidence intervals. Striped bars indicate costs estimated from exported token counts. GLM-5.2 estimates use its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash estimates use Vertex AI list prices.}
+  % Retain panels A and B together, with the full shared model legend below.
+  \includegraphics[width=\textwidth,trim=0bp 63bp 329bp 0bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}\par
+  \medskip
+  \includegraphics[width=\textwidth,trim=157bp 0bp 151bp 272bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
+  \caption[Coding-agent performance and cost by task difficulty on MDArena.]{Performance and cost of nine coding-agent configurations on MDArena by task difficulty. (A) Mean Strict-Pass@1. (B) Mean cost per trial. A strict pass requires correctness and process scores of one. Error bars show 95\% task-bootstrap confidence intervals. Striped bars indicate costs estimated from exported token counts. GLM-5.2 estimates use its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash estimates use Vertex AI list prices.}
   \label{fig:difficulty_cost}
   \label{fig:cost-by-difficulty}
 \end{figure}
 
-Split this into two + 1 showing full 
+\begin{figure}[htbp]
+\centering
+  % Isolate panel C without its panel label and repeat the model legend.
+  \includegraphics[width=0.8\textwidth,trim=650bp 50bp 0bp 26bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}\par
+  \medskip
+  \includegraphics[width=\textwidth,trim=157bp 0bp 151bp 272bp,clip]{chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/figures/figure_3.pdf}
+  \caption[Overall coding-agent performance against cost on MDArena.]{Overall mean Strict-Pass@1 against mean cost per trial for nine coding-agent configurations on MDArena. A strict pass requires correctness and process scores of one. GLM-5.2 costs are estimated using its supplied mean cost at 1~GBP~=~1.36~USD. DeepSeek V4.1 Flash costs are estimated from exported token counts using Vertex AI list prices.}
+  \label{fig:overall_cost_performance}
+\end{figure}
 
 \subsection[Performance on hard tasks]{Frontier models tested solve previously intractable hard tasks}
 
@@ -136,7 +147,7 @@ Add heatmap on where agents fail
 
 \subsection{Cost effectiveness of different models}
 
-Cost per successful trial is a key consideration for industrial adoption. Mean cost rose with task difficulty (Fig.~\ref{fig:difficulty_cost}B), reflecting longer agent runtimes and greater token usage. The latest generation of models substantially reduced cost while improving success (Fig.~\ref{fig:difficulty_cost}B). Mean cost per trial fell by 49.8\% for Claude Opus-5.5 relative to Opus-5 (\$1.71 to \$0.86) and by 68.8\% for GPT-6.1 Sol relative to GPT-5.6 Sol (\$1.51 to \$0.47). Gemini 4 Argon was an exception, nearly doubling the cost of Gemini 3.7 Flash (\$1.86 versus \$0.94) by processing 31\% more input tokens despite fewer tool calls (59 versus 65), though its strict pass rate also rose (71.3\% to 76.7\%), with an exceptional improvement on hard tasks (45.8\% to 81.3\%). We also see that higher cost did not guarantee better performance: the flagship GPT-6 Astra cost \$2.68 per trial, 5.7 times that of GPT-6.1 Sol, yet only matched its 88.0\% strict pass rate. Overall, GPT-6.1 Sol had the lowest cost per strict pass (\$0.53), while Claude Opus-5.5 achieved the highest strict pass rate for an additional \$0.39 per trial.
+Cost per successful trial is a key consideration for industrial adoption. Mean cost rose with task difficulty (Fig.~\ref{fig:difficulty_cost}B), reflecting longer agent runtimes and greater token usage. The latest generation of models substantially reduced cost while improving success (Fig.~\ref{fig:difficulty_cost}B). Mean cost per trial fell by 49.8\% for Claude Opus-5.5 relative to Opus-5 (\$1.71 to \$0.86) and by 68.8\% for GPT-6.1 Sol relative to GPT-5.6 Sol (\$1.51 to \$0.47). Gemini 4 Argon was an exception, nearly doubling the cost of Gemini 3.7 Flash (\$1.86 versus \$0.94) by processing 31\% more input tokens despite fewer tool calls (59 versus 65), though its strict pass rate also rose (71.3\% to 76.7\%), with an exceptional improvement on hard tasks (45.8\% to 81.3\%). We also see that higher cost did not guarantee better performance (Fig.~\ref{fig:overall_cost_performance}): the flagship GPT-6 Astra cost \$2.68 per trial, 5.7 times that of GPT-6.1 Sol, yet only matched its 88.0\% strict pass rate. Overall, GPT-6.1 Sol had the lowest cost per strict pass (\$0.53), while Claude Opus-5.5 achieved the highest strict pass rate for an additional \$0.39 per trial.
 
 
 
