@@ -43,8 +43,10 @@ The figure is included in Chapter 3 as Figure 3.2. Source assets were copied fro
 
 - `figures/allosteric_sodium/combined_v4_converged.svg` is the unchanged source
   figure, assembled in Inkscape from six plot panels.
-- `figures/allosteric_sodium/combined_v4_converged.pdf` is its vector PDF export
-  used by pdfLaTeX.
+- `figures/allosteric_sodium/combined_v4_converged.pdf` is the earlier vector PDF
+  export, retained with its source SVG. The thesis now includes the exact
+  publication asset as `figures/allosteric_sodium/paper_figure_5.pdf`, exported
+  from the unchanged `figures_for_publication/fig5.svg`.
 - `data/allosteric_sodium/` contains six repeat-level CSV files and the six
   `*_w_stats.csv` tables used to plot the figure. The tables reproduce the MUE
   and RMSE values displayed in all six panels.
@@ -93,3 +95,29 @@ inkscape "$chapter/figures/allosteric_sodium/combined_v4_converged.svg" \
 ```
 
 Build the thesis with `sh scripts/build`.
+
+## Published-paper import
+
+The nine main-text figures of Anand et al.,
+[doi:10.1021/acs.jctc.6c01161](https://doi.org/10.1021/acs.jctc.6c01161),
+were checked against the supplied paper on 2026-11-22. This chapter contains
+paper Figures 1, 5, and 6 as thesis Figures 3.1, 3.2, and 3.3. All three captions
+credit the CC BY 4.0 paper. Chapter 4 contains paper Figures 2–4; Chapter 5
+contains paper Figures 7–9. The 13 SI figures were subsequently imported into
+Appendix A on 2026-11-23; see the [appendix asset README](../appendixA/README.md).
+
+The existing SVGs for Figures 3.1 and 3.3 exactly match the publication SVGs and
+were reused with their existing scripts and data. Figure 3.3 uses the Kumar D3
+inputs in `data/figure_3_3/`, its preparation and plotting scripts ending in
+`_kumar.py`, and the composite under `figures/figure_3_3/`.
+`data/orexin_source_manifest.csv` records the publication figure sources and the
+existing script/data mappings, with original SHA-256 hashes. Existing adapted
+scripts were retained.
+
+Re-export the publication Figure 5 used in the thesis with:
+
+```sh
+inkscape "$chapter/figures/allosteric_sodium/paper_figure_5.svg" \
+    --export-area-page --export-text-to-path \
+    --export-filename="$chapter/figures/allosteric_sodium/paper_figure_5.pdf"
+```

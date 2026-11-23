@@ -64,7 +64,7 @@ shared thesis build command.
 ## Plotting
 
 The repository has a uv project for plotting, with Matplotlib, NumPy, pandas,
-SciPy, and Pillow. Install the locked environment from the repository root:
+SciPy, Pillow, Seaborn, and scikit-learn. Install the locked environment from the repository root:
 
 ```sh
 uv sync --locked
@@ -85,6 +85,20 @@ Chapter 7's data, scripts, and figure assets were copied from
 [asset README](chapters/Ch7-Automating-ABFEP-calculations-with-AI-agents/README.md)
 describes the imported layout, plotting commands, and upstream tools that need
 their original scientific environment.
+
+The nine main-text figures from Anand et al.,
+[Improving ABFE Calculations for GPCRs by Addressing Errors in Apo-State Representation](https://doi.org/10.1021/acs.jctc.6c01161),
+are included across Chapters 3–5. Paper Figures 1, 5, and 6 appear in Chapter 3;
+Figures 2–4 in Chapter 4; and Figures 7–9 in Chapter 5. The chapter READMEs
+document the copied scripts, data, editable SVGs, molecular sessions, PDF exports,
+and source manifests:
+[Chapter 3](chapters/Ch3-Benchmarking-and-System-preparation/README.md),
+[Chapter 4](chapters/Ch4-Binding-pocket-resolvation/README.md), and
+[Chapter 5](chapters/Ch5-Apo-state-conformational-changes/README.md).
+The paper's 13 SI figures are included in Appendix A in their published order,
+with references from Chapters 3–5. The [appendix asset README](chapters/appendixA/README.md)
+maps the published numbering to the historical source folders and documents
+the copied data, scripts, and reproduction commands.
 
 The department and field are Physics. Names, dates, and text remain editable
 sample placeholders. The copyright year follows `degreeyear` automatically.
@@ -133,8 +147,8 @@ Chapter filenames and headings follow this order:
 7. Automating ABFEs with AI Agents
 8. Conclusion
 
-Chapters are minimal templates with a title, label, and content TODO, except for
-Chapter 7, which retains the existing AI-agents draft. Supporting Information
+Chapters retain placeholder prose, with published figures in Chapters 3–5.
+Chapter 7 retains the existing AI-agents draft. Supporting Information
 follows as Appendix A. The page count and line breaks depend on the content.
 
 The repository's existing license is retained in `LICENSE`. The underlying
