@@ -138,6 +138,54 @@
 % convergence diagnostics, and comparison with experiment.
 \lipsum[1][1-3]
 
+\subsection{Implementation}
+
+
+\subsubsection{System setup}
+System Preparation
+The starting coordinates for the protein--ligand complex were taken from the input structures provided by Guo et al. Residue protonation states were retained as assigned in the Guo et al. structure, (19) and structurally resolved water molecules from that model were preserved. Following best practices described by Cook et al., (6) the protein--ligand complex was extracted from the original coordinate set and re-embedded in a POPC bilayer using CHARMM-GUI (24) to generate multiple alternative embeddings thereby improving sampling of interfacial lipid interactions.
+
+The protein, lipid bilayer, and ligand were parameterized using the ff99SB-ILDN, (25) Lipid21, (26) and Sage force fields, (27) respectively. Ligand parameters were generated using the OpenFF toolkit (via ParmEd/OpenMM). (28)
+
+The membrane-embedded protein--ligand complex was subsequently solvated with TIP3P water using the GROMACS (29) solvate module. The system was neutralized and supplemented with NaCl/KCl to reproduce the desired ionic strength using the GROMACS genion module. Where required, bound ions were introduced by structural superposition from experimentally resolved ion-bound reference structures.
+
+\subsubsection{System Equilibration}
+
+The system was first subjected to a steepest-descent energy minimization using particle mesh Ewald (PME) electrostatics (30) with a 1.2 nm real-space cutoff for both electrostatic and van der Waals interactions. Minimization was considered complete if the maximum force fell below 2000 kJ mol$^{-1}$ nm$^{-1}$ or after 500,000 steps.
+
+Following minimization, a two-step equilibration procedure was followed: First, a 10 ps NVT equilibration was performed at 298.15 K using the stochastic velocity-rescaling thermostat of Bussi, Donadio, and Parrinello, (31) implemented using the GROMACS v-rescale option, with position restraints applied to heavy atoms. Initial velocities were assigned from a Maxwell--Boltzmann distribution at 298.15 K. This was followed by a 4 ns NPT equilibration at 298.15 K and 1 bar using the stochastic velocity-rescaling thermostat and the Parrinello--Rahman barostat (32) with semi-isotropic pressure coupling.
+
+During equilibration, equations of motion were integrated using the leapfrog integrator with a 2 fs time step with constraints on all bonds involving hydrogen atoms using the LINCS algorithm. (33) Temperature was controlled using the stochastic velocity-rescaling thermostat, with separate coupling groups for protein--membrane and solvent--ion subsystems. The equilibrated trajectories were then used to derive Boresch restraints (34) using the BoreschRestraintsGenerator tool. (8)
+
+\subsubsection{Boresch Restraints}
+
+The Boresch restraints were generated using an improved implementation of the BoreschRestraintsGenerator described by Alibay et al. (8) In addition to selecting the most stable reference values for the three angles, two dihedrals, and one bond from a 100 ns equilibrium simulation, the corresponding force constants were chosen to reproduce the distributions observed during equilibrium. This approach, inspired by the restraints used in the SepTop workflow from Baumann et al., (35) was implemented to reduce failures of ABFE calculations arising from instabilities in the Boresch restraints.
+
+\subsubsection{Absolute Binding Free Energy Simulations}
+
+
+
+
+
+
+
+Absolute binding free energy (ABFE) calculations were performed using a protocol similar to the one employed in the previous work from our lab (Cook et al. (6)).
+
+The alchemical transformation in the complex phase was carried out in three stages: electrostatic decoupling, restraint application, and van der Waals decoupling. Electrostatic interactions were decoupled over 11 $\lambda$ windows ($\lambda$ = 0.0--1.0 in increments of 0.1), Boresch restraints obtained from the modified BoreschRestraintsGenerator described in the previous paragraph were applied over 12 $\lambda$ windows ($\lambda$ = 0.0, 0.01, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.35, 0.5, 0.75, 1.0), and van der Waals interactions were decoupled over 21 $\lambda$ windows ($\lambda$ = 0.0--1.0 in increments of 0.05).
+
+The solvent leg of the simulation was performed with the ligand in a water box, using 11 $\lambda$ windows for electrostatic decoupling and 21 $\lambda$ windows for van der Waals decoupling, employing the same $\lambda$ schedules as in the complex phase. However, here the contribution of this restraint to the free energy was accounted for analytically.
+
+Each alchemical window consists of a series of short equilibration steps similar to the protocol described previously for the equilibration cycles, although using 10 ps for the restrained NVT equilibration, 100 ps for the restrained NPT Berendsen barostat (36) equilibration, and 500 ps for the unrestrained NPT Parrinello--Rahman barostat equilibration. This is followed by 20 ns of production NPT simulation. If convergence was not achieved, simulations were extended in 5 ns increments until convergence criteria (described below) were satisfied.
+
+A total of three independent replicas of the ABFE cycle are simulated for each protein--ligand pair. For the protein--ligand complexes, each replica is independently equilibrated and uses different orientational restraints, allowing the replicas to more representatively sample the available conformational space within the binding site. In selected cases (e.g., the Lenselink et al. data set (13)), additional replicas were performed during workflow optimization. All ABFE simulations were carried out using GROMACS 2020.6 (29) in combination with PLUMED, employing Hamiltonian replica exchange between alchemical windows, with exchange attempts every 200 MD steps (0.4 ps) unless otherwise specified. For charged ligands, a coannihilation scheme with an alchemical counterion was used to maintain system neutrality throughout the transformation. $\partial H/\partial \lambda$ data for all simulations have been deposited in Zenodo and are publicly available.
+
+\subsubsection{FEP Simulations and Analysis}
+
+The $\partial H/\partial \lambda$ files obtained were processed using the ABFE workflow available within the Alchemlyb (37) library. For each alchemical window, the first 1 ns of simulation was discarded as equilibration. The remaining samples were decorrelated based on the statistical inefficiency of the $\partial H/\partial \lambda$ time series. Convergence was assessed by comparing the difference between the affinity estimates using the first and second halves of the $\partial H/\partial \lambda$ data. Simulations were considered converged when the difference between these estimates was less than 0.5 kcal mol$^{-1}$.
+
+Uncertainties were estimated as the standard deviation of the free energy across independent replicas. All other trajectory analyses were performed using PENSA, (38) MDAnalysis, (39) NumPy, SciPy, and scikit-learn, while plotting was carried out using Matplotlib. Molecular visualizations were generated using ChimeraX (40) and PyMOL. (41) Agreement between calculated and experimental binding affinities was assessed using Spearman's $\rho$, Pearson's R, mean unsigned error (MUE), and root-mean-square error (RMSE)
+
+
 \section{Enhanced sampling}
 
 \lipsum[1][1-3]

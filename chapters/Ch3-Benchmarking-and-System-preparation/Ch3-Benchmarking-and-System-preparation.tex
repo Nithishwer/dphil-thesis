@@ -3,19 +3,24 @@
 I think it would be a good idea!
 \qauthor{Mahatma Gandhi}
 \end{savequote}
-\chapter{Baseline Absolute Binding Free Energy Calculations: Sampling Methods and System Setup}
+\chapter{Establishing a Baseline Protocol for GPCR ABFE Calculations}
 \label{ch:benchmarking-and-system-preparation}
 \section{Introduction}
 
+As discussed in the Introduction, errors in ABFE predictions can arise when simulations fail to accurately represent the relevant equilibrium ensembles of the bound and unbound systems. Errors in the simulated ensemble broadly stem from two sources: limitations in the molecular model, or insufficient sampling of the relevant states. In this thesis, we focus on the sampling problem, seeking to minimise sampling-related error given the force fields used by Guo et al. We consider two complementary approaches: selecting sampling strategies that improve exploration of relevant states, and preparing appropriate initial models to reduce dependence on slow relaxation from unsuitable configurations. Accordingly, this chapter aims to establish a baseline GPCR ABFE protocol by first comparing sampling strategies and then examining system-preparation choices, particularly the inclusion or exclusion of allosteric sodium.
 
-\subsection{Choosing Protocol:}
+\subsection{Selection of a baseline sampling strategy}
 
+A variety of sampling methods have been combined with free energy perturbation (FEP) to improve convergence and maximise the effective sample size. The most common protocols are Hamiltonian replica exchange along $\lambda$ ($\lambda$-HREX, also called $\lambda$-REMD), which runs simulations at different $\lambda$ values and exchanges configurations between them; replica exchange with solute tempering (REST2), which scales selected interactions to effectively heat chosen degrees of freedom while leaving others unscaled, so that exchanges with these softened replicas can promote conformational transitions; and independent $\lambda$-window simulations, which involve no exchanges. Rarer or more complex alternatives include $\lambda$-dynamics, alchemical metadynamics and replica-exchange enveloping distribution sampling.
 
+These methods have already been applied to GPCRs. Lenselink et al.\ and Cappel et al.\ applied REST-enhanced RBFE calculations, and Guo et al.\ used REST2 for [RBFE/ABFE]. V\"ogele et al.\ went further for GPCR ABFE calculations by combining REST2 with grand canonical Monte Carlo (GCMC) water sampling. Baumann et al.\ introduced $\varepsilon$-HREX within a separated-topologies RBFE approach, softening ligand Lennard-Jones interactions to lower conformational barriers and improve sampling of slow ligand rotamers. Cook et al.\ instead initialised weakly coupled ABFE windows from apo receptor conformations to address slow receptor relaxation after ligand decoupling. Because these strategies target distinct sampling limitations, their relative merits for GPCR ABFE calculations remain unclear.
 
-Out of the studies mentioned, we see that the different FEP studies have employed different sampling protocols. Lenselink et al. and Cappel et al. applied REST-enhanced RBFEs to GPCRs, and Guo et al. used REST2 for [RBFE/ABFE]. Vögele et al. went further for GPCR ABFEs by combining REST2 with GCMC water sampling (PMC). Baumann et al. introduced ε-HREX within their separated-topologies RBFE approach, softening ligand Lennard-Jones interactions to lower conformational barriers and improve sampling of slow ligand rotamers (PMC). Cook et al. instead initialised weakly coupled ABFE windows from apo conformations to address slow receptor relaxation after ligand decoupling (ChemRxiv). 
-As these strategies target distinct sampling limitations, their relative merits for GPCR ABFE calculations remain unclear. We therefore do an initial benchmark and compare four protocol variants: HREX, ε-HREX, apo-initialised windows, and independent windows without HREX. The A2A receptor dataset of Lenselink et al. was selected as the test system, as it achieved the the highest R² among the GPCR RBFE benchmarks reported in Guo et al.
+Their effectiveness depends on the system and on which degrees of freedom remain poorly sampled. Replica exchange allows configurations to move between alchemical states, while additional interaction scaling, as in REST2, can lower conformational barriers. Initialising weakly coupled windows from apo receptor conformations instead reduces dependence on slow relaxation from the ligand-bound structure. However, the dominant sampling bottlenecks are often difficult to identify before running the calculations, which makes it hard to choose a suitable protocol prospectively.
 
-\subsection{System setup practices: Sodium}
+We therefore compared four protocol variants to establish a baseline for the subsequent ABFE calculations: independent $\lambda$-window simulations without replica exchange, $\lambda$-HREX, an apo-window variant in which weakly coupled windows were initialised from apo receptor conformations, and $\varepsilon$-HREX. The comparison was designed to assess the practical benefit of each modification within the available computational resources. REST2 was outside the scope of this benchmark because of implementation and computational constraints. The A\textsubscript{2A} receptor dataset of Lenselink et al.\ was selected as the test system because it achieved the highest $R^2$ among the GPCR RBFE benchmarks reported by Guo et al.
+
+\subsection{Allosteric sodium in system preparation}
+
 In addition to sampling protocols, we examined how system preparation affects the calculations. Because we used input structures from the Guo et al. dataset, which were already optimised for RBFE performance, binding pocket issues were largely avoided. However, we noticed other issues, such as the treatment of ions.
 
 The dataset contains six class A receptors (OX2R, TAAR1, A2A, D3, DOR and β1AR) and one class C receptor (mGlu5). Class A receptors are known to have a buried allosteric Na⁺ pocket centred on Asp²·⁵⁰, formed with other polar residues and coordinating waters. Class C receptors such as mGlu5 have a different transmembrane architecture and a large extracellular Venus-flytrap domain, with no known sodium-binding site.
@@ -24,10 +29,25 @@ Evidence for ion binding is strongest for A2A, DOR and β1AR, where high-resolut
 
 Molecular dynamics simulations have probed sodium coordination and its coupling to receptor conformation and ligand recognition in A2A, D3 and DOR, providing mechanistic support, especially for D3, where sodium binding has not been structurally resolved. For TAAR1, receptor-specific evidence for ion binding remains insufficient in the literature we examined.
 
-As a consequence of this uneven experimental characterisation, the treatment of ions during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include ions in the binding pocket (2, 13), whereas others omit them (21), particularly when reasonable agreement with experiment is obtained without them. This variability is evident in the calculations of Guo et al. The A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Notably, despite the absence of sodium, the Lenselink data set showed the highest correlation with experimental binding affinities (R² = 0.84) of all the data sets analysed by Guo et al. Motivated by this apparent inconsistency, we systematically evaluated the impact of the allosteric sodium ion by performing absolute binding free energy calculations with and without Na⁺. Given the varying levels of evidence for Na⁺ binding across these receptors and our limited computational capacity, we restricted our analysis to systems where the treatment of sodium was ambiguous or inconsistent.
+As a consequence of this uneven experimental characterisation, the treatment of ions during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include ions in the binding pocket (2, 13), whereas others omit them (21), particularly when reasonable agreement with experiment is obtained without them. This variability is evident in the calculations of Guo et al. The A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Notably, despite the absence of sodium, the Lenselink data set showed the highest correlation with experimental binding affinities (R² = 0.84) of all the data sets analysed by Guo et al. Motivated by this apparent inconsistency, we systematically evaluated the impact of the allosteric sodium ion by performing absolute binding free energy calculations with and without Na⁺
+
+
+
+
+
+
+
+
+\section{Methods}
+
+\subsection{Dataset selection and experimental design}
+
+\subsubsection{Experimental Design of Sampling investigations}
+\subsubsection{Experimental design of Sodium sampling}
+
+. Given the varying levels of evidence for Na⁺ binding across these receptors and our limited computational capacity, we restricted our analysis to systems where the treatment of sodium was ambiguous or inconsistent.
 
 Three systems were selected to span the range of evidential support for sodium binding. A2A was chosen because Guo et al. treated sodium inconsistently across its ligand sets, including Na⁺ for some and omitting it for the Lenselink set, despite crystallographic evidence for its binding. D3 was included because the evidence for sodium modulation is exclusively functional, with no structural confirmation, leaving the role of the ion ambiguous. Finally, OX2R was selected because no evidence of sodium binding has been reported, yet it was simulated with Na⁺ present in the Guo et al. dataset.
-
 
 \begin{table}[htbp]
     \centering
@@ -71,68 +91,14 @@ To this end, we first selected data sets from the receptors with the highest coe
 
 We first established a baseline ABFE protocol using one data set and subsequently extended this approach across the selected systems. We then systematically analyzed the sources of error and explored strategies to mitigate them. On the setup side, we found that the presence or absence of bound metal ions has a variable effect on ligand affinities depending on the system. On the sampling side, we identified two key sources of error: inadequate water resolvation in the apo-like alchemical windows, and subtle conformational differences in the binding pocket from incomplete relaxation to the apo conformation. We also propose and validate methods to mitigate these problems.
 
-\lipsum[1][1-3]
-
-\section{Methods}
-
-\lipsum[1][1-3]
-
-\subsection{Guo et al dataset}
-
-\lipsum[1][1-3]
-
-\subsection{System setup}
-System Preparation
-The starting coordinates for the protein--ligand complex were taken from the input structures provided by Guo et al. Residue protonation states were retained as assigned in the Guo et al. structure, (19) and structurally resolved water molecules from that model were preserved. Following best practices described by Cook et al., (6) the protein--ligand complex was extracted from the original coordinate set and re-embedded in a POPC bilayer using CHARMM-GUI (24) to generate multiple alternative embeddings thereby improving sampling of interfacial lipid interactions.
-
-The protein, lipid bilayer, and ligand were parameterized using the ff99SB-ILDN, (25) Lipid21, (26) and Sage force fields, (27) respectively. Ligand parameters were generated using the OpenFF toolkit (via ParmEd/OpenMM). (28)
-
-The membrane-embedded protein--ligand complex was subsequently solvated with TIP3P water using the GROMACS (29) solvate module. The system was neutralized and supplemented with NaCl/KCl to reproduce the desired ionic strength using the GROMACS genion module. Where required, bound ions were introduced by structural superposition from experimentally resolved ion-bound reference structures.
-
-\subsection{System Equilibration}
-
-The system was first subjected to a steepest-descent energy minimization using particle mesh Ewald (PME) electrostatics (30) with a 1.2 nm real-space cutoff for both electrostatic and van der Waals interactions. Minimization was considered complete if the maximum force fell below 2000 kJ mol$^{-1}$ nm$^{-1}$ or after 500,000 steps.
-
-Following minimization, a two-step equilibration procedure was followed: First, a 10 ps NVT equilibration was performed at 298.15 K using the stochastic velocity-rescaling thermostat of Bussi, Donadio, and Parrinello, (31) implemented using the GROMACS v-rescale option, with position restraints applied to heavy atoms. Initial velocities were assigned from a Maxwell--Boltzmann distribution at 298.15 K. This was followed by a 4 ns NPT equilibration at 298.15 K and 1 bar using the stochastic velocity-rescaling thermostat and the Parrinello--Rahman barostat (32) with semi-isotropic pressure coupling.
-
-During equilibration, equations of motion were integrated using the leapfrog integrator with a 2 fs time step with constraints on all bonds involving hydrogen atoms using the LINCS algorithm. (33) Temperature was controlled using the stochastic velocity-rescaling thermostat, with separate coupling groups for protein--membrane and solvent--ion subsystems. The equilibrated trajectories were then used to derive Boresch restraints (34) using the BoreschRestraintsGenerator tool. (8)
-
-\subsection{Boresch Restraints}
-
-The Boresch restraints were generated using an improved implementation of the BoreschRestraintsGenerator described by Alibay et al. (8) In addition to selecting the most stable reference values for the three angles, two dihedrals, and one bond from a 100 ns equilibrium simulation, the corresponding force constants were chosen to reproduce the distributions observed during equilibrium. This approach, inspired by the restraints used in the SepTop workflow from Baumann et al., (35) was implemented to reduce failures of ABFE calculations arising from instabilities in the Boresch restraints.
-
-\subsection{Absolute Binding Free Energy Simulations}
-
-
-
-
-
-
-
-Absolute binding free energy (ABFE) calculations were performed using a protocol similar to the one employed in the previous work from our lab (Cook et al. (6)).
-
-The alchemical transformation in the complex phase was carried out in three stages: electrostatic decoupling, restraint application, and van der Waals decoupling. Electrostatic interactions were decoupled over 11 $\lambda$ windows ($\lambda$ = 0.0--1.0 in increments of 0.1), Boresch restraints obtained from the modified BoreschRestraintsGenerator described in the previous paragraph were applied over 12 $\lambda$ windows ($\lambda$ = 0.0, 0.01, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.35, 0.5, 0.75, 1.0), and van der Waals interactions were decoupled over 21 $\lambda$ windows ($\lambda$ = 0.0--1.0 in increments of 0.05).
-
-The solvent leg of the simulation was performed with the ligand in a water box, using 11 $\lambda$ windows for electrostatic decoupling and 21 $\lambda$ windows for van der Waals decoupling, employing the same $\lambda$ schedules as in the complex phase. However, here the contribution of this restraint to the free energy was accounted for analytically.
-
-Each alchemical window consists of a series of short equilibration steps similar to the protocol described previously for the equilibration cycles, although using 10 ps for the restrained NVT equilibration, 100 ps for the restrained NPT Berendsen barostat (36) equilibration, and 500 ps for the unrestrained NPT Parrinello--Rahman barostat equilibration. This is followed by 20 ns of production NPT simulation. If convergence was not achieved, simulations were extended in 5 ns increments until convergence criteria (described below) were satisfied.
-
-A total of three independent replicas of the ABFE cycle are simulated for each protein--ligand pair. For the protein--ligand complexes, each replica is independently equilibrated and uses different orientational restraints, allowing the replicas to more representatively sample the available conformational space within the binding site. In selected cases (e.g., the Lenselink et al. data set (13)), additional replicas were performed during workflow optimization. All ABFE simulations were carried out using GROMACS 2020.6 (29) in combination with PLUMED, employing Hamiltonian replica exchange between alchemical windows, with exchange attempts every 200 MD steps (0.4 ps) unless otherwise specified. For charged ligands, a coannihilation scheme with an alchemical counterion was used to maintain system neutrality throughout the transformation. $\partial H/\partial \lambda$ data for all simulations have been deposited in Zenodo and are publicly available.
-
-\subsection{FEP Simulations and Analysis}
-
-The $\partial H/\partial \lambda$ files obtained were processed using the ABFE workflow available within the Alchemlyb (37) library. For each alchemical window, the first 1 ns of simulation was discarded as equilibration. The remaining samples were decorrelated based on the statistical inefficiency of the $\partial H/\partial \lambda$ time series. Convergence was assessed by comparing the difference between the affinity estimates using the first and second halves of the $\partial H/\partial \lambda$ data. Simulations were considered converged when the difference between these estimates was less than 0.5 kcal mol$^{-1}$.
-
-Uncertainties were estimated as the standard deviation of the free energy across independent replicas. All other trajectory analyses were performed using PENSA, (38) MDAnalysis, (39) NumPy, SciPy, and scikit-learn, while plotting was carried out using Matplotlib. Molecular visualizations were generated using ChimeraX (40) and PyMOL. (41) Agreement between calculated and experimental binding affinities was assessed using Spearman's $\rho$, Pearson's R, mean unsigned error (MUE), and root-mean-square error (RMSE)
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Different Equilibration schemes}
 We start with Lenselink because it is the best performing: We benchmark it with different eqilibreation
 
  and then different sampling schemes
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Investigating effect of Equilibration}
+\section{Establishing the baseline ABFE protocol}
+\subsection{Variability across starting structures and restraint setups}
 \begin{figure}[p]
   \centering
   \includegraphics[width=\textwidth]{chapters/appendixA/figures/si_s2/si_figure_S2.pdf}
@@ -141,7 +107,7 @@ We start with Lenselink because it is the best performing: We benchmark it with 
   \caption*{Reproduced from SI Figure S2 of Anand et al.\cite{anand2026improving} under CC BY 4.0.}
 \end{figure}
 \clearpage
-\section{Establishing the Sampling protocol}
+\subsection{COmparison of Sampling Strategies}
 We first evaluated Absolute Binding Free Energy (ABFE) calculations on membrane protein systems well-characterized by relative binding free energies (RBFE). This approach minimizes errors from binding conformations and force fields, while allowing a direct comparison with RBFEs. Using a system with known RBFE performance also helps isolate ABFE-specific errors, such as assumptions about the apo-state conformation. For our initial study, we selected the Lenselink et al. (13) adenosine A2A receptor (A2A) data set, where in a recent study (19) RBFE calculations captured the maximal experimental variance (compared to 12 other GPCR systems) with an R2 of 0.84. We first assessed the performance of four different sampling strategies on this data set to establish the likely best protocol for ABFE calculations going forward.
 \begin{figure}[htbp]
   \centering
@@ -161,8 +127,9 @@ Having shown that statistical averaging reduces initial bias, we explored the in
 Repeat-level estimates grouped by Boresch restraint--structure setup are shown in
 Figure~\ref{fig:si-boresch-repeats}.
 
+\subsection{Selection of the baseline protocol}
 
-\section{Effect of Allosteric Sodium}:
+\section{Effect of allosteric sodium}
 
 Table of how much experimental evidence for ions and how they are handles:
 
@@ -198,7 +165,7 @@ in A2A and DOR, Resolved but in D3 and OX2R no resolved. mGlu5 is different fami
 
 
 
-Allosteric Sodium as a Source of Systematic Bias in A2A ABFE Calculations
+\subsection{Adenosine A2A receptor}
 Biologically abundant metal ions such as Na+, Mg2+, Ca2+ and Zn2+ have been known to modulate GPCR activity by stabilizing the receptor’s inactive state and thereby preventing receptor activation. Among these, Na+ has been extensively characterized as an endogenous negative allosteric modulator for many class A GPCRs. (50) The allosteric Na+ typically occupies a binding pocket within the transmembrane domain, located near the highly conserved Asp (2, 50) and is known to form a coordination network involving surrounding polar residues and structured water molecules. (50)
 
 Structural studies of the A2A adenosine receptor have resolved a Na+ binding site (51) that coordinates residues such as Ser3.39 and Asp2.50. In contrast, for some receptors such as the dopamine D3 Receptor, although sodium has been shown to modulate ligand binding, there is no direct experimental resolution of the ion in available structures. For other receptors like mGlu5, the role of transmembrane ion binding in modulating receptor activity remains largely unexplored.
@@ -215,7 +182,7 @@ For the Deflorian et al. (2) data set (Figure 5 e,f, SI Table S4), which spans a
 
 Although a reduction in correlation coefficients was observed, they remained high overall, with the Pearson correlation decreasing from 0.97 in the absence of sodium to 0.88 when sodium was included.
 
-Allosteric Sodium as a Source of Systematic Bias in ABFE Calculations of the D3 Receptor
+\subsection{Dopamine D3 receptor}
 Like other class A GPCRs, the dopamine D3 receptor (D3R) contains a conserved allosteric Na+ binding site located beneath the orthosteric pocket. This site is centered on Asp2.50 (Asp72 in D3R numbering) and coordinates a network of water molecules via the side-chain carboxylate of Asp2.50 and the hydroxyl group of Ser3.39 (Ser114 in D3R). Although no experimental D3R structure has been resolved with a bound sodium ion, the cavity observed in the eticlopride-bound D3R crystal structure (53) closely superimposes with Na+ binding sites identified in other aminergic GPCRs, including the β1- and β2-adrenergic and A2A adenosine receptors. To validate the functional role of the cavity, Michino et al. (54) explicitly modeled Na+ into this cavity and performed long-timescale molecular dynamics simulations of the resulting D3R–ligand complexes. In these simulations, the ion remained stably coordinated with sodium binding stabilizing a specific rotameric state of Ser (3, 39) leading to a stabilized inactive-like conformation of the binding pocket. In contrast, simulations performed in the absence of Na+ exhibited increased conformational heterogeneity of side chain movement.
 
 Experimental studies have further demonstrated that sodium ions enhance the binding affinity of D3R for several antagonists and inverse agonists, including SB-277011-A, L-741,626, GR103691, and U99194. (55, 56) In contrast, the affinities of some ligands like spiperone and (+)-butaclamol appear insensitive to sodium while the affinity of other ligands like clozapine seems to be sensitive to the overall ionic strength rather than to specific cation effects. Although these compounds are structurally distinct from the SAR series reported by Kumar et al., (56) (SI Table S5), the documented sodium dependence of several known antagonists together with the absence of a resolved Na+ ion in the structures reported by Guo et al. motivated us to examine the role of sodium binding in modulating D3R ligand affinity. Therefore, we performed absolute binding free energy (ABFE) calculations using receptor models with and without a bound Na+ ion. The Na+ -bound D3R model was generated by transferring the ion from the A2A receptor structure (PDB ID: 4EIY) (57) into our D3R model after superimposing the structures.
@@ -237,27 +204,7 @@ pooled A$_{2A}$ predictions are provided in
 Figures~\ref{fig:si-all-datasets-water-occupancy}, \ref{fig:si-lenselink-gcmc},
 and~\ref{fig:si-combined-a2a}, respectively.
 
-\subsection{Deflorian OX2R}
-
-\lipsum[1][1-3]
-
-\subsection{Lenselink A2A}
-
-\lipsum[1][1-3]
-
-\subsection{Minetti A2A}
-
-\lipsum[1][1-3]
-
-\subsection{Piersanti A2A}
-
-\lipsum[1][1-3]
-
-\subsection{Deflorian A2A}
-
-\lipsum[1][1-3]
-
-\subsection{Kumar D3}
+\subsection{Orexin OX2 receptor}
 
 
 \begin{figure}[htbp]
