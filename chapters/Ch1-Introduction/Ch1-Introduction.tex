@@ -5,19 +5,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 \label{introduction}
 
 % TODO: Add content here.
-\section{Drug Discovery}
-
-\lipsum[1][1-3]
-
-\subsection{Small molecule Drugs}
-
-\lipsum[1][1-3]
-
-\subsection{Current Bottlenecks and outlook}
-
-\lipsum[1][1-3]
-
-\subsection{Affinity Advantage}
 
 \lipsum[1][1-3]
 
@@ -26,6 +13,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 \lipsum[1][1-3]
 
 \subsection{Physics of Protein Ligand binding}
+
+\subsection{Affinity Advantage in Drug Discovery}
 
 \lipsum[1][1-3]
 
@@ -49,34 +38,54 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 \lipsum[1][1-3]
 
-\section{FEP calculations} %FEP or alchemical Free energy calculations??
+\section{Alchemical Binding Free Energy calculations} %FEP or alchemical Free energy calculations??
 
 \lipsum[1][1-3]
 
-\subsection{ABFE and RBFE}
+\subsection{Relative and Absolute Binding Free energy calculations}
 
 \lipsum[1][1-3]
 
-\subsection{Current Bottlenecks in ABFEs}
+\subsection{Applications and strengths of ABFE calculations}
+
+\subsection{Challenges limiting ABFE reliability}
+
+\section{GPCRs as a setting for ABFE investigation}
 
 \lipsum[1][1-3]
 
-\section{GPCRs}
+\subsection{GPCR structure, function, and pharmacological relevance}
 
 \lipsum[1][1-3]
 
-\subsection{Intro to GPCRs}
+\subsection{Previous free-energy studies and the research gap}
 
-\lipsum[1][1-3]
+Over the years, FEP for affinity prediction has gained increasing attention as a way to identify better-binding ligands for proteins and since membrane proteins constitute the majority of drug targets, considerable effort has been directed towards extending FEP to these systems. Among the earliest quantitative FEP studies was the 2006 work of Henin et al., who estimated the effects of two modifications to the peptide agonist CCK9 on binding to the GPCR CCK1R and validated the results against radioligand binding estimates. Extending the approach beyond a peptide-receptor system, Zhao, Caplan and Noskov (2010) applied both absolute and relative FEP/MD calculations to the binding of three antidepressants to the bacterial transporter LeuT. A follow-up study by Zhao et al. examined how the calculated affinities depended on ligand partial charges and restraint schemes, setting an early methodological precedent for evaluating the reliability of membrane-protein ABFEs. In 2014, Boukharta, Gutiérrez-de-Terán and Åqvist developed a stepwise FEP protocol and evaluated the effects of thirteen alanine substitutions in the neuropeptide Y₁ receptor, alongside relative binding affinities for eight related antagonists. By comparing calculated free-energy changes with experimental data for both receptor mutations and ligand modifications, the study provided an early systematic evaluation of FEP within a single GPCR system. However, although the receptor in the Boukharta study was initially equilibrated in a membrane, the FEP calculations used a spherical simulation region in Q. Also in 2014, Heinzelmann, Chen and Kuyucak introduced a simultaneous coupling-decoupling protocol for calculating standard binding free energies of polar and charged ligands, applying it to five GluA2 ligands. By coupling one ligand copy in the binding site while simultaneously decoupling another in bulk solution, the approach maintained a constant system charge. They combined this scheme with restraints and a confine-and-release treatment to address convergence difficulties. In 2015, Goldfeld et al. from Schrödinger investigated RBFEs for antagonist SAR at the κ-opioid receptor, and Lee and colleagues used ABFEs on the β₂-adrenoceptor for efficacy discrimination. Studies on the A₃ and A₁ receptors have also been reported. [Add citations. Azuaje et al. Wan et al.] Each of these studies, however, focused on a single protein system.
 
-\subsection{Classes}
+Lenselink et al. (2016) addressed this limitation in a landmark study that tested 45 ligands across four GPCRs (A₂A, β₁-adrenergic, CXCR4 and δ-opioid) using a consistent FEP+ protocol with a full lipid bilayer and explicit solvent. Calculations used twelve λ windows, 5 ns per window and REST-enhanced sampling, and the resulting performance included an RMSE of 0.80 kcal mol⁻¹ and an average Spearman correlation of 0.55. To test predictive power, the study also prospectively synthesised and tested four A₂A compounds, of which two predictions were within 1 kcal mol⁻¹, including a compound with approximately tenfold improved affinity. It was therefore the first study to apply a consistent protocol across multiple GPCR ligand series, combined with prospective experimental evaluation.
 
-\lipsum[1][1-3]
+Subsequent studies extended these efforts to more challenging targets and ligand sets. In 2019, Negami et al. used MP-CAFEE to calculate absolute binding free energies for twelve structurally diverse drugs binding to hERG, starting from docked structures. In 2020, a study from Schrödinger on the preparation of GPCR systems for FEP investigated A₂A and OX₂ ligand datasets. It highlighted issues with water placement, residue ionisation and ligand-specific equilibration that affect the accuracy of the calculated affinities. This study established that reliable quantitative prediction depends on the molecular representation and system preparation, not only on access to an established FEP implementation. Jespers et al. subsequently combined receptor-mutation FEP, ligand FEP, synthesis, experimental binding measurements and crystallography in a prospective investigation of chromone antagonists of A₂A. Studies then turned to more complex systems, such as the P2Y₁ receptor (P2Y₁R), whose binding pocket is exposed to the lipid bilayer. Dickson et al. performed an RBFE study of this receptor and separated membrane partitioning from intrinsic receptor binding, showing that changes in affinity can reflect both contributions. This extended the scope of FEP beyond predominantly protein-enclosed orthosteric pockets and made the membrane environment an important part of the thermodynamic interpretation of affinity.
 
-\subsection{Agonists and Antagonists}
+In 2021, Joseph et al. used ABFEs to investigate ligands binding to the μ- and κ-opioid receptors. A substantially larger GPCR RBFE benchmark followed in 2023, when Guo et al. reported 139 ligands, 226 perturbation pairs, twelve datasets and eight GPCRs, including mGlu5 alongside class A receptors. This marked a shift towards larger, reusable benchmark collections for membrane proteins. Zhang and Im then compared AMBER-TI and AToM-OpenMM across 53 transformations involving four GPCRs, investigating the effects of simulation length and membrane inclusion, which broadened validation across computational implementations. Separately, Cook et al. directly assessed ABFEs at the lipid-exposed sites of P2Y₁ and the glucagon receptor. The reported MAEs were 1.21 kcal mol⁻¹ for P2Y₁ and 4.74 kcal mol⁻¹ for the best-performing glucagon receptor protocol. These contrasting results exposed problems with apo-state representation, protein rearrangement and lipid occupation, which bear directly on the examination of HREX and apo-initialised windows in this thesis. Also in 2023, Vögele et al. from Schrödinger extended FEP to an eight-GPCR benchmark, including 5-HT₁B and 5-HT₂A agonist/antagonist efficacy panels, to investigate receptor conformational states. [Check this wording against the paper.]
 
-\lipsum[1][1-3]
+This was the state of the field at the start of this work, and further studies have since appeared. Kim et al. (2025) reported BAR-based calculations across several GPCR case studies, including experimental β₁-adrenergic affinities and an A₂A antagonist series, the latter giving a reported R² of approximately 0.78 and an MUE of 1.87 kcal mol⁻¹. The BindFlow workflow (2026) was applied to ten A₂A ligands in an automated ABFE benchmark, reporting RMSEs of 1.64 kcal mol⁻¹ with GAFF and 1.02 kcal mol⁻¹ with OpenFF. [Closing sentence: Overall, the majority of these studies employed RBFE, with ABFE applied far less often, which motivates the ABFE focus of this thesis.]
+
+Most studies discussed above used RBFE, and benchmarking of ABFE on membrane proteins remains limited. Such benchmarking is needed for three reasons. First, ABFE is particularly valuable for novel scaffolds that lack suitable reference ligands for RBFE. Second, it would help identify the issues that arise when the error cancellation inherent to RBFE is absent. Third, most ABFE studies, such as Vögele et al., used FEP+, so benchmarking an open-source implementation would show how it compares. A further complication is that protocols vary considerably across studies. Lenselink et al. used REST-enhanced RBFE with 5 ns per window, whereas BindFlow employed independent ABFE windows with 10 ns of sampling, and Cook et al. additionally examined HREX and apo-initialised windows. These differences complicate cross-study comparisons and motivate controlled ABFE benchmarking that uses common datasets and consistent system preparation to establish the accuracy, reproducibility and benefits of different sampling strategies.
+
+
+\subsection{Benchmark selection and rationale}
+
+With many datasets probing ABFEs and RBFEs on membrane proteins, we wanted to choose cases where ABFEs can be directly compared with RBFEs, with the comparison standardised across all receptors. Guo et al. formed a natural starting point for this.
+
+Guo et al. performed RBFEs for 139 ligands against 8 GPCRs with 226 perturbations, spanning 12 datasets (A2A, mGlu5, D3, OX2, CXCR4, β1, δ and TA1 receptors), and obtained promising results, particularly for agonist ligands in the TA1 datasets (R² = 0.58, RMSE = 1.07 kcal · mol⁻¹). The average R² is 0.61 and the average RMSE is 0.94 kcal · mol⁻¹, which is comparable to experimental accuracy (<1 kcal · mol⁻¹). They also investigated factors that affect the accuracy of FEP results, including ligand binding pose, water placement and protein structure, and provided public input structures for FEP calculations that can be used as a benchmark dataset for GPCR-FEP studies (https://doi.org/10.5281/zenodo.7988248).
+
+We therefore used this dataset for our ABFEs. The table below summarises the RBFE performance reported by Guo et al.:
+
+
+
 
 \section{Contributions of this thesis}
+\subsection{Research aims}
 
+\subsection{Thesis contributions and organisation}
 \lipsum[1][1-3]

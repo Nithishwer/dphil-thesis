@@ -8,9 +8,7 @@ dependencies = [
     "numpy",
     "pandas",
     "pillow",
-    "scikit-learn>=1.9.1",
     "scipy",
-    "seaborn>=0.13.2",
 ]
 
 [tool.uv]
