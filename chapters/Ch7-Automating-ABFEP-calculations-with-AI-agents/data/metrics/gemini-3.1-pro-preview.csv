@@ -1,6 +1,0 @@
-metric,value,ci_low,ci_high,n_tasks,basis
-mean correctness,0.536158,0.41040435000000003,0.6568187500000001,50,macro mean over tasks
-mean process,0.53262,0.40188815000000006,0.66000795,50,macro mean over tasks
-strict pass@1,0.34,0.22,0.48,50,macro mean over tasks
-pass@1,0.34,0.22,0.48,50,strict pass; tasks with >= 1 trials
-pass^1,0.34,0.22,0.48,50,all 1 attempts pass

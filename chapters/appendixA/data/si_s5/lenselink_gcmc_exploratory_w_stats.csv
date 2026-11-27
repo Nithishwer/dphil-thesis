@@ -1,8 +1,0 @@
-Lig_Name,Experimental_G,Experimental_Error,Predicted_G,Predicted_Error,n_replicates_used,included_starts,excluded_starts,Dataset,Source_Batch
-cmp_1,-10.87,1.0,-10.644800339746118,0.7321840561484445,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_11,-10.4,1.0,-11.649863889598173,1.5616305118826674,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_13,-8.31,1.0,-10.073647988297145,1.653005157546564,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_17,-9.12,1.0,-10.962960220318754,1.1266387847742128,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_2,-8.24,1.0,-8.794085669852066,0.0105955831111952,2,van1;van2,van3,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_3,-10.64,1.0,-12.396987963414128,1.7786494294502095,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
-cmp_8,-12.16,1.0,-12.573180758531873,0.4900036966617954,3,van1;van2;van3,,lenselink_gcmc_exploratory,/biggin/b211/reub0138/Projects/orexin/lenselink_a2a_v3a_na_gcmc/analysis_incremental_gcmc/batches/batch_20260812_215926
