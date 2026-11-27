@@ -21,15 +21,11 @@ We therefore compared four protocol variants to establish a baseline for the sub
 
 \subsection{Allosteric sodium in system preparation}
 
-In addition to sampling protocols, we examined how system preparation affects the calculations. Because we used input structures from the Guo et al. dataset, which were already optimised for RBFE performance, binding pocket issues were largely avoided. However, we noticed other issues, such as the treatment of ions.
+In addition to sampling protocols, we examined the treatment of allosteric sodium during system preparation. Sodium binding can influence receptor conformational equilibria and ligand affinity, making its inclusion a potentially consequential choice for ABFE calculations. The structures supplied by Guo et al. provided a common starting point for this investigation but differed in their treatment of sodium across receptor and ligand datasets. (https://pmc.ncbi.nlm.nih.gov/articles/PMC3399762/)
 
-The dataset contains six class A receptors (OX2R, TAAR1, A2A, D3, DOR and β1AR) and one class C receptor (mGlu5). Class A receptors are known to have a buried allosteric Na⁺ pocket centred on Asp²·⁵⁰, formed with other polar residues and coordinating waters. Class C receptors such as mGlu5 have a different transmembrane architecture and a large extracellular Venus-flytrap domain, with no known sodium-binding site.
+The dataset contains seven class A receptors (OX2R, TAAR1, A2A, D3, DOR, CXCR4 and β1AR) and one class C receptor (mGlu5). While mGlu5 has no known Na⁺ binding site, many class A receptors have a buried allosteric Na⁺ pocket centred on Asp²·⁵⁰, formed with other polar residues and coordinating waters. Evidence for ion binding is strongest for A2A, DOR and β1AR, where high-resolution X-ray structures directly resolve Na⁺ in the conserved transmembrane pocket, supported by biochemical or biophysical experiments. For D3, experimental support for sodium-dependent modulation of ligand affinity comes from binding assays and mutagenesis, although a bound sodium ion has not been resolved structurally. For OX2R, binding assays showed no significant sodium effect on EMPA binding, consistent with the absence of a resolved sodium ion in its structure. In addition to experimental studies, molecular dynamics simulations have probed sodium coordination and its coupling to receptor conformation and ligand recognition in A2A, D3 and DOR, providing mechanistic support, especially for D3, where sodium binding has not been structurally resolved. For TAAR1, receptor-specific evidence for ion binding remains insufficient in the literature we examined.
 
-Evidence for ion binding is strongest for A2A, DOR and β1AR, where high-resolution X-ray structures directly resolve Na⁺ in the conserved transmembrane pocket, supported by biochemical or biophysical experiments. For D3, evidence for sodium modulation of ligand affinity comes only from functional and ligand-binding experiments, in which mutations in the proposed sodium-binding network alter receptor responses or abolish sodium sensitivity. For OX2R, binding assays showed no significant sodium effect on EMPA binding, consistent with the absence of a resolved sodium ion in its structure. In mGlu5, the extracellular-domain structure (PDB 3LMK, 2.44 Å) contains a site modelled as Mg²⁺, but its identity and physiological significance require further validation.
-
-Molecular dynamics simulations have probed sodium coordination and its coupling to receptor conformation and ligand recognition in A2A, D3 and DOR, providing mechanistic support, especially for D3, where sodium binding has not been structurally resolved. For TAAR1, receptor-specific evidence for ion binding remains insufficient in the literature we examined.
-
-As a consequence of this uneven experimental characterisation, the treatment of ions during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include ions in the binding pocket (2, 13), whereas others omit them (21), particularly when reasonable agreement with experiment is obtained without them. This variability is evident in the calculations of Guo et al. The A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Notably, despite the absence of sodium, the Lenselink data set showed the highest correlation with experimental binding affinities (R² = 0.84) of all the data sets analysed by Guo et al. Motivated by this apparent inconsistency, we systematically evaluated the impact of the allosteric sodium ion by performing absolute binding free energy calculations with and without Na⁺
+As a consequence of this uneven experimental characterisation, the treatment of allosteric sodium during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include Na⁺ in the conserved pocket (2, 13), whereas others omit it (21). This variability is evident in the calculations of Guo et al.: the A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Despite the omission of allosteric sodium, the Lenselink dataset showed the highest correlation with experimental affinities among the RBFE benchmarks reported by Guo et al. However, good relative-affinity predictions do not establish whether the same preparation is suitable for absolute binding free-energy calculations, where shared contributions from the unbound receptor remain relevant. We therefore evaluated the sensitivity of ABFE predictions to the inclusion or exclusion of Na⁺ in the allosteric pocket.
 
 
 
@@ -40,14 +36,11 @@ As a consequence of this uneven experimental characterisation, the treatment of 
 
 \section{Methods}
 
-\subsection{Dataset selection and experimental design}
+\subsection{Dataset selection}
 
-\subsubsection{Experimental Design of Sampling investigations}
-\subsubsection{Experimental design of Sodium sampling}
+For the sampling comparison, we selected the A$_{2A}$ receptor dataset from Lenselink et al., which achieved the highest coefficient of determination among the GPCR RBFE datasets reported by Guo et al. ($R^2 = 0.84$). This provided a reference system with strong reported RBFE agreement against which to compare four ABFE protocol variants: independent $\lambda$-window simulations, $\lambda$-HREX, initialisation of weakly coupled windows from apo receptor conformations, and $\varepsilon$-HREX.
 
-. Given the varying levels of evidence for Na⁺ binding across these receptors and our limited computational capacity, we restricted our analysis to systems where the treatment of sodium was ambiguous or inconsistent.
-
-Three systems were selected to span the range of evidential support for sodium binding. A2A was chosen because Guo et al. treated sodium inconsistently across its ligand sets, including Na⁺ for some and omitting it for the Lenselink set, despite crystallographic evidence for its binding. D3 was included because the evidence for sodium modulation is exclusively functional, with no structural confirmation, leaving the role of the ion ambiguous. Finally, OX2R was selected because no evidence of sodium binding has been reported, yet it was simulated with Na⁺ present in the Guo et al. dataset.
+For the sodium analysis, computational constraints limited us to three receptors that differ in their support for allosteric sodium binding and in unresolved preparation choices: A$_{2A}$R, D3R, and OX2R. A$_{2A}$R was selected because sodium was included in some ligand datasets prepared by Guo et al. but omitted from the Lenselink dataset, despite crystallographic evidence for the binding site. D3R was selected because ligand-binding studies and molecular simulations support sodium-dependent modulation, although no bound sodium ion has been experimentally resolved in the structures reviewed. OX2R was selected because the structures supplied by Guo et al. included an allosteric sodium ion, despite the absence of positive evidence for its binding in the literature reviewed.
 
 \begin{table}[htbp]
     \centering
@@ -80,16 +73,89 @@ Three systems were selected to span the range of evidential support for sodium b
 \end{table}
 
 
-We do for OX2R and A2A because in OX2R No evidence but Guo et al structure has. In A2A yes structure but Guo et al structture has not. In D3 ambiguoys
-In this chapter, we deal with A2A, D3R and OX2R from the Guo et al paper
+
+
+\subsection{Experimental design of sampling investigations}
+
+Four sampling protocols were compared using the seven ligands
+in the A$_{2A}$ receptor dataset of Lenselink et al. For each
+ligand, three independent 100~ns equilibration simulations
+were performed to obtain starting configurations and
+corresponding Boresch restraints. To assess sensitivity to
+the initial setup, three independent ABFE repeats were
+performed from each equilibrated configuration without
+replica exchange, yielding nine estimates per ligand.
+This design allowed variability between repeats sharing
+a starting configuration and restraint setup to be compared
+with variability between independently equilibrated setups.
+
+The calculations were then compared with three alternative
+protocols: $\lambda$-HREX, an apo-window protocol, and
+$\varepsilon$-HREX. In the $\lambda$-HREX protocol,
+configurations were exchanged between alchemical windows,
+with exchange attempts every 200 MD steps (0.4~ps). In
+the apo-window protocol, the final ten windows of the
+van der Waals decoupling stage were initialised from apo
+receptor conformations, while the remaining windows were
+initialised from ligand-bound configurations. In the
+$\varepsilon$-HREX protocol, the ligand Lennard--Jones
+well-depth parameter, $\varepsilon$, was scaled to
+facilitate conformational sampling.
+
+For both $\lambda$-HREX and $\varepsilon$-HREX, three ABFE
+repeats were performed from each of the three equilibrated
+setups, giving nine estimates per ligand for each protocol.
+The apo-window protocol used three repeats per ligand,
+each originating from an independent equilibration
+simulation. Protocol performance was assessed through
+agreement with experimental binding free energies and
+variability across repeats. The detailed simulation
+parameters and analysis procedures are described below.
+
+\subsection{Experimental design of the sodium comparison}
+
+The effect of allosteric sodium inclusion was investigated
+using the A$_{2A}$ receptor datasets of Lenselink et al.,
+Minetti et al., and Deflorian et al., containing seven,
+nine, and ten ligands, respectively; the six-ligand D3R
+dataset of Kumar et al.; and Deflorian set~1 for OX2R.
+For each ligand, ABFE calculations were performed using
+receptor models prepared with and without a Na$^{+}$ ion
+in the allosteric pocket. These conditions refer to the
+treatment of the pocket ion; bulk solvent ions were
+handled according to the system-preparation procedure
+described below.
+
+For D3R, the sodium-containing model was generated by
+superimposing the receptor onto the sodium-bound
+A$_{2A}$ receptor structure (PDB ID: 4EIY) and transferring
+the ion coordinates into the corresponding pocket.
+For OX2R, the sodium ion present in the starting model
+supplied by Guo et al. was retained or removed to generate
+the two conditions.
+
+The sodium comparisons used $\lambda$-HREX and independently
+equilibrated starting configurations. Three ABFE repeats
+were performed per ligand under each condition, except
+for the sodium-omitted Lenselink and D3R calculations,
+for which nine and six estimates per ligand, respectively,
+were available. The sodium-omitted Lenselink estimates
+were those obtained in the sampling comparison described
+above.
+
+In the sodium-containing calculations, the allosteric
+ion remained fully interacting during ligand decoupling;
+its binding or release free energy was not calculated.
+The comparison therefore assessed the sensitivity of
+ligand ABFE predictions to the chosen sodium treatment.
+Results were analysed separately for each ligand dataset
+using mean unsigned error, root-mean-square error,
+Pearson correlation, and Spearman rank correlation.
+Variability across repeats was reported as the standard
+deviation of the binding free-energy estimates.
 
 
 
-To this end, we first selected data sets from the receptors with the highest coefficient of determination in the DP Tech study: A2A from Lenselink et al. (R2 = 0.84) and did some intial stuff there.  We then extended the analysis to other A2A Receptors: Piersanti, Minetti and Deflorian. 
-
-, mGlu5 from Christopher et al. (R2 = 0.74), and D3 from Kumar et al. (R2 = 0.67). Due to compute constraints, we were unable to include all A2A data sets and excluded Piersanti et al., which had the lowest number of compounds. This yielded three receptors from the Guo et al. data set, (19) A2A, D3, and mGlu5, for detailed investigation. We utilized the Guo study as the primary point of comparison because our calculations were initialized from the same structures and with identical system preparation, enabling the closest like-for-like comparison. Other studies have examined the same data sets (see SI Table S1 for a summary), but substantial variation in ligand inclusion, FEP methodology, ligand parametrization, and other system-specific parameters introduces confounding factors that complicate direct comparison.
-
-We first established a baseline ABFE protocol using one data set and subsequently extended this approach across the selected systems. We then systematically analyzed the sources of error and explored strategies to mitigate them. On the setup side, we found that the presence or absence of bound metal ions has a variable effect on ligand affinities depending on the system. On the sampling side, we identified two key sources of error: inadequate water resolvation in the apo-like alchemical windows, and subtle conformational differences in the binding pocket from incomplete relaxation to the apo conformation. We also propose and validate methods to mitigate these problems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Different Equilibration schemes}
@@ -116,10 +182,10 @@ We first evaluated Absolute Binding Free Energy (ABFE) calculations on membrane 
   \label{fig:benchmark-sampling-comparison}
   \caption*{Reproduced from Figure 1 of Anand et al.\cite{anand2026improving} under CC BY 4.0.}
 \end{figure}
-For our baseline protocol, starting structures and Boresch (47) restraints were derived from three independent 100 ns equilibration runs. For each structure, three independent ABFE repeats were performed, resulting in nine ABFE estimates per compound across seven compounds. Comparison with experimental data from Lenselink et al. revealed that variability between ABFE estimates originating from the same Boresch-restrained structure was relatively small (see Figure S2). In contrast, the variability between estimates obtained from different Boresch-restrained structures was typically larger (Figure S2). This increased spread between distinct initial structures indicates that systematic differences associated with the choice of Boresch restraint and starting structure contribute more to ABFE uncertainty than repeat-to-repeat noise within a given setup. This higher error between different initial structures reinforces the existing best practice of using multiple different decorrelated initial structures (8, 48) to reduce error and improve sampling. When ABFE estimates were averaged across the three starting structures derived from independent equilibration simulations, agreement with experiment was good, yielding an RMSE of 1.59 kcal/mol, a Spearman $\rho$ of 0.71, and a Pearson R of 0.74 (Figure 1a).
+For our baseline protocol, starting structures and Boresch (47) restraints were derived from three independent 100 ns equilibration runs. For each structure, three independent ABFE repeats were performed, resulting in nine ABFE estimates per compound across seven compounds. Comparison with experimental data from Lenselink et al. revealed that variability between ABFE estimates originating from the same Boresch-restrained structure was relatively small (see Figure S2). In contrast, the variability between estimates obtained from different Boresch-restrained structures was typically larger (Figure S2). This increased spread between distinct initial structures indicates that systematic differences associated with the choice of Boresch restraint and starting structure contribute more to ABFE uncertainty than repeat-to-repeat noise within a given setup. This higher error between different initial structures reinforces the existing best practice of using multiple different decorrelated initial structures (8, 48) to reduce error and improve sampling. When ABFE estimates were averaged across the three starting structures derived from independent equilibration simulations, agreement with experiment was good, yielding an RMSE of 1.59 kcal/mol, a Spearman ρ of 0.71, and a Pearson R of 0.74 (Figure 1a).
 
 
-Having shown that statistical averaging reduces initial bias, we explored the influence of three techniques that should enhance sampling: HREX (Hamiltonian Replica Exchange) (Figure 1b), ABFEs with apo-state corrections (Figure 1c) (6, 22) and $\epsilon$-HREX (Figure 1d), where the ligand’s LJ parameter, epsilon was scaled to enhance sampling. (10) $\epsilon$-HREX was first introduced by Baumann et al. (35) to increase sampling in FEP calculations using the separated topology method. HREX performed best, with average standard deviation between interstructure ABFEs decreasing significantly (2.4 kcal mol–1 to 1 kcal mol–1) (Figure 1b), highlighting the benefit of exchanges between windows. A naïve Apo-state correction, (6) whereby the final 10 windows of the annihilation step are seeded from an apo state model, rather than the holo-state, did not improve the accuracy (Figure 1c). This underscores the need for a more nuanced treatment of the apo state (see later). Naively initializing late $\lambda$ windows from apo structures, especially without replica exchange, can shift the system toward an apo-like ensemble and lead to underestimated free energies. $\epsilon$-HREX (Figure 1d) generally underestimated affinities, likely due to smoother epsilon scaling exploring unfavorable conformations. A complete breakdown of all individual compounds is given in SI Table S2. Based on these results, we adopted a protocol with HREX ABFEs from three starting frames obtained from three independent 100 ns equilibration simulations and used this as the default for the remainder of the paper.
+Having shown that statistical averaging reduces initial bias, we explored the influence of three techniques that should enhance sampling: HREX (Hamiltonian Replica Exchange) (Figure 1b), ABFEs with apo-state corrections (Figure 1c) (6, 22) and ε-HREX (Figure 1d), where the ligand’s LJ parameter, epsilon was scaled to enhance sampling. (10) ε-HREX was first introduced by Baumann et al. (35) to increase sampling in FEP calculations using the separated topology method. HREX performed best, with average standard deviation between interstructure ABFEs decreasing significantly (2.4 kcal mol–1 to 1 kcal mol–1) (Figure 1b), highlighting the benefit of exchanges between windows. A naïve Apo-state correction, (6) whereby the final 10 windows of the annihilation step are seeded from an apo state model, rather than the holo-state, did not improve the accuracy (Figure 1c). This underscores the need for a more nuanced treatment of the apo state (see later). Naively initializing late λ windows from apo structures, especially without replica exchange, can shift the system toward an apo-like ensemble and lead to underestimated free energies. ε-HREX (Figure 1d) generally underestimated affinities, likely due to smoother epsilon scaling exploring unfavorable conformations. A complete breakdown of all individual compounds is given in SI Table S2. Based on these results, we adopted a protocol with HREX ABFEs from three starting frames obtained from three independent 100 ns equilibration simulations and used this as the default for the remainder of the paper.
 
 
 
@@ -183,11 +249,11 @@ For the Deflorian et al. (2) data set (Figure 5 e,f, SI Table S4), which spans a
 Although a reduction in correlation coefficients was observed, they remained high overall, with the Pearson correlation decreasing from 0.97 in the absence of sodium to 0.88 when sodium was included.
 
 \subsection{Dopamine D3 receptor}
-Like other class A GPCRs, the dopamine D3 receptor (D3R) contains a conserved allosteric Na+ binding site located beneath the orthosteric pocket. This site is centered on Asp2.50 (Asp72 in D3R numbering) and coordinates a network of water molecules via the side-chain carboxylate of Asp2.50 and the hydroxyl group of Ser3.39 (Ser114 in D3R). Although no experimental D3R structure has been resolved with a bound sodium ion, the cavity observed in the eticlopride-bound D3R crystal structure (53) closely superimposes with Na+ binding sites identified in other aminergic GPCRs, including the $\beta$1- and $\beta$2-adrenergic and A2A adenosine receptors. To validate the functional role of the cavity, Michino et al. (54) explicitly modeled Na+ into this cavity and performed long-timescale molecular dynamics simulations of the resulting D3R–ligand complexes. In these simulations, the ion remained stably coordinated with sodium binding stabilizing a specific rotameric state of Ser (3, 39) leading to a stabilized inactive-like conformation of the binding pocket. In contrast, simulations performed in the absence of Na+ exhibited increased conformational heterogeneity of side chain movement.
+Like other class A GPCRs, the dopamine D3 receptor (D3R) contains a conserved allosteric Na+ binding site located beneath the orthosteric pocket. This site is centered on Asp2.50 (Asp72 in D3R numbering) and coordinates a network of water molecules via the side-chain carboxylate of Asp2.50 and the hydroxyl group of Ser3.39 (Ser114 in D3R). Although no experimental D3R structure has been resolved with a bound sodium ion, the cavity observed in the eticlopride-bound D3R crystal structure (53) closely superimposes with Na+ binding sites identified in other aminergic GPCRs, including the β1- and β2-adrenergic and A2A adenosine receptors. To validate the functional role of the cavity, Michino et al. (54) explicitly modeled Na+ into this cavity and performed long-timescale molecular dynamics simulations of the resulting D3R–ligand complexes. In these simulations, the ion remained stably coordinated with sodium binding stabilizing a specific rotameric state of Ser (3, 39) leading to a stabilized inactive-like conformation of the binding pocket. In contrast, simulations performed in the absence of Na+ exhibited increased conformational heterogeneity of side chain movement.
 
 Experimental studies have further demonstrated that sodium ions enhance the binding affinity of D3R for several antagonists and inverse agonists, including SB-277011-A, L-741,626, GR103691, and U99194. (55, 56) In contrast, the affinities of some ligands like spiperone and (+)-butaclamol appear insensitive to sodium while the affinity of other ligands like clozapine seems to be sensitive to the overall ionic strength rather than to specific cation effects. Although these compounds are structurally distinct from the SAR series reported by Kumar et al., (56) (SI Table S5), the documented sodium dependence of several known antagonists together with the absence of a resolved Na+ ion in the structures reported by Guo et al. motivated us to examine the role of sodium binding in modulating D3R ligand affinity. Therefore, we performed absolute binding free energy (ABFE) calculations using receptor models with and without a bound Na+ ion. The Na+ -bound D3R model was generated by transferring the ion from the A2A receptor structure (PDB ID: 4EIY) (57) into our D3R model after superimposing the structures.
 
-ABFE calculations performed with Na+ unbound (Figure 6a) and Na+ bound (Figure 6b) systems show comparable performance, with RMSE values of 2.93 and 2.94 kcal/mol, respectively. The Na+ bound system yields marginally better absolute error (MUE of 2.22 vs 2.33 kcal/mol) but slightly worse linear agreement (Pearson R of 0.34 vs 0.41), while compound ranking remains identical (Spearman $\rho$ = 0.43 in both cases). Overall, Na+ inclusion has a small effect on D3 receptor calculations, with no observed drawback, though the small sample size limits the strength of this conclusion.
+ABFE calculations performed with Na+ unbound (Figure 6a) and Na+ bound (Figure 6b) systems show comparable performance, with RMSE values of 2.93 and 2.94 kcal/mol, respectively. The Na+ bound system yields marginally better absolute error (MUE of 2.22 vs 2.33 kcal/mol) but slightly worse linear agreement (Pearson R of 0.34 vs 0.41), while compound ranking remains identical (Spearman ρ = 0.43 in both cases). Overall, Na+ inclusion has a small effect on D3 receptor calculations, with no observed drawback, though the small sample size limits the strength of this conclusion.
 
 These results align with the established role of Na+ in entropically stabilizing the apo receptor, which is expected to reduce antagonist binding affinity and mitigate the observed overestimation of ABFE values. Therefore, from these results for the A2A and D3 receptors, we conclude that while including suspected bound ions is advisable, this cannot be universally generalized and should be applied with caution on a system-by-system basis (see SI Table S6).
 
