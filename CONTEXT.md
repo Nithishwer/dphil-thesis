@@ -32,6 +32,11 @@
   folders are preserved with `.gitkeep`. Root `scripts/build` is shared.
   Thesis Figure 7.9 is an exception to the script layout: its generator and
   rendered outputs are together in Chapter 7's `figures/figure_7_9/`, as requested.
+- Chapter `data/` folders are local-only and ignored by Git. Keep their contents
+  on disk; version thesis sources, Python scripts, and figures. Fresh clones
+  require a separate data copy to regenerate plots. Back up data in other
+  existing checkouts before pulling the commit that untracks these folders,
+  because Git can remove their previously tracked files during that pull.
 - `pyproject.toml` and `uv.lock` define the plotting-only uv project:
   Matplotlib, NumPy, pandas, SciPy, Pillow, Seaborn, and scikit-learn. Use `uv sync --locked`, then
   `uv run --locked python <chapter-script>`. `.venv/` is local and ignored.

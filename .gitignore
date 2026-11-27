@@ -20,3 +20,6 @@ fonts/*
 .venv/
 __pycache__/
 .ruff_cache/
+
+# Keep chapter input data locally; sync figures and plotting scripts through Git.
+/chapters/*/data/

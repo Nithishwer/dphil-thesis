@@ -50,6 +50,12 @@ chapters/Ch1-Introduction/
 
 Keep input data in `data/`, processing and plotting scripts directly in
 `scripts/`, and figure outputs in `figures/` within the relevant chapter.
+Chapter `data/` folders are local-only and ignored by Git. Thesis sources,
+Python scripts, and figure outputs remain versioned. A fresh clone can build
+the thesis from the committed figures, but regenerating plots requires copying
+the corresponding data folders separately. Back up data in other existing
+checkouts before pulling the commit that stops tracking these folders: Git
+can remove their previously tracked files when applying that commit.
 Keep working files (prepared structures, sessions, generated tables, and
 validation records) in `scripts/intermediates/`, grouped by figure or workflow.
 Thesis Figure 7.9 keeps its generator and outputs together in Chapter 7's
