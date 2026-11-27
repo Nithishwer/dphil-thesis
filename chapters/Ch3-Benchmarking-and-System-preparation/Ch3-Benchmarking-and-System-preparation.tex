@@ -21,15 +21,11 @@ We therefore compared four protocol variants to establish a baseline for the sub
 
 \subsection{Allosteric sodium in system preparation}
 
-In addition to sampling protocols, we examined how system preparation affects the calculations. Because we used input structures from the Guo et al. dataset, which were already optimised for RBFE performance, binding pocket issues were largely avoided. However, we noticed other issues, such as the treatment of ions.
+In addition to sampling protocols, we examined the treatment of allosteric sodium during system preparation. Sodium binding can influence receptor conformational equilibria and ligand affinity, making its inclusion a potentially consequential choice for ABFE calculations. The structures supplied by Guo et al. provided a common starting point for this investigation but differed in their treatment of sodium across receptor and ligand datasets. (https://pmc.ncbi.nlm.nih.gov/articles/PMC3399762/)
 
-The dataset contains six class A receptors (OX2R, TAAR1, A2A, D3, DOR and β1AR) and one class C receptor (mGlu5). Class A receptors are known to have a buried allosteric Na⁺ pocket centred on Asp²·⁵⁰, formed with other polar residues and coordinating waters. Class C receptors such as mGlu5 have a different transmembrane architecture and a large extracellular Venus-flytrap domain, with no known sodium-binding site.
+The dataset contains seven class A receptors (OX2R, TAAR1, A2A, D3, DOR, CXCR4 and β1AR) and one class C receptor (mGlu5). While mGlu5 has no known Na⁺ binding site, many class A receptors have a buried allosteric Na⁺ pocket centred on Asp²·⁵⁰, formed with other polar residues and coordinating waters. Evidence for ion binding is strongest for A2A, DOR and β1AR, where high-resolution X-ray structures directly resolve Na⁺ in the conserved transmembrane pocket, supported by biochemical or biophysical experiments. For D3, experimental support for sodium-dependent modulation of ligand affinity comes from binding assays and mutagenesis, although a bound sodium ion has not been resolved structurally. For OX2R, binding assays showed no significant sodium effect on EMPA binding, consistent with the absence of a resolved sodium ion in its structure. In addition to experimental studies, molecular dynamics simulations have probed sodium coordination and its coupling to receptor conformation and ligand recognition in A2A, D3 and DOR, providing mechanistic support, especially for D3, where sodium binding has not been structurally resolved. For TAAR1, receptor-specific evidence for ion binding remains insufficient in the literature we examined.
 
-Evidence for ion binding is strongest for A2A, DOR and β1AR, where high-resolution X-ray structures directly resolve Na⁺ in the conserved transmembrane pocket, supported by biochemical or biophysical experiments. For D3, evidence for sodium modulation of ligand affinity comes only from functional and ligand-binding experiments, in which mutations in the proposed sodium-binding network alter receptor responses or abolish sodium sensitivity. For OX2R, binding assays showed no significant sodium effect on EMPA binding, consistent with the absence of a resolved sodium ion in its structure. In mGlu5, the extracellular-domain structure (PDB 3LMK, 2.44 Å) contains a site modelled as Mg²⁺, but its identity and physiological significance require further validation.
-
-Molecular dynamics simulations have probed sodium coordination and its coupling to receptor conformation and ligand recognition in A2A, D3 and DOR, providing mechanistic support, especially for D3, where sodium binding has not been structurally resolved. For TAAR1, receptor-specific evidence for ion binding remains insufficient in the literature we examined.
-
-As a consequence of this uneven experimental characterisation, the treatment of ions during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include ions in the binding pocket (2, 13), whereas others omit them (21), particularly when reasonable agreement with experiment is obtained without them. This variability is evident in the calculations of Guo et al. The A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Notably, despite the absence of sodium, the Lenselink data set showed the highest correlation with experimental binding affinities (R² = 0.84) of all the data sets analysed by Guo et al. Motivated by this apparent inconsistency, we systematically evaluated the impact of the allosteric sodium ion by performing absolute binding free energy calculations with and without Na⁺
+As a consequence of this uneven experimental characterisation, the treatment of allosteric sodium during system preparation for free-energy perturbation (FEP) calculations varies across studies. Some computational protocols explicitly include Na⁺ in the conserved pocket (2, 13), whereas others omit it (21). This variability is evident in the calculations of Guo et al.: the A2A receptor systems with ligands from Minetti, Piersanti and Deflorian explicitly included the Na⁺ ion, whereas those from Lenselink et al. did not. Despite the omission of allosteric sodium, the Lenselink dataset showed the highest correlation with experimental affinities among the RBFE benchmarks reported by Guo et al. However, good relative-affinity predictions do not establish whether the same preparation is suitable for absolute binding free-energy calculations, where shared contributions from the unbound receptor remain relevant. We therefore evaluated the sensitivity of ABFE predictions to the inclusion or exclusion of Na⁺ in the allosteric pocket.
 
 
 
@@ -40,14 +36,11 @@ As a consequence of this uneven experimental characterisation, the treatment of 
 
 \section{Methods}
 
-\subsection{Dataset selection and experimental design}
+\subsection{Dataset selection}
 
-\subsubsection{Experimental Design of Sampling investigations}
-\subsubsection{Experimental design of Sodium sampling}
+For the sampling comparison, we selected the A$_{2A}$ receptor dataset from Lenselink et al., which achieved the highest coefficient of determination among the GPCR RBFE datasets reported by Guo et al. ($R^2 = 0.84$). This provided a reference system with strong reported RBFE agreement against which to compare four ABFE protocol variants: independent $\lambda$-window simulations, $\lambda$-HREX, initialisation of weakly coupled windows from apo receptor conformations, and $\varepsilon$-HREX.
 
-. Given the varying levels of evidence for Na⁺ binding across these receptors and our limited computational capacity, we restricted our analysis to systems where the treatment of sodium was ambiguous or inconsistent.
-
-Three systems were selected to span the range of evidential support for sodium binding. A2A was chosen because Guo et al. treated sodium inconsistently across its ligand sets, including Na⁺ for some and omitting it for the Lenselink set, despite crystallographic evidence for its binding. D3 was included because the evidence for sodium modulation is exclusively functional, with no structural confirmation, leaving the role of the ion ambiguous. Finally, OX2R was selected because no evidence of sodium binding has been reported, yet it was simulated with Na⁺ present in the Guo et al. dataset.
+For the sodium analysis, computational constraints limited us to three receptors that differ in their support for allosteric sodium binding and in unresolved preparation choices: A$_{2A}$R, D3R, and OX2R. A$_{2A}$R was selected because sodium was included in some ligand datasets prepared by Guo et al. but omitted from the Lenselink dataset, despite crystallographic evidence for the binding site. D3R was selected because ligand-binding studies and molecular simulations support sodium-dependent modulation, although no bound sodium ion has been experimentally resolved in the structures reviewed. OX2R was selected because the structures supplied by Guo et al. included an allosteric sodium ion, despite the absence of positive evidence for its binding in the literature reviewed.
 
 \begin{table}[htbp]
     \centering
@@ -80,16 +73,89 @@ Three systems were selected to span the range of evidential support for sodium b
 \end{table}
 
 
-We do for OX2R and A2A because in OX2R No evidence but Guo et al structure has. In A2A yes structure but Guo et al structture has not. In D3 ambiguoys
-In this chapter, we deal with A2A, D3R and OX2R from the Guo et al paper
+
+
+\subsection{Experimental design of sampling investigations}
+
+Four sampling protocols were compared using the seven ligands
+in the A$_{2A}$ receptor dataset of Lenselink et al. For each
+ligand, three independent 100~ns equilibration simulations
+were performed to obtain starting configurations and
+corresponding Boresch restraints. To assess sensitivity to
+the initial setup, three independent ABFE repeats were
+performed from each equilibrated configuration without
+replica exchange, yielding nine estimates per ligand.
+This design allowed variability between repeats sharing
+a starting configuration and restraint setup to be compared
+with variability between independently equilibrated setups.
+
+The calculations were then compared with three alternative
+protocols: $\lambda$-HREX, an apo-window protocol, and
+$\varepsilon$-HREX. In the $\lambda$-HREX protocol,
+configurations were exchanged between alchemical windows,
+with exchange attempts every 200 MD steps (0.4~ps). In
+the apo-window protocol, the final ten windows of the
+van der Waals decoupling stage were initialised from apo
+receptor conformations, while the remaining windows were
+initialised from ligand-bound configurations. In the
+$\varepsilon$-HREX protocol, the ligand Lennard--Jones
+well-depth parameter, $\varepsilon$, was scaled to
+facilitate conformational sampling.
+
+For both $\lambda$-HREX and $\varepsilon$-HREX, three ABFE
+repeats were performed from each of the three equilibrated
+setups, giving nine estimates per ligand for each protocol.
+The apo-window protocol used three repeats per ligand,
+each originating from an independent equilibration
+simulation. Protocol performance was assessed through
+agreement with experimental binding free energies and
+variability across repeats. The detailed simulation
+parameters and analysis procedures are described below.
+
+\subsection{Experimental design of the sodium comparison}
+
+The effect of allosteric sodium inclusion was investigated
+using the A$_{2A}$ receptor datasets of Lenselink et al.,
+Minetti et al., and Deflorian et al., containing seven,
+nine, and ten ligands, respectively; the six-ligand D3R
+dataset of Kumar et al.; and Deflorian set~1 for OX2R.
+For each ligand, ABFE calculations were performed using
+receptor models prepared with and without a Na$^{+}$ ion
+in the allosteric pocket. These conditions refer to the
+treatment of the pocket ion; bulk solvent ions were
+handled according to the system-preparation procedure
+described below.
+
+For D3R, the sodium-containing model was generated by
+superimposing the receptor onto the sodium-bound
+A$_{2A}$ receptor structure (PDB ID: 4EIY) and transferring
+the ion coordinates into the corresponding pocket.
+For OX2R, the sodium ion present in the starting model
+supplied by Guo et al. was retained or removed to generate
+the two conditions.
+
+The sodium comparisons used $\lambda$-HREX and independently
+equilibrated starting configurations. Three ABFE repeats
+were performed per ligand under each condition, except
+for the sodium-omitted Lenselink and D3R calculations,
+for which nine and six estimates per ligand, respectively,
+were available. The sodium-omitted Lenselink estimates
+were those obtained in the sampling comparison described
+above.
+
+In the sodium-containing calculations, the allosteric
+ion remained fully interacting during ligand decoupling;
+its binding or release free energy was not calculated.
+The comparison therefore assessed the sensitivity of
+ligand ABFE predictions to the chosen sodium treatment.
+Results were analysed separately for each ligand dataset
+using mean unsigned error, root-mean-square error,
+Pearson correlation, and Spearman rank correlation.
+Variability across repeats was reported as the standard
+deviation of the binding free-energy estimates.
 
 
 
-To this end, we first selected data sets from the receptors with the highest coefficient of determination in the DP Tech study: A2A from Lenselink et al. (R2 = 0.84) and did some intial stuff there.  We then extended the analysis to other A2A Receptors: Piersanti, Minetti and Deflorian. 
-
-, mGlu5 from Christopher et al. (R2 = 0.74), and D3 from Kumar et al. (R2 = 0.67). Due to compute constraints, we were unable to include all A2A data sets and excluded Piersanti et al., which had the lowest number of compounds. This yielded three receptors from the Guo et al. data set, (19) A2A, D3, and mGlu5, for detailed investigation. We utilized the Guo study as the primary point of comparison because our calculations were initialized from the same structures and with identical system preparation, enabling the closest like-for-like comparison. Other studies have examined the same data sets (see SI Table S1 for a summary), but substantial variation in ligand inclusion, FEP methodology, ligand parametrization, and other system-specific parameters introduces confounding factors that complicate direct comparison.
-
-We first established a baseline ABFE protocol using one data set and subsequently extended this approach across the selected systems. We then systematically analyzed the sources of error and explored strategies to mitigate them. On the setup side, we found that the presence or absence of bound metal ions has a variable effect on ligand affinities depending on the system. On the sampling side, we identified two key sources of error: inadequate water resolvation in the apo-like alchemical windows, and subtle conformational differences in the binding pocket from incomplete relaxation to the apo conformation. We also propose and validate methods to mitigate these problems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Different Equilibration schemes}
