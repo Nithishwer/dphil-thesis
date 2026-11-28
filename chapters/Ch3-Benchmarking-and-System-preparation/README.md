@@ -121,3 +121,40 @@ inkscape "$chapter/figures/allosteric_sodium/paper_figure_5.svg" \
     --export-area-page --export-text-to-path \
     --export-filename="$chapter/figures/allosteric_sodium/paper_figure_5.pdf"
 ```
+
+
+## Figure 3.5: Deflorian OX2 set 1 sodium comparison
+
+- `data/figure_3_5/deflorian_set1_repeats.csv` snapshots the current repeat-level
+  results for all 27 compounds, including estimator errors and source CSV paths.
+  Missing estimates are written explicitly as `NA`.
+- `scripts/prepare_figure_3_5.py` reads the `total` rows from current numbered
+  `abfe_vanN_hrex_r1/analysis/abfe_results.csv` files in
+  `/biggin/b211/reub0138/Projects/orexin/deflorian_set_1_j13_v1` (without Na)
+  and `deflorian_set_1_j13_v2_na` (with Na). It excludes `abfe_old`.
+  Experimental values match the with-Na experimental CSV and MIAMA inventory.
+- `scripts/plot_figure_3_5.py` defaults to MBAR; `--method BAR` and `--method TI`
+  use the other saved estimators. The plot is regenerated entirely from the
+  local data snapshot. Re-run preparation to collect newly available results.
+- `scripts/intermediates/figure_3_5/` contains per-compound means, sample SDs,
+  repeat counts, and panel statistics. Wholly missing compounds remain `NA` in
+  the summaries. A single repeat is plotted without a vertical error bar.
+- `figures/figure_3_5/figure_3_5_MBAR.svg` and `.pdf` place without Na on the
+  left and with Na on the right, following Figure 3.3's colors, bands, and
+  labels. The panels share equal axis limits, expanded if needed to fit data.
+
+The initial snapshot contains 93 without-Na repeats and 73 with-Na repeats,
+covering 26 compounds in each panel. Compound 42922 has no current without-Na
+result; compound 49599 has no with-Na result. All available current repeats are
+included, including repeats 4–6 for five without-Na compounds. Results are not
+filtered by convergence status, and each panel's statistics use its own
+available compounds. Horizontal error bars are assigned 1 kcal/mol; vertical
+error bars show repeat SD rather than estimator uncertainty.
+
+From the repository root:
+
+```sh
+chapter=chapters/Ch3-Benchmarking-and-System-preparation
+uv run --locked python "$chapter/scripts/prepare_figure_3_5.py"
+uv run --locked python "$chapter/scripts/plot_figure_3_5.py"
+```
